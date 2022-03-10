@@ -60,12 +60,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   welcomeMessage: {
-    color: COLORS.lightText,
+    color: COLORS.lightBaseOne,
     fontSize: 10,
     fontFamily: "DMSans_400Regular",
   },
   fullName: {
-    color: COLORS.lightText,
+    color: COLORS.lightBaseOne,
     fontSize: 14,
     fontFamily: "DMSans_700Bold",
   },
