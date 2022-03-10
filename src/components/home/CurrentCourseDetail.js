@@ -8,7 +8,7 @@ import {
 } from "@expo-google-fonts/dm-sans";
 import COLORS from "../../constants/Colors";
 
-const CurrentCourseDetail = ({ width, height, style }) => {
+const CurrentCourseDetail = ({ logo, width, height, style }) => {
   if (!width || !height) return <View />;
 
   let [fontsLoaded] = useFonts({
@@ -28,10 +28,7 @@ const CurrentCourseDetail = ({ width, height, style }) => {
           </Text>
           <Text style={styles.author}>- By Barış Ertakuş</Text>
         </View>
-        <Image
-          style={{ height: height, width: height }}
-          source={require("../../../assets/course-logo.png")}
-        ></Image>
+        <Image style={{ height: height, width: height }} source={logo}></Image>
       </View>
     );
 };

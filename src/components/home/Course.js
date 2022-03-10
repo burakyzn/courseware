@@ -10,19 +10,11 @@ const CurrentCourse = ({ width, height, style }) => {
 
   return (
     <View style={[styles.container, style, { width: width, height: height }]}>
-      <View style={{ height: height * 0.35 }}>
-        <CurrentCourseDetail
-          logo={require("../../../assets/current-course-logo.png")}
-          width={width - 30}
-          height={height * 0.35}
-        />
-      </View>
-      <View style={{ height: height * 0.2 }}>
-        <CurrentProgress progression={"25%"} height={height * 0.2} />
-      </View>
-      <View style={{ height: height * 0.1, width: width - 30 }}>
-        <ProgressBar progression={"25%"} />
-      </View>
+      <CurrentCourseDetail
+        logo={require("../../../assets/course-logo.png")}
+        width={width - 30}
+        height={height - 30}
+      />
     </View>
   );
 };
@@ -32,9 +24,8 @@ export default CurrentCourse;
 const styles = StyleSheet.create({
   container: {
     backgroundColor: COLORS.lightBaseOne,
-    paddingLeft: 15,
-    paddingRight: 15,
     justifyContent: "space-evenly",
     borderRadius: 10,
+    padding: 15,
   },
 });
