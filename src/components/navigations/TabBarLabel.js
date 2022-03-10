@@ -32,9 +32,9 @@ const styles = StyleSheet.create({
     fontFamily: "DMSans_400Regular",
   },
   activeColor: {
-    color: COLORS.tabBarSelected,
+    color: COLORS.secondary,
   },
   defaultColor: {
-    color: COLORS.tabBarDefault,
+    color: COLORS.darkBaseOne,
   },
 });

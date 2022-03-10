@@ -16,10 +16,10 @@ export default TabBarIcon;
 
 const styles = StyleSheet.create({
   activeColor: {
-    tintColor: COLORS.tabBarSelected,
+    tintColor: COLORS.secondary,
   },
   defultColor: {
-    tintColor: COLORS.tabBarDefault,
+    tintColor: COLORS.darkBaseOne,
   },
   icon: {
     height: 22,
