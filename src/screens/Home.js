@@ -4,17 +4,10 @@ import CurrentCourse from "../components/home/CurrentCourse";
 import ProfileCard from "../components/home/ProfileCard";
 import COLORS from "../constants/Colors";
 import Course from "../components/home/Course";
-import AppLoading from "expo-app-loading";
-import { useFonts, DMSans_700Bold } from "@expo-google-fonts/dm-sans";
 
 const { width, height } = Dimensions.get("window");
 
 const Home = () => {
-  let [fontsLoaded] = useFonts({
-    DMSans_700Bold,
-  });
-
-  if (!fontsLoaded) return <AppLoading />;
   return (
     <View style={styles.container}>
       <ProfileCard />

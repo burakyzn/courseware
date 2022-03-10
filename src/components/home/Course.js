@@ -1,8 +1,6 @@
 import { View, StyleSheet, Dimensions, Text } from "react-native";
 import React from "react";
 import COLORS from "../../constants/Colors";
-import ProgressBar from "../../components/home/ProgressBar";
-import CurrentProgress from "../../components/home/CurrentProgress";
 import CurrentCourseDetail from "../../components/home/CurrentCourseDetail";
 
 const CurrentCourse = ({ width, height, style }) => {

@@ -1,36 +1,21 @@
 import { View, Text, StyleSheet, Image } from "react-native";
 import React from "react";
-import AppLoading from "expo-app-loading";
-import {
-  useFonts,
-  DMSans_400Regular,
-  DMSans_400Regular_Italic,
-} from "@expo-google-fonts/dm-sans";
 import COLORS from "../../constants/Colors";
 
 const CurrentCourseDetail = ({ logo, width, height, style }) => {
   if (!width || !height) return <View />;
 
-  let [fontsLoaded] = useFonts({
-    DMSans_400Regular,
-    DMSans_400Regular_Italic,
-  });
-
-  if (!fontsLoaded) return <AppLoading />;
-  else
-    return (
-      <View style={[styles.container, style]}>
-        <View>
-          <Text
-            style={[styles.descriptionText, { width: width - height - 15 }]}
-          >
-            Zero to hero Java Spring Boot crash course
-          </Text>
-          <Text style={styles.author}>- By Barış Ertakuş</Text>
-        </View>
-        <Image style={{ height: height, width: height }} source={logo}></Image>
+  return (
+    <View style={[styles.container, style]}>
+      <View>
+        <Text style={[styles.descriptionText, { width: width - height - 15 }]}>
+          Zero to hero Java Spring Boot crash course
+        </Text>
+        <Text style={styles.author}>- By Barış Ertakuş</Text>
       </View>
-    );
+      <Image style={{ height: height, width: height }} source={logo}></Image>
+    </View>
+  );
 };
 
 export default CurrentCourseDetail;
