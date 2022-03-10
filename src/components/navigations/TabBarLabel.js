@@ -2,6 +2,7 @@ import { StyleSheet, Text } from "react-native";
 import AppLoading from "expo-app-loading";
 import React from "react";
 import { useFonts, DMSans_400Regular } from "@expo-google-fonts/dm-sans";
+import COLORS from "../../constants/Colors";
 
 const TabBarLabel = ({ focused, text }) => {
   let [fontsLoaded] = useFonts({
@@ -31,9 +32,9 @@ const styles = StyleSheet.create({
     fontFamily: "DMSans_400Regular",
   },
   activeColor: {
-    color: "#FF8181",
+    color: COLORS.tabBarSelected,
   },
   defaultColor: {
-    color: "#161719",
+    color: COLORS.tabBarDefault,
   },
 });

@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
+import COLORS from "../constants/Colors";
 
 const Home = () => {
   return (
@@ -14,7 +15,7 @@ export default Home;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#F1F1FA",
+    backgroundColor: COLORS.activeBackground,
     alignItems: "center",
     justifyContent: "center",
   },

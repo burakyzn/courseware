@@ -1,5 +1,6 @@
 import { StyleSheet, Image } from "react-native";
 import React from "react";
+import COLORS from "../../constants/Colors";
 
 const TabBarIcon = ({ focused, source }) => {
   return (
@@ -15,10 +16,10 @@ export default TabBarIcon;
 
 const styles = StyleSheet.create({
   activeColor: {
-    tintColor: "#FF8181",
+    tintColor: COLORS.tabBarSelected,
   },
   defultColor: {
-    tintColor: "#161719",
+    tintColor: COLORS.tabBarDefault,
   },
   icon: {
     height: 22,

@@ -1,5 +1,6 @@
 import RootNavigator from "./src/navigations/RootNavigator";
 import { View, StyleSheet } from "react-native";
+import COLORS from "./src/constants/Colors";
 
 export default function App() {
   return (
@@ -12,7 +13,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#F1F1FA",
+    backgroundColor: COLORS.activeBackground,
     justifyContent: "center",
   },
 });
