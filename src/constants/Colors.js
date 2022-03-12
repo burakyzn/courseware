@@ -6,6 +6,7 @@ const COLORS = {
   secondary: "#FF8181",
   darkBaseOne: "#161719",
   success: "#7DC579",
+  warning: "#FFC960",
 };
 
 export default COLORS;

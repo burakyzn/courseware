@@ -50,7 +50,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   title: {
-    flex: 2,
+    color: COLORS.darkBaseOne,
+    fontSize: responsiveFonts(14),
+    fontFamily: "DMSans_400Regular",
   },
   description: {
     flex: 3,
