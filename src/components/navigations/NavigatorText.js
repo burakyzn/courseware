@@ -4,7 +4,7 @@ import { Ionicons } from "@expo/vector-icons";
 import COLORS from "../../constants/Colors";
 
 const NavigatorText = (props) => {
-  const { width, height, text } = props;
+  const { width, height, text, onPress } = props;
 
   return (
     <View width={width} height={height}>
@@ -14,6 +14,7 @@ const NavigatorText = (props) => {
             name="chevron-back-outline"
             size={32}
             color={COLORS.lightBaseOne}
+            onPress={onPress}
           />
           <Text style={styles.text}>{text}</Text>
         </View>

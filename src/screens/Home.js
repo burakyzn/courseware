@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View, Dimensions, ScrollView } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 import CurrentCourse from "../components/course/CurrentCourse";
 import ProfileCard from "../components/home/ProfileCard";
 import COLORS from "../constants/Colors";
@@ -61,44 +60,42 @@ const Home = () => {
 
   return (
     <View style={styles.background}>
-      <SafeAreaView style={styles.safeArea}>
-        <View style={styles.bottomContainer}></View>
-        <View style={styles.container}>
-          <View style={styles.profileWrapper}>
-            <ProfileCard />
-          </View>
-          <View style={styles.currentCourseWrapper}>
-            <CurrentCourse
-              width={"100%"}
-              height={hp * 0.23}
-              progression={currentCourse.progression}
-              title={currentCourse.title}
-              author={currentCourse.author}
-            />
-          </View>
-          <Text style={styles.recommendationText}>Recommendation</Text>
-          <ScrollView
-            style={styles.recommentedCourses}
-            showsVerticalScrollIndicator={false}
-          >
-            {recommentedCourses.map((course, i) => {
-              return (
-                <View style={styles.courseWrapper} key={i}>
-                  <Course
-                    width={"100%"}
-                    height={hp * 0.15}
-                    title={course.title}
-                    author={course.author}
-                    score={course.score}
-                    level={course.level}
-                    price={course.price}
-                  />
-                </View>
-              );
-            })}
-          </ScrollView>
+      <View style={styles.bottomContainer}></View>
+      <View style={styles.container}>
+        <View style={styles.profileWrapper}>
+          <ProfileCard />
         </View>
-      </SafeAreaView>
+        <View style={styles.currentCourseWrapper}>
+          <CurrentCourse
+            width={"100%"}
+            height={hp * 0.23}
+            progression={currentCourse.progression}
+            title={currentCourse.title}
+            author={currentCourse.author}
+          />
+        </View>
+        <Text style={styles.recommendationText}>Recommendation</Text>
+        <ScrollView
+          style={styles.recommentedCourses}
+          showsVerticalScrollIndicator={false}
+        >
+          {recommentedCourses.map((course, i) => {
+            return (
+              <View style={styles.courseWrapper} key={i}>
+                <Course
+                  width={"100%"}
+                  height={hp * 0.15}
+                  title={course.title}
+                  author={course.author}
+                  score={course.score}
+                  level={course.level}
+                  price={course.price}
+                />
+              </View>
+            );
+          })}
+        </ScrollView>
+      </View>
     </View>
   );
 };
@@ -113,9 +110,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-  },
-  safeArea: {
-    flex: 1,
     paddingHorizontal: 25,
   },
   profileWrapper: {

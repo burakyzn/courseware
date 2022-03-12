@@ -2,6 +2,7 @@ import RootNavigator from "./src/navigations/RootNavigator";
 import { View, StyleSheet } from "react-native";
 import COLORS from "./src/constants/Colors";
 import AppLoading from "expo-app-loading";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { Provider } from "react-redux";
 import store from "./src/app/store";
 import {
@@ -23,9 +24,9 @@ export default function App() {
   } else {
     return (
       <Provider store={store}>
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
           <RootNavigator></RootNavigator>
-        </View>
+        </SafeAreaView>
       </Provider>
     );
   }

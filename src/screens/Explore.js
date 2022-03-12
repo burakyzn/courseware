@@ -7,7 +7,6 @@ import CategoryButton from "../utils/CategoryButton";
 import Course from "../components/course/Course";
 import responsiveFonts from "../utils/ResponsiveFonts";
 import { useNavigation } from "@react-navigation/native";
-const wp = Dimensions.get("window").width;
 const hp = Dimensions.get("window").height;
 
 const Explore = () => {
@@ -73,7 +72,7 @@ const Explore = () => {
       <View style={styles.upperPart}>
         <View style={styles.navigatorWrapper}>
           <NavigatorText
-            width={wp - 50}
+            width={"100%"}
             height={50}
             text={"Explore"}
             onPress={() => {
@@ -85,7 +84,7 @@ const Explore = () => {
       <View style={styles.lowerPart}>
         <View style={styles.searchboxWrapper}>
           <Searchbox
-            width={wp - 50}
+            width={"100%"}
             height={60}
             placeholder="Search for courses"
           />
@@ -93,7 +92,7 @@ const Explore = () => {
         <View style={styles.categoryWrapper}>
           <Text style={styles.categoryText}>Browser Category</Text>
           <ScrollView
-            style={{ marginTop: "2%" }}
+            style={styles.categories}
             horizontal
             showsHorizontalScrollIndicator={false}
           >
@@ -105,14 +104,14 @@ const Explore = () => {
         <View style={styles.recommendedWrapper}>
           <Text style={styles.categoryText}>Recommended Courses</Text>
           <ScrollView
-            style={{ marginTop: "5%", height: hp * 0.5 }}
+            style={styles.recommendedCourses}
             showsVerticalScrollIndicator={false}
           >
             {recommentedCourses.map((course, i) => {
               return (
                 <View style={styles.courseWrapper} key={i}>
                   <Course
-                    width={wp - 50}
+                    width={"100%"}
                     height={hp * 0.15}
                     title={course.title}
                     author={course.author}
@@ -139,13 +138,14 @@ const styles = StyleSheet.create({
   },
   upperPart: {
     flex: 1,
-    alignItems: "center",
+    paddingHorizontal: 25,
   },
   lowerPart: {
-    flex: 6.3,
+    flex: 10,
     backgroundColor: COLORS.lightBaseTwo,
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
+    paddingHorizontal: 25,
   },
   navigatorWrapper: {
     flex: 1,
@@ -158,15 +158,20 @@ const styles = StyleSheet.create({
   },
   categoryWrapper: {
     marginTop: "5%",
-    paddingLeft: 25,
   },
   categoryText: {
     fontFamily: "DMSans_700Bold",
     fontSize: responsiveFonts(14),
   },
+  categories: {
+    marginTop: "2%",
+  },
   recommendedWrapper: {
-    marginTop: "3%",
-    paddingLeft: 25,
+    marginTop: "5%",
+  },
+  recommendedCourses: {
+    marginTop: "5%",
+    height: hp * 0.5,
   },
   courseWrapper: {
     marginBottom: 20,
