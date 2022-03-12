@@ -2,18 +2,30 @@ import * as React from "react";
 import { StyleSheet } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Home from "../screens/Home";
-import Explore from "../screens/Explore";
+import ExploreStackNavigator from "./ExploreStackNavigator";
+import HomeStackNavigator from "./HomeStackNavigator";
+import { useSelector } from "react-redux";
+import { selectTabBar } from "../features/tabBarSlice";
 import TabBarLabel from "../components/navigations/TabBarLabel";
 import TabBarIcon from "../components/navigations/TabBarIcon";
 
 const Tab = createBottomTabNavigator();
 
 const TabNavigator = () => {
+  const tabBar = useSelector(selectTabBar);
+
   return (
-    <Tab.Navigator screenOptions={{ tabBarStyle: styles.tabBarStyle }}>
+    <Tab.Navigator
+      screenOptions={{
+        tabBarStyle: [
+          styles.tabBarStyle,
+          { display: tabBar.visible ? null : "none" },
+        ],
+      }}
+    >
       <Tab.Screen
-        name="Home"
-        component={Home}
+        name="HomeStack"
+        component={HomeStackNavigator}
         options={() => ({
           headerShown: false,
           tabBarLabel: ({ focused }) => (
@@ -25,8 +37,8 @@ const TabNavigator = () => {
         })}
       />
       <Tab.Screen
-        name="Explore"
-        component={Explore}
+        name="ExploreStack"
+        component={ExploreStackNavigator}
         options={() => ({
           headerShown: false,
           tabBarLabel: ({ focused }) => (

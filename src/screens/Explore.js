@@ -6,10 +6,13 @@ import Searchbox from "../components/Searchbox";
 import CategoryButton from "../utils/CategoryButton";
 import Course from "../components/course/Course";
 import responsiveFonts from "../utils/ResponsiveFonts";
+import { useNavigation } from "@react-navigation/native";
 const wp = Dimensions.get("window").width;
 const hp = Dimensions.get("window").height;
 
 const Explore = () => {
+  const navigation = useNavigation();
+
   const [recommentedCategories, setRecommentedCategories] = useState([
     "Technology",
     "JavaScript",
@@ -69,7 +72,14 @@ const Explore = () => {
     <View style={styles.background}>
       <View style={styles.upperPart}>
         <View style={styles.navigatorWrapper}>
-          <NavigatorText width={wp - 50} height={50} text={"Explore"} />
+          <NavigatorText
+            width={wp - 50}
+            height={50}
+            text={"Explore"}
+            onPress={() => {
+              navigation.navigate("HomeStack");
+            }}
+          />
         </View>
       </View>
       <View style={styles.lowerPart}>

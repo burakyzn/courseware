@@ -1,5 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
+import tabBarReducer from "../features/tabBarSlice";
 
-export const store = configureStore({
-  reducer: {},
+const store = configureStore({
+  reducer: {
+    tabBar: tabBarReducer,
+  },
 });
+
+export default store;
