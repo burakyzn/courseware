@@ -17,7 +17,7 @@ const CurrentCourse = (props) => {
             <Text style={styles.price}>{price}</Text>
           </View>
           <View style={styles.iconWrapper}>
-            <Ionicons name="bookmarks" size={50} color="black" />
+            <Ionicons name="bookmarks" size={24} color="black" />
           </View>
         </View>
         <View style={styles.courseInfoWrapper}>

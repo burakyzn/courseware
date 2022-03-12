@@ -1,28 +1,15 @@
-import { StyleSheet, Image } from "react-native";
 import React from "react";
 import COLORS from "../../constants/Colors";
+import { Ionicons } from "@expo/vector-icons";
 
-const TabBarIcon = ({ focused, source }) => {
+const TabBarIcon = ({ focused, name }) => {
   return (
-    <Image
-      source={source}
-      style={[styles.icon, focused ? styles.activeColor : styles.defultColor]}
-      resizeMode="contain"
+    <Ionicons
+      name={name}
+      size={22}
+      color={focused ? COLORS.secondary : COLORS.darkBaseOne}
     />
   );
 };
 
 export default TabBarIcon;
-
-const styles = StyleSheet.create({
-  activeColor: {
-    tintColor: COLORS.secondary,
-  },
-  defultColor: {
-    tintColor: COLORS.darkBaseOne,
-  },
-  icon: {
-    height: 22,
-    width: 22,
-  },
-});

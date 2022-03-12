@@ -2,6 +2,7 @@ import * as React from "react";
 import { StyleSheet } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Home from "../screens/Home";
+import Explore from "../screens/Explore";
 import TabBarLabel from "../components/navigations/TabBarLabel";
 import TabBarIcon from "../components/navigations/TabBarIcon";
 
@@ -19,30 +20,20 @@ const TabNavigator = () => {
             <TabBarLabel focused={focused} text="Home"></TabBarLabel>
           ),
           tabBarIcon: ({ focused }) => {
-            return (
-              <TabBarIcon
-                focused={focused}
-                source={require("../../assets/tabNavigation/home.png")}
-              ></TabBarIcon>
-            );
+            return <TabBarIcon focused={focused} name="home"></TabBarIcon>;
           },
         })}
       />
       <Tab.Screen
         name="Explore"
-        component={Home}
+        component={Explore}
         options={() => ({
           headerShown: false,
           tabBarLabel: ({ focused }) => (
             <TabBarLabel focused={focused} text="Explore"></TabBarLabel>
           ),
           tabBarIcon: ({ focused }) => {
-            return (
-              <TabBarIcon
-                focused={focused}
-                source={require("../../assets/tabNavigation/explore.png")}
-              ></TabBarIcon>
-            );
+            return <TabBarIcon focused={focused} name="search"></TabBarIcon>;
           },
         })}
       />
@@ -56,10 +47,7 @@ const TabNavigator = () => {
           ),
           tabBarIcon: ({ focused }) => {
             return (
-              <TabBarIcon
-                focused={focused}
-                source={require("../../assets/tabNavigation/courses.png")}
-              ></TabBarIcon>
+              <TabBarIcon focused={focused} name="play-circle"></TabBarIcon>
             );
           },
         })}
@@ -74,10 +62,7 @@ const TabNavigator = () => {
           ),
           tabBarIcon: ({ focused }) => {
             return (
-              <TabBarIcon
-                focused={focused}
-                source={require("../../assets/tabNavigation/account.png")}
-              ></TabBarIcon>
+              <TabBarIcon focused={focused} name="person-circle"></TabBarIcon>
             );
           },
         })}
