@@ -6,7 +6,6 @@ import ProfileCard from "../components/home/ProfileCard";
 import COLORS from "../constants/Colors";
 import Course from "../components/course/Course";
 import responsiveFonts from "../utils/ResponsiveFonts";
-const wp = Dimensions.get("window").width;
 const hp = Dimensions.get("window").height;
 
 const Home = () => {
@@ -70,33 +69,34 @@ const Home = () => {
           </View>
           <View style={styles.currentCourseWrapper}>
             <CurrentCourse
-              width={wp - 50}
+              width={"100%"}
               height={hp * 0.23}
               progression={currentCourse.progression}
               title={currentCourse.title}
               author={currentCourse.author}
             />
           </View>
-          <Text style={styles.recommendationText}>Recommendation {}</Text>
-          <View style={styles.scrollWrapper}>
-            <ScrollView showsVerticalScrollIndicator={false}>
-              {recommentedCourses.map((course, i) => {
-                return (
-                  <View style={styles.courseWrapper} key={i}>
-                    <Course
-                      width={wp - 50}
-                      height={hp * 0.15}
-                      title={course.title}
-                      author={course.author}
-                      score={course.score}
-                      level={course.level}
-                      price={course.price}
-                    />
-                  </View>
-                );
-              })}
-            </ScrollView>
-          </View>
+          <Text style={styles.recommendationText}>Recommendation</Text>
+          <ScrollView
+            style={styles.recommentedCourses}
+            showsVerticalScrollIndicator={false}
+          >
+            {recommentedCourses.map((course, i) => {
+              return (
+                <View style={styles.courseWrapper} key={i}>
+                  <Course
+                    width={"100%"}
+                    height={hp * 0.15}
+                    title={course.title}
+                    author={course.author}
+                    score={course.score}
+                    level={course.level}
+                    price={course.price}
+                  />
+                </View>
+              );
+            })}
+          </ScrollView>
         </View>
       </SafeAreaView>
     </View>
@@ -116,8 +116,7 @@ const styles = StyleSheet.create({
   },
   safeArea: {
     flex: 1,
-    paddingHorizontal: 20,
-    paddingBottom: 20,
+    paddingHorizontal: 25,
   },
   profileWrapper: {
     marginTop: "5%",
@@ -126,7 +125,7 @@ const styles = StyleSheet.create({
     marginTop: "5%",
   },
   recommendationText: {
-    width: wp - 50,
+    width: "100%",
     fontFamily: "DMSans_700Bold",
     fontSize: responsiveFonts(14),
     marginTop: "5%",
@@ -134,9 +133,9 @@ const styles = StyleSheet.create({
   courseWrapper: {
     marginBottom: 20,
   },
-  scrollWrapper: {
+  recommentedCourses: {
     marginTop: "5%",
-    height: hp * 0.447,
+    width: "100%",
   },
   bottomContainer: {
     height: hp * 0.65,
