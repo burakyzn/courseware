@@ -1,12 +1,6 @@
 import React, { useState } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  Dimensions,
-  ScrollView,
-  SafeAreaView,
-} from "react-native";
+import { StyleSheet, Text, View, Dimensions, ScrollView } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import CurrentCourse from "../components/course/CurrentCourse";
 import ProfileCard from "../components/home/ProfileCard";
 import COLORS from "../constants/Colors";
@@ -88,9 +82,8 @@ const Home = () => {
             <ScrollView showsVerticalScrollIndicator={false}>
               {recommentedCourses.map((course, i) => {
                 return (
-                  <View style={styles.courseWrapper}>
+                  <View style={styles.courseWrapper} key={i}>
                     <Course
-                      key={i}
                       width={wp - 50}
                       height={hp * 0.15}
                       title={course.title}
