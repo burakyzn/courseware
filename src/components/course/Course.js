@@ -8,11 +8,9 @@ import { useDispatch } from "react-redux";
 import { closeTabBar } from "../../features/tabBarSlice";
 
 const Course = (props) => {
+  const { width, height, title, author, score, level, price } = props;
   const navigation = useNavigation();
   const dispatch = useDispatch();
-
-  const { width, height, title, author, score, level, price } = props;
-  if (!width || !height) return <View />;
 
   const goToCourseDetail = () => {
     dispatch(closeTabBar());
@@ -26,7 +24,7 @@ const Course = (props) => {
           <View style={styles.descriptionWrapper}>
             <View style={styles.description}>
               <Text style={styles.title}>{title}</Text>
-              <Text style={styles.price}>{price}</Text>
+              <Text style={styles.price}>{price} $</Text>
             </View>
             <View style={styles.iconWrapper}>
               <Ionicons name="bookmarks" size={24} color="black" />
