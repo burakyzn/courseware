@@ -1,26 +1,41 @@
-import { View, Image, StyleSheet, Dimensions, Text } from "react-native";
+import { View, Image, StyleSheet, Text } from "react-native";
 import React from "react";
 import COLORS from "../../constants/Colors";
+import responsiveFonts from "../../utils/ResponsiveFonts";
+import { Ionicons } from "@expo/vector-icons";
 
-const { width, height } = Dimensions.get("window");
-const CONTAINER_WIDTH = width - 50;
-const CONTAINER_HIGHT = height * 0.06;
+const ProfileCard = (props) => {
+  const { width, height } = props;
 
-const ProfileCard = () => {
+  const handleImageStyle = () => {
+    return {
+      width: height,
+      height: height,
+      borderRadius: height / 2,
+      marginRight: 20,
+    };
+  };
+
   return (
-    <View style={styles.container}>
-      <Image
-        source={require("../../../assets/profile-photo.png")}
-        style={styles.profilePhoto}
-      ></Image>
-      <View style={styles.message}>
-        <Text style={styles.welcomeMessage}>Welcome back</Text>
-        <Text style={styles.fullName}>Burak Yazan</Text>
+    <View height={height} width={width}>
+      <View style={styles.container}>
+        <View style={styles.userInformation}>
+          <Image
+            source={require("../../../assets/profile-photo.png")}
+            style={handleImageStyle()}
+          ></Image>
+          <View>
+            <Text style={styles.welcomeMessage}>Welcome back</Text>
+            <Text style={styles.fullName}>Burak Yazan</Text>
+          </View>
+        </View>
+        <Ionicons
+          style={styles.notification}
+          name="notifications-outline"
+          size={height * 0.75}
+          color={COLORS.lightBaseOne}
+        />
       </View>
-      <Image
-        source={require("../../../assets/bell.png")}
-        style={styles.bell}
-      ></Image>
     </View>
   );
 };
@@ -29,36 +44,26 @@ export default ProfileCard;
 
 const styles = StyleSheet.create({
   container: {
-    top: 70,
-    height: CONTAINER_HIGHT,
-    width: CONTAINER_WIDTH,
+    flex: 1,
     flexDirection: "row",
-    justifyContent: "space-around",
+    justifyContent: "space-between",
+    paddingHorizontal: 10,
   },
-  profilePhoto: {
-    height: CONTAINER_HIGHT,
-    width: CONTAINER_HIGHT,
-    borderRadius: CONTAINER_HIGHT / 2,
-  },
-  message: {
-    paddingLeft: 10,
-    width: CONTAINER_WIDTH - CONTAINER_HIGHT * 2,
-    height: CONTAINER_HIGHT,
-    justifyContent: "center",
-  },
-  welcomeMessage: {
-    color: COLORS.lightBaseOne,
-    fontSize: 10,
-    fontFamily: "DMSans_400Regular",
+  userInformation: {
+    flexDirection: "row",
+    alignItems: "center",
   },
   fullName: {
     color: COLORS.lightBaseOne,
-    fontSize: 14,
+    fontSize: responsiveFonts(14),
     fontFamily: "DMSans_700Bold",
   },
-  bell: {
-    height: CONTAINER_HIGHT * 0.5,
-    width: CONTAINER_HIGHT * 0.5,
+  welcomeMessage: {
+    color: COLORS.lightBaseOne,
+    fontSize: responsiveFonts(12),
+    fontFamily: "DMSans_400Regular",
+  },
+  notification: {
     justifyContent: "center",
     alignSelf: "center",
   },

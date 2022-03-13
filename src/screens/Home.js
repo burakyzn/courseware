@@ -19,42 +19,42 @@ const Home = () => {
       author: "Burak Yazan",
       score: 4.5,
       level: "All Level",
-      price: "25$",
+      price: 25,
     },
     {
       title: "Introduction to C++",
       author: "Şule Aktaş",
       score: 4.8,
       level: "All Level",
-      price: "25$",
+      price: 25,
     },
     {
       title: "Introduction to Java",
       author: "Maftun Hashimli",
       score: 4.3,
       level: "All Level",
-      price: "25$",
+      price: 25,
     },
     {
       title: "React Native Crash Course",
       author: "Burak Yazan",
       score: 4.5,
       level: "Entry Level",
-      price: "25$",
+      price: 25,
     },
     {
       title: "Responsive Web Design",
       author: "Barış Ertakuş",
       score: 4.9,
       level: "All Level",
-      price: "25$",
+      price: "25",
     },
     {
       title: "Data Visualization With D3.js",
       author: "Barış Ertakuş",
       score: 4.2,
       level: "All Level",
-      price: "25$",
+      price: "25",
     },
   ]);
 
@@ -63,7 +63,7 @@ const Home = () => {
       <View style={styles.bottomContainer}></View>
       <View style={styles.container}>
         <View style={styles.profileWrapper}>
-          <ProfileCard />
+          <ProfileCard height={hp * 0.05} width={"100%"} />
         </View>
         <View style={styles.currentCourseWrapper}>
           <CurrentCourse
@@ -114,6 +114,7 @@ const styles = StyleSheet.create({
   },
   profileWrapper: {
     marginTop: "5%",
+    width: "100%",
   },
   currentCourseWrapper: {
     marginTop: "5%",
