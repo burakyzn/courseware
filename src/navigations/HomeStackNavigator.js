@@ -1,7 +1,9 @@
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import * as React from "react";
 import Home from "../screens/Home";
 import CourseDetail from "../screens/CourseDetail";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Basket from "../screens/Basket";
+import Author from "../screens/Author";
 
 const HomeStack = createNativeStackNavigator();
 
@@ -18,6 +20,20 @@ const HomeStackNavigator = () => {
       <HomeStack.Screen
         name="CourseDetail"
         component={CourseDetail}
+        options={() => ({
+          headerShown: false,
+        })}
+      />
+      <HomeStack.Screen
+        name="Author"
+        component={Author}
+        options={() => ({
+          headerShown: false,
+        })}
+      />
+      <HomeStack.Screen
+        name="Basket"
+        component={Basket}
         options={() => ({
           headerShown: false,
         })}

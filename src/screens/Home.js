@@ -63,7 +63,7 @@ const Home = () => {
       <View style={styles.bottomContainer}></View>
       <View style={styles.container}>
         <View style={styles.profileWrapper}>
-          <ProfileCard height={hp * 0.05} width={"100%"} />
+          <ProfileCard height={hp * 0.06} width={"100%"} />
         </View>
         <View style={styles.currentCourseWrapper}>
           <CurrentCourse
