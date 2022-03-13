@@ -83,8 +83,6 @@ const Home = () => {
             return (
               <View style={styles.courseWrapper} key={i}>
                 <Course
-                  width={"100%"}
-                  height={hp * 0.15}
                   title={course.title}
                   author={course.author}
                   score={course.score}

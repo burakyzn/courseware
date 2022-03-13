@@ -1,4 +1,10 @@
-import { View, StyleSheet, TouchableOpacity, Text } from "react-native";
+import {
+  View,
+  StyleSheet,
+  TouchableOpacity,
+  Text,
+  Dimensions,
+} from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import COLORS from "../../constants/Colors";
@@ -6,9 +12,10 @@ import responsiveFonts from "../../utils/ResponsiveFonts";
 import { Ionicons } from "@expo/vector-icons";
 import { useDispatch } from "react-redux";
 import { closeTabBar } from "../../features/tabBarSlice";
+const hp = Dimensions.get("window").height;
 
 const Course = (props) => {
-  const { width, height, title, author, score, level, price } = props;
+  const { title, author, score, level, price } = props;
   const navigation = useNavigation();
   const dispatch = useDispatch();
 
@@ -19,7 +26,7 @@ const Course = (props) => {
 
   return (
     <TouchableOpacity onPress={goToCourseDetail}>
-      <View height={height} width={width}>
+      <View height={hp * 0.15} width={"100%"}>
         <View style={styles.container}>
           <View style={styles.descriptionWrapper}>
             <View style={styles.description}>
