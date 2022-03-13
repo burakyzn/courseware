@@ -11,7 +11,6 @@ const hp = Dimensions.get("window").height;
 
 const Explore = () => {
   const navigation = useNavigation();
-
   const [recommentedCategories, setRecommentedCategories] = useState([
     "Technology",
     "JavaScript",
@@ -28,42 +27,42 @@ const Explore = () => {
       author: "Burak Yazan",
       score: 4.5,
       level: "All Level",
-      price: "25$",
+      price: 25,
     },
     {
       title: "Introduction to C++",
       author: "Şule Aktaş",
       score: 4.8,
       level: "All Level",
-      price: "25$",
+      price: 25,
     },
     {
       title: "Introduction to Java",
       author: "Maftun Hashimli",
       score: 4.3,
       level: "All Level",
-      price: "25$",
+      price: 25,
     },
     {
       title: "React Native Crash Course",
       author: "Burak Yazan",
       score: 4.5,
       level: "Entry Level",
-      price: "25$",
+      price: 25,
     },
     {
       title: "Responsive Web Design",
       author: "Barış Ertakuş",
       score: 4.9,
       level: "All Level",
-      price: "25$",
+      price: 25,
     },
     {
       title: "Data Visualization With D3.js",
       author: "Barış Ertakuş",
       score: 4.2,
       level: "All Level",
-      price: "25$",
+      price: 25,
     },
   ]);
 
@@ -78,6 +77,7 @@ const Explore = () => {
             onPress={() => {
               navigation.navigate("HomeStack");
             }}
+            showBasketIcon={true}
           />
         </View>
       </View>
