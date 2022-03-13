@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 import COLORS from "../constants/Colors";
+import responsiveFonts from "./ResponsiveFonts";
 
 const CategoryButton = (props) => {
   const { text, backgroundColor, textColor } = props;
@@ -19,7 +20,7 @@ const CategoryButton = (props) => {
 
   return (
     <TouchableOpacity style={[styles.container, handleBackgroundColor()]}>
-      <Text style={handleTextColor()}>{text}</Text>
+      <Text style={[handleTextColor(), styles.text]}>{text}</Text>
     </TouchableOpacity>
   );
 };
@@ -33,5 +34,8 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 30,
     justifyContent: "center",
+  },
+  text: {
+    fontSize: responsiveFonts(14),
   },
 });
