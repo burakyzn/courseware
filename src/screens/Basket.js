@@ -1,4 +1,4 @@
-import { View, StyleSheet, Text, ScrollView } from "react-native";
+import { View, StyleSheet, Text, FlatList } from "react-native";
 import React from "react";
 import COLORS from "../constants/Colors";
 import NavigatorText from "../components/navigations/NavigatorText";
@@ -39,24 +39,25 @@ const Basket = () => {
       </View>
       <View style={styles.lowerPart}>
         <View style={styles.courseArea}>
-          <ScrollView
+          <FlatList
             style={styles.coursesInBasket}
-            showsVerticalScrollIndicator={false}
-          >
-            {coursesInBasket.map((course, i) => {
+            data={coursesInBasket}
+            renderItem={({ item }) => {
               return (
-                <View style={styles.courseWrapper} key={i}>
+                <View style={styles.courseWrapper}>
                   <Course
-                    title={course.title}
-                    author={course.author}
-                    score={course.score}
-                    level={course.level}
-                    price={course.price}
+                    title={item.title}
+                    author={item.author}
+                    score={item.score}
+                    level={item.level}
+                    price={item.price}
                   />
                 </View>
               );
-            })}
-          </ScrollView>
+            }}
+            keyExtractor={(course) => course.id}
+            showsVerticalScrollIndicator={false}
+          />
         </View>
         <View style={styles.divider}></View>
         <View style={styles.paymentArea}>

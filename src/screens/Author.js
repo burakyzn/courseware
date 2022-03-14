@@ -2,7 +2,7 @@ import {
   View,
   StyleSheet,
   Text,
-  ScrollView,
+  FlatList,
   Image,
   Dimensions,
 } from "react-native";
@@ -22,8 +22,9 @@ const Author = () => {
     navigation.goBack();
   };
 
-  const [recommentedCourses, setrecommentedCourses] = useState([
+  const [authorCourses, setAuthorCourses] = useState([
     {
+      id: "1",
       title: "JavaScript Best Practices Course",
       author: "Burak Yazan",
       score: 4.5,
@@ -31,6 +32,7 @@ const Author = () => {
       price: 25,
     },
     {
+      id: "2",
       title: "Introduction to C++",
       author: "Şule Aktaş",
       score: 4.8,
@@ -38,6 +40,7 @@ const Author = () => {
       price: 25,
     },
     {
+      id: "3",
       title: "Introduction to Java",
       author: "Maftun Hashimli",
       score: 4.3,
@@ -45,6 +48,7 @@ const Author = () => {
       price: 25,
     },
     {
+      id: "4",
       title: "React Native Crash Course",
       author: "Burak Yazan",
       score: 4.5,
@@ -52,6 +56,7 @@ const Author = () => {
       price: 25,
     },
     {
+      id: "5",
       title: "Responsive Web Design",
       author: "Barış Ertakuş",
       score: 4.9,
@@ -59,6 +64,7 @@ const Author = () => {
       price: 25,
     },
     {
+      id: "6",
       title: "Data Visualization With D3.js",
       author: "Barış Ertakuş",
       score: 4.2,
@@ -136,28 +142,27 @@ const Author = () => {
       <View style={styles.lowerPart}>
         <View style={styles.coursesHeader}>
           <Text style={styles.coursesHeaderText}>Courses</Text>
-          <Text style={styles.courseCount}>
-            Total {recommentedCourses.length}
-          </Text>
+          <Text style={styles.courseCount}>Total {authorCourses.length}</Text>
         </View>
-        <ScrollView
-          style={styles.recommentedCourses}
-          showsVerticalScrollIndicator={false}
-        >
-          {recommentedCourses.map((course, i) => {
+        <FlatList
+          style={styles.authorCourses}
+          data={authorCourses}
+          renderItem={({ item }) => {
             return (
-              <View style={styles.courseWrapper} key={i}>
+              <View style={styles.courseWrapper}>
                 <Course
-                  title={course.title}
-                  author={course.author}
-                  score={course.score}
-                  level={course.level}
-                  price={course.price}
+                  title={item.title}
+                  author={item.author}
+                  score={item.score}
+                  level={item.level}
+                  price={item.price}
                 />
               </View>
             );
-          })}
-        </ScrollView>
+          }}
+          keyExtractor={(course) => course.id}
+          showsVerticalScrollIndicator={false}
+        />
       </View>
     </View>
   );
@@ -217,7 +222,7 @@ const styles = StyleSheet.create({
     fontFamily: "DMSans_400Regular",
     color: COLORS.lightBaseOne,
   },
-  recommentedCourses: {
+  authorCourses: {
     marginTop: "3%",
     width: "100%",
   },

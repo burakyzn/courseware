@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, Dimensions, ScrollView } from "react-native";
+import { StyleSheet, Text, View, Dimensions, FlatList } from "react-native";
 import CurrentCourse from "../components/course/CurrentCourse";
 import ProfileCard from "../components/home/ProfileCard";
 import COLORS from "../constants/Colors";
@@ -13,8 +13,9 @@ const Home = () => {
     author: "Barış Ertakuş",
     progression: "25%",
   });
-  const [recommentedCourses, setrecommentedCourses] = useState([
+  const [recommendedCourses, setrecommendedCourses] = useState([
     {
+      id: "1",
       title: "JavaScript Best Practices Course",
       author: "Burak Yazan",
       score: 4.5,
@@ -22,6 +23,7 @@ const Home = () => {
       price: 25,
     },
     {
+      id: "2",
       title: "Introduction to C++",
       author: "Şule Aktaş",
       score: 4.8,
@@ -29,6 +31,7 @@ const Home = () => {
       price: 25,
     },
     {
+      id: "3",
       title: "Introduction to Java",
       author: "Maftun Hashimli",
       score: 4.3,
@@ -36,6 +39,7 @@ const Home = () => {
       price: 25,
     },
     {
+      id: "4",
       title: "React Native Crash Course",
       author: "Burak Yazan",
       score: 4.5,
@@ -43,6 +47,7 @@ const Home = () => {
       price: 25,
     },
     {
+      id: "5",
       title: "Responsive Web Design",
       author: "Barış Ertakuş",
       score: 4.9,
@@ -50,6 +55,7 @@ const Home = () => {
       price: "25",
     },
     {
+      id: "6",
       title: "Data Visualization With D3.js",
       author: "Barış Ertakuş",
       score: 4.2,
@@ -75,24 +81,25 @@ const Home = () => {
           />
         </View>
         <Text style={styles.recommendationText}>Recommendation</Text>
-        <ScrollView
-          style={styles.recommentedCourses}
-          showsVerticalScrollIndicator={false}
-        >
-          {recommentedCourses.map((course, i) => {
+        <FlatList
+          style={styles.recommendedCourses}
+          data={recommendedCourses}
+          renderItem={({ item }) => {
             return (
-              <View style={styles.courseWrapper} key={i}>
+              <View style={styles.courseWrapper}>
                 <Course
-                  title={course.title}
-                  author={course.author}
-                  score={course.score}
-                  level={course.level}
-                  price={course.price}
+                  title={item.title}
+                  author={item.author}
+                  score={item.score}
+                  level={item.level}
+                  price={item.price}
                 />
               </View>
             );
-          })}
-        </ScrollView>
+          }}
+          keyExtractor={(course) => course.id}
+          showsVerticalScrollIndicator={false}
+        />
       </View>
     </View>
   );
@@ -126,7 +133,7 @@ const styles = StyleSheet.create({
   courseWrapper: {
     marginBottom: 20,
   },
-  recommentedCourses: {
+  recommendedCourses: {
     marginTop: "5%",
     width: "100%",
   },

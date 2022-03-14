@@ -2,9 +2,9 @@ import {
   View,
   StyleSheet,
   Text,
-  ScrollView,
   Dimensions,
   TouchableOpacity,
+  FlatList,
 } from "react-native";
 import React, { useState } from "react";
 import COLORS from "../constants/Colors";
@@ -19,6 +19,7 @@ const MyCourses = () => {
   const [isDoneTabSelected, setIsDoneTabSelected] = useState(false);
   const [inProgressCourses, setInProgressCourses] = useState([
     {
+      id: "1",
       title: "JavaScript Best Practices Course",
       author: "Burak Yazan",
       score: 4.5,
@@ -26,6 +27,7 @@ const MyCourses = () => {
       price: 25,
     },
     {
+      id: "2",
       title: "Introduction to C++",
       author: "Şule Aktaş",
       score: 4.8,
@@ -33,6 +35,7 @@ const MyCourses = () => {
       price: 25,
     },
     {
+      id: "3",
       title: "Introduction to Java",
       author: "Maftun Hashimli",
       score: 4.3,
@@ -40,6 +43,7 @@ const MyCourses = () => {
       price: 25,
     },
     {
+      id: "4",
       title: "Data Visualization With D3.js",
       author: "Barış Ertakuş",
       score: 4.2,
@@ -49,6 +53,7 @@ const MyCourses = () => {
   ]);
   const [doneCourses, setDoneCourses] = useState([
     {
+      id: "1",
       title: "React Native Crash Course",
       author: "Burak Yazan",
       score: 4.5,
@@ -56,6 +61,7 @@ const MyCourses = () => {
       price: 25,
     },
     {
+      id: "2",
       title: "Responsive Web Design",
       author: "Barış Ertakuş",
       score: 4.9,
@@ -63,6 +69,23 @@ const MyCourses = () => {
       price: 25,
     },
     {
+      id: "3",
+      title: "Data Visualization With D3.js",
+      author: "Barış Ertakuş",
+      score: 4.2,
+      level: "All Level",
+      price: 25,
+    },
+    {
+      id: "4",
+      title: "Data Visualization With D3.js",
+      author: "Barış Ertakuş",
+      score: 4.2,
+      level: "All Level",
+      price: 25,
+    },
+    {
+      id: "5",
       title: "Data Visualization With D3.js",
       author: "Barış Ertakuş",
       score: 4.2,
@@ -120,38 +143,24 @@ const MyCourses = () => {
           </TouchableOpacity>
         </View>
         <View style={styles.courseListWrapper}>
-          <ScrollView
-            style={styles.courseList}
+          <FlatList
+            data={isDoneTabSelected ? doneCourses : inProgressCourses}
+            renderItem={({ item }) => {
+              return (
+                <View style={styles.courseWrapper}>
+                  <Course
+                    title={item.title}
+                    author={item.author}
+                    score={item.score}
+                    level={item.level}
+                    price={item.price}
+                  />
+                </View>
+              );
+            }}
+            keyExtractor={(course) => course.id}
             showsVerticalScrollIndicator={false}
-          >
-            {isDoneTabSelected
-              ? doneCourses.map((course, i) => {
-                  return (
-                    <View style={styles.courseWrapper} key={i}>
-                      <Course
-                        title={course.title}
-                        author={course.author}
-                        score={course.score}
-                        level={course.level}
-                        price={course.price}
-                      />
-                    </View>
-                  );
-                })
-              : inProgressCourses.map((course, i) => {
-                  return (
-                    <View style={styles.courseWrapper} key={i}>
-                      <Course
-                        title={course.title}
-                        author={course.author}
-                        score={course.score}
-                        level={course.level}
-                        price={course.price}
-                      />
-                    </View>
-                  );
-                })}
-          </ScrollView>
+          />
         </View>
       </View>
     </View>
@@ -187,6 +196,7 @@ const styles = StyleSheet.create({
     height: hp * 0.5,
   },
   courseWrapper: {
+    flex: 1,
     marginBottom: 20,
   },
   tabContainer: {
