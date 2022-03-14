@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Home from "../screens/Home";
 import ExploreStackNavigator from "./ExploreStackNavigator";
 import HomeStackNavigator from "./HomeStackNavigator";
+import MyCoursesStackNavigator from "./MyCoursesStackNavigator";
 import { useSelector } from "react-redux";
 import { selectTabBar } from "../features/tabBarSlice";
 import TabBarLabel from "../components/navigations/TabBarLabel";
@@ -50,8 +51,8 @@ const TabNavigator = () => {
         })}
       />
       <Tab.Screen
-        name="Courses"
-        component={Home}
+        name="MyCoursesStack"
+        component={MyCoursesStackNavigator}
         options={() => ({
           headerShown: false,
           tabBarLabel: ({ focused }) => (
