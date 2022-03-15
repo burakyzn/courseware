@@ -121,7 +121,6 @@ const styles = StyleSheet.create({
     flex: 4,
     justifyContent: "center",
     alignItems: "center",
-    paddingHorizontal: 25,
   },
   lowerPart: {
     flex: 6,

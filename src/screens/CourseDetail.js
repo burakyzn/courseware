@@ -41,6 +41,10 @@ const CourseDetail = () => {
     dispatch(addToBasket(mockCourse));
   };
 
+  const handleSeeDetails = () => {
+    navigation.navigate("VideoPlayer");
+  };
+
   return (
     <View style={styles.background}>
       <View style={styles.upperPart}>
@@ -101,6 +105,7 @@ const CourseDetail = () => {
               title="See Details"
               buttonStyle={styles.buttonSeeDetailStyle}
               containerStyle={styles.buttonSeeDetailContainer}
+              onPress={handleSeeDetails}
             />
             <Button
               title="Add To Basket"

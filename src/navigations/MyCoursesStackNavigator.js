@@ -4,6 +4,7 @@ import MyCourses from "../screens/MyCourses";
 import CourseDetail from "../screens/CourseDetail";
 import Basket from "../screens/Basket";
 import Author from "../screens/Author";
+import VideoPlayer from "../screens/VideoPlayer";
 
 const MyCourseStack = createNativeStackNavigator();
 
@@ -20,6 +21,13 @@ const MyCourseStackNavigator = () => {
       <MyCourseStack.Screen
         name="CourseDetail"
         component={CourseDetail}
+        options={() => ({
+          headerShown: false,
+        })}
+      />
+      <MyCourseStack.Screen
+        name="VideoPlayer"
+        component={VideoPlayer}
         options={() => ({
           headerShown: false,
         })}

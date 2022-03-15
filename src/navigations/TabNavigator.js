@@ -1,7 +1,7 @@
 import * as React from "react";
 import { StyleSheet } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Account from "../screens/Account";
+import AccountStackNavigator from "./AccountStackNavigator";
 import ExploreStackNavigator from "./ExploreStackNavigator";
 import HomeStackNavigator from "./HomeStackNavigator";
 import MyCoursesStackNavigator from "./MyCoursesStackNavigator";
@@ -66,8 +66,8 @@ const TabNavigator = () => {
         })}
       />
       <Tab.Screen
-        name="Account"
-        component={Account}
+        name="AccountStack"
+        component={AccountStackNavigator}
         options={() => ({
           headerShown: false,
           tabBarLabel: ({ focused }) => (

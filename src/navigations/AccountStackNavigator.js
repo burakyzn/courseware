@@ -1,53 +1,53 @@
-import * as React from "react";
-import Explore from "../screens/Explore";
-import CourseDetail from "../screens/CourseDetail";
-import Author from "../screens/Author";
-import Basket from "../screens/Basket";
-import VideoPlayer from "../screens/VideoPlayer";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import * as React from "react";
+import Account from "../screens/Account";
+import CourseDetail from "../screens/CourseDetail";
+import Basket from "../screens/Basket";
+import Author from "../screens/Author";
+import VideoPlayer from "../screens/VideoPlayer";
 
-const ExploreStack = createNativeStackNavigator();
+const AccountStack = createNativeStackNavigator();
 
-const ExploreStackNavigator = () => {
+const AccountStackNavigator = () => {
   return (
-    <ExploreStack.Navigator>
-      <ExploreStack.Screen
-        name="Explore"
-        component={Explore}
+    <AccountStack.Navigator>
+      <AccountStack.Screen
+        name="Account"
+        component={Account}
         options={() => ({
           headerShown: false,
         })}
       />
-      <ExploreStack.Screen
+      <AccountStack.Screen
         name="CourseDetail"
         component={CourseDetail}
         options={() => ({
           headerShown: false,
         })}
       />
-      <ExploreStack.Screen
+      <AccountStack.Screen
         name="VideoPlayer"
         component={VideoPlayer}
         options={() => ({
           headerShown: false,
         })}
       />
-      <ExploreStack.Screen
+      <AccountStack.Screen
         name="Author"
         component={Author}
         options={() => ({
           headerShown: false,
         })}
       />
-      <ExploreStack.Screen
+      <AccountStack.Screen
         name="Basket"
         component={Basket}
         options={() => ({
           headerShown: false,
         })}
       />
-    </ExploreStack.Navigator>
+    </AccountStack.Navigator>
   );
 };
 
-export default ExploreStackNavigator;
+export default AccountStackNavigator;

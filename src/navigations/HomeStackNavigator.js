@@ -4,6 +4,7 @@ import Home from "../screens/Home";
 import CourseDetail from "../screens/CourseDetail";
 import Basket from "../screens/Basket";
 import Author from "../screens/Author";
+import VideoPlayer from "../screens/VideoPlayer";
 
 const HomeStack = createNativeStackNavigator();
 
@@ -20,6 +21,13 @@ const HomeStackNavigator = () => {
       <HomeStack.Screen
         name="CourseDetail"
         component={CourseDetail}
+        options={() => ({
+          headerShown: false,
+        })}
+      />
+      <HomeStack.Screen
+        name="VideoPlayer"
+        component={VideoPlayer}
         options={() => ({
           headerShown: false,
         })}
