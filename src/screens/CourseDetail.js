@@ -12,7 +12,7 @@ import { useNavigation } from "@react-navigation/native";
 import { useDispatch } from "react-redux";
 import { openTabBar } from "../features/tabBarSlice";
 import { addToBasket } from "../features/basketSlice";
-import CategoryButton from "../utils/CategoryButton";
+import CategoryButton from "../components/core/CategoryButton";
 import responsiveFonts from "../utils/ResponsiveFonts";
 import { Button } from "react-native-elements";
 import { Ionicons } from "@expo/vector-icons";

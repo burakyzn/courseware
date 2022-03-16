@@ -1,8 +1,8 @@
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet } from "react-native";
 import React from "react";
 import { Ionicons } from "@expo/vector-icons";
-import COLORS from "../constants/Colors";
-import CustomInput from "../utils/CustomInput";
+import COLORS from "../../constants/Colors";
+import CustomInput from "../../utils/CustomInput";
 
 const Searchbox = (props) => {
   const { width, height, placeholder } = props;

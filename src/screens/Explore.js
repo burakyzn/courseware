@@ -1,9 +1,9 @@
-import { View, StyleSheet, Text, Dimensions, FlatList } from "react-native";
+import { View, StyleSheet, Text, Dimensions } from "react-native";
 import React, { useState } from "react";
 import COLORS from "../constants/Colors";
 import NavigatorText from "../components/navigations/NavigatorText";
-import Searchbox from "../components/Searchbox";
-import CategoryButton from "../utils/CategoryButton";
+import Searchbox from "../components/explore/Searchbox";
+import CategoryList from "../components/explore/CategoryList";
 import CourseCardList from "../components/core/CourseCardList";
 import responsiveFonts from "../utils/ResponsiveFonts";
 import { useNavigation } from "@react-navigation/native";
@@ -126,16 +126,7 @@ const Explore = () => {
         </View>
         <View style={styles.categoryWrapper}>
           <Text style={styles.categoryText}>Browser Category</Text>
-          <FlatList
-            style={styles.categories}
-            data={recommendedCategories}
-            renderItem={({ item }) => {
-              return <CategoryButton text={item.name} />;
-            }}
-            keyExtractor={(item) => item.id}
-            horizontal
-            showsHorizontalScrollIndicator={false}
-          />
+          <CategoryList data={recommendedCategories} />
         </View>
         <View style={styles.recommendedWrapper}>
           <Text style={styles.categoryText}>Recommended Courses</Text>
@@ -172,28 +163,21 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
   },
   searchboxWrapper: {
-    justifyContent: "center",
-    alignItems: "center",
-    marginTop: "7%",
+    justifyContent: "flex-end",
+    flex: 2,
   },
   categoryWrapper: {
     marginTop: "5%",
+    flex: 2,
   },
   categoryText: {
     fontFamily: "DMSans_700Bold",
     fontSize: responsiveFonts(14),
   },
-  categories: {
-    marginTop: "2%",
-  },
   recommendedWrapper: {
-    flex: 1,
+    flex: 10,
   },
   recommendedCourses: {
     marginTop: "5%",
-    height: hp * 0.5,
-  },
-  courseWrapper: {
-    marginBottom: 20,
   },
 });
