@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View, Dimensions, FlatList } from "react-native";
-import CurrentCourse from "../components/course/CurrentCourse";
-import ProfileCard from "../components/home/ProfileCard";
+import CurrentCourse from "../components/home/CurrentCourse";
+import ProfileCard from "../components/core/ProfileCard";
 import COLORS from "../constants/Colors";
-import Course from "../components/course/Course";
+import Course from "../components/core/Course";
 import responsiveFonts from "../utils/ResponsiveFonts";
 const hp = Dimensions.get("window").height;
 
@@ -69,7 +69,11 @@ const Home = () => {
       <View style={styles.bottomContainer}></View>
       <View style={styles.container}>
         <View style={styles.profileWrapper}>
-          <ProfileCard height={hp * 0.06} width={"100%"} />
+          <ProfileCard
+            fullName={"Burak Yazan"}
+            summary={"Welcome back"}
+            iconName={"notifications-outline"}
+          />
         </View>
         <View style={styles.currentCourseWrapper}>
           <CurrentCourse
@@ -120,6 +124,7 @@ const styles = StyleSheet.create({
   profileWrapper: {
     marginTop: "5%",
     width: "100%",
+    height: hp * 0.06,
   },
   currentCourseWrapper: {
     marginTop: "5%",

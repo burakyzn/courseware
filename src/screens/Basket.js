@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { cleanBasket } from "../features/basketSlice";
 import { Button } from "react-native-elements";
 import { itemsSelector, totalPriceSelector } from "../features/basketSlice";
-import Course from "../components/course/Course";
+import Course from "../components/core/Course";
 import responsiveFonts from "../utils/ResponsiveFonts";
 
 const Basket = () => {

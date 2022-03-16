@@ -1,7 +1,7 @@
 import { View, StyleSheet, Text } from "react-native";
 import React from "react";
 import COLORS from "../../constants/Colors";
-import ProgressBar from "../home/ProgressBar";
+import ProgressBar from "./ProgressBar";
 import { Ionicons } from "@expo/vector-icons";
 import responsiveFonts from "../../utils/ResponsiveFonts";
 

@@ -11,8 +11,9 @@ import COLORS from "../constants/Colors";
 import NavigatorText from "../components/navigations/NavigatorText";
 import { useNavigation } from "@react-navigation/native";
 import responsiveFonts from "../utils/ResponsiveFonts";
-import Course from "../components/course/Course";
+import Course from "../components/core/Course";
 import { Ionicons } from "@expo/vector-icons";
+import ProfileCard from "../components/core/ProfileCard";
 const hp = Dimensions.get("window").height;
 
 const Author = () => {
@@ -73,17 +74,6 @@ const Author = () => {
     },
   ]);
 
-  const handleImageStyle = () => {
-    let ratio = hp * 0.06;
-
-    return {
-      width: ratio,
-      height: ratio,
-      borderRadius: ratio / 2,
-      marginRight: 20,
-    };
-  };
-
   return (
     <View style={styles.background}>
       <View style={styles.upperPart}>
@@ -98,21 +88,11 @@ const Author = () => {
         </View>
       </View>
       <View style={styles.middlePart}>
-        <View style={styles.authorWrapper}>
-          <Image
-            style={handleImageStyle()}
-            source={require("../../assets/profile-photo.png")}
-          ></Image>
-          <View style={styles.authorInformation}>
-            <Text style={styles.authorFullName}>Burak Yazan</Text>
-            <Text style={styles.authorSummary}>Software Engineer</Text>
-          </View>
-          <Ionicons
-            name="chatbox-ellipses-outline"
-            size={32}
-            color={COLORS.lightBaseOne}
-          />
-        </View>
+        <ProfileCard
+          fullName={"Burak Yazan"}
+          summary={"Software Engineer"}
+          iconName={"chatbox-ellipses-outline"}
+        />
         <View style={styles.divider}></View>
         <View style={styles.achievementWrapper}>
           <View style={styles.totalStudent}>

@@ -9,7 +9,7 @@ import {
 import React, { useState } from "react";
 import COLORS from "../constants/Colors";
 import NavigatorText from "../components/navigations/NavigatorText";
-import Course from "../components/course/Course";
+import Course from "../components/core/Course";
 import responsiveFonts from "../utils/ResponsiveFonts";
 import { useNavigation } from "@react-navigation/native";
 const hp = Dimensions.get("window").height;
