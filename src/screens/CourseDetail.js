@@ -1,10 +1,4 @@
-import {
-  View,
-  StyleSheet,
-  Text,
-  ScrollView,
-  TouchableOpacity,
-} from "react-native";
+import { View, StyleSheet, Text } from "react-native";
 import React, { useState } from "react";
 import COLORS from "../constants/Colors";
 import NavigatorText from "../components/navigations/NavigatorText";
@@ -12,11 +6,11 @@ import { useNavigation } from "@react-navigation/native";
 import { useDispatch } from "react-redux";
 import { openTabBar } from "../features/tabBarSlice";
 import { addToBasket } from "../features/basketSlice";
-import CategoryButton from "../components/core/CategoryButton";
 import responsiveFonts from "../utils/ResponsiveFonts";
 import { Button } from "react-native-elements";
-import { Ionicons } from "@expo/vector-icons";
 import Divider from "../components/core/Divider";
+import AuthorButton from "../components/courseDetail/AuthorButton";
+import CourseInformation from "../components/courseDetail/CourseInformation";
 
 const CourseDetail = () => {
   const navigation = useNavigation();
@@ -60,57 +54,34 @@ const CourseDetail = () => {
         </View>
       </View>
       <View style={styles.middlePart}>
-        <Text style={styles.courseTitle}>{mockCourse.title}</Text>
-        <View style={styles.categories}>
-          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-            {mockCourse.categories.map((category, i) => {
-              return (
-                <CategoryButton
-                  key={i}
-                  text={category}
-                  backgroundColor={COLORS.accentPrimary}
-                  textColor={COLORS.primary}
-                />
-              );
-            })}
-          </ScrollView>
-        </View>
+        <CourseInformation
+          title={mockCourse.title}
+          data={mockCourse.categories}
+        />
       </View>
       <View style={styles.space}></View>
       <View style={styles.lowerPart}>
         <View style={styles.descriptionWrapper}>
-          <Text style={styles.header}>Description</Text>
+          <Text style={styles.descriptionHeader}>Description</Text>
           <Text style={styles.description}>{mockCourse.description}</Text>
         </View>
         <View style={styles.bottomArea}>
           <Divider />
-          <Text style={styles.authorHeader}>Author</Text>
-          <TouchableOpacity
-            style={styles.authorWrapper}
+          <AuthorButton
             onPress={() => {
               navigation.navigate("Author");
             }}
-          >
-            <View style={styles.authorProfile}>
-              <Ionicons name="person-circle" size={60} color="black" />
-            </View>
-            <View style={styles.authorInformation}>
-              <Text style={styles.authorFullName}>Burak Yazan</Text>
-              <Text style={styles.authorSummary}>
-                14 Courses • 1400 Students
-              </Text>
-            </View>
-          </TouchableOpacity>
+          />
           <View style={styles.buttonWrapper}>
             <Button
               title="See Details"
-              buttonStyle={styles.buttonSeeDetailStyle}
+              buttonStyle={styles.button}
               containerStyle={styles.buttonSeeDetailContainer}
               onPress={handleSeeDetails}
             />
             <Button
               title="Add To Basket"
-              buttonStyle={styles.buttonAddToBasketStyle}
+              buttonStyle={[styles.button, styles.buttonSuccess]}
               containerStyle={styles.buttonAddToBasketContainer}
               onPress={handleAddToBasket}
             />
@@ -150,21 +121,13 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "flex-end",
   },
-  courseTitle: {
-    color: COLORS.lightBaseOne,
-    fontSize: responsiveFonts(24),
-    fontFamily: "DMSans_700Bold",
-  },
-  categories: {
-    width: "100%",
-  },
   space: {
     flex: 1,
   },
   descriptionWrapper: {
     flex: 1,
   },
-  header: {
+  descriptionHeader: {
     fontSize: responsiveFonts(12),
     fontFamily: "DMSans_400Regular",
     color: COLORS.lightBaseThree,
@@ -179,62 +142,26 @@ const styles = StyleSheet.create({
   bottomArea: {
     flex: 1,
   },
-  authorWrapper: {
-    backgroundColor: COLORS.lightBaseTwo,
-    width: "100%",
-    marginTop: "5%",
-    borderRadius: 20,
-    flex: 1,
-    flexDirection: "row",
-  },
-  authorHeader: {
-    fontSize: responsiveFonts(12),
-    fontFamily: "DMSans_400Regular",
-    color: COLORS.lightBaseThree,
-    marginTop: "5%",
-  },
-  authorProfile: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  authorInformation: {
-    flex: 3,
-    justifyContent: "center",
-  },
-  authorFullName: {
-    fontSize: responsiveFonts(14),
-    fontFamily: "DMSans_400Regular",
-    color: COLORS.darkBaseOne,
-  },
-  authorSummary: {
-    fontSize: responsiveFonts(10),
-    fontFamily: "DMSans_400Regular",
-    color: COLORS.lightBaseThree,
-  },
   buttonWrapper: {
     flex: 1,
     flexDirection: "row",
     alignItems: "flex-end",
+    paddingTop: 10,
   },
-  buttonSeeDetailStyle: {
+  button: {
     backgroundColor: COLORS.primary,
     borderRadius: 10,
     height: "100%",
   },
+  buttonSuccess: {
+    backgroundColor: COLORS.success,
+  },
   buttonSeeDetailContainer: {
     flex: 1,
     paddingRight: 10,
-    marginTop: 10,
-  },
-  buttonAddToBasketStyle: {
-    backgroundColor: COLORS.success,
-    borderRadius: 10,
-    height: "100%",
   },
   buttonAddToBasketContainer: {
     flex: 1,
     paddingLeft: 10,
-    marginTop: 10,
   },
 });

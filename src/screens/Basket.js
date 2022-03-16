@@ -1,15 +1,14 @@
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet } from "react-native";
 import React from "react";
 import COLORS from "../constants/Colors";
 import NavigatorText from "../components/navigations/NavigatorText";
 import { useNavigation } from "@react-navigation/native";
 import { useDispatch, useSelector } from "react-redux";
 import { cleanBasket } from "../features/basketSlice";
-import { Button } from "react-native-elements";
 import { itemsSelector, totalPriceSelector } from "../features/basketSlice";
 import CourseCardList from "../components/core/CourseCardList";
-import responsiveFonts from "../utils/ResponsiveFonts";
 import Divider from "../components/core/Divider";
+import Payment from "../components/basket/Payment";
 
 const Basket = () => {
   const navigation = useNavigation();
@@ -39,24 +38,9 @@ const Basket = () => {
         </View>
       </View>
       <View style={styles.lowerPart}>
-        <View style={styles.courseArea}>
-          <CourseCardList data={coursesInBasket} />
-        </View>
+        <CourseCardList style={styles.courseList} data={coursesInBasket} />
         <Divider />
-        <View style={styles.paymentArea}>
-          <View style={styles.totalPriceWrapper}>
-            <Text style={styles.totalPriceText}>Total Price</Text>
-            <Text style={styles.totalPriceValue}>{totalPrice} $</Text>
-          </View>
-          <View style={styles.buttonCheckoutWrapper}>
-            <Button
-              title="Checkout Now"
-              buttonStyle={styles.buttonCheckoutStyle}
-              containerStyle={styles.buttonCheckoutContainer}
-              onPress={handleCheckout}
-            />
-          </View>
-        </View>
+        <Payment totalPrice={totalPrice} onPress={handleCheckout} />
       </View>
     </View>
   );
@@ -85,40 +69,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "flex-end",
   },
-  paymentArea: {
-    flex: 1,
-  },
-  totalPriceWrapper: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    marginTop: "5%",
-  },
-  totalPriceText: {
-    color: COLORS.lightBaseThree,
-    fontSize: responsiveFonts(12),
-    fontFamily: "DMSans_700Bold",
-  },
-  totalPriceValue: {
-    fontSize: responsiveFonts(12),
-    fontFamily: "DMSans_700Bold",
-    color: COLORS.darkBaseOne,
-  },
-  buttonCheckoutWrapper: {
-    flex: 1,
-    justifyContent: "flex-end",
-  },
-  buttonCheckoutStyle: {
-    backgroundColor: COLORS.success,
-    borderRadius: 10,
-    height: "100%",
-  },
-  buttonCheckoutContainer: {
-    alignSelf: "center",
-    width: "100%",
-    marginTop: "5%",
-  },
-  courseArea: {
+  courseList: {
     flex: 5,
-    paddingVertical: 20,
   },
 });
