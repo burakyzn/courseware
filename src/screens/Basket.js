@@ -9,6 +9,7 @@ import { Button } from "react-native-elements";
 import { itemsSelector, totalPriceSelector } from "../features/basketSlice";
 import CourseCardList from "../components/core/CourseCardList";
 import responsiveFonts from "../utils/ResponsiveFonts";
+import Divider from "../components/core/Divider";
 
 const Basket = () => {
   const navigation = useNavigation();
@@ -41,7 +42,7 @@ const Basket = () => {
         <View style={styles.courseArea}>
           <CourseCardList data={coursesInBasket} />
         </View>
-        <View style={styles.divider}></View>
+        <Divider />
         <View style={styles.paymentArea}>
           <View style={styles.totalPriceWrapper}>
             <Text style={styles.totalPriceText}>Total Price</Text>
@@ -83,10 +84,6 @@ const styles = StyleSheet.create({
   navigatorWrapper: {
     flex: 1,
     justifyContent: "flex-end",
-  },
-  divider: {
-    borderTopWidth: 1,
-    borderColor: COLORS.lightBaseThree,
   },
   paymentArea: {
     flex: 1,

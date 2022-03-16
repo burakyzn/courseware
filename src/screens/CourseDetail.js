@@ -16,6 +16,7 @@ import CategoryButton from "../components/core/CategoryButton";
 import responsiveFonts from "../utils/ResponsiveFonts";
 import { Button } from "react-native-elements";
 import { Ionicons } from "@expo/vector-icons";
+import Divider from "../components/core/Divider";
 
 const CourseDetail = () => {
   const navigation = useNavigation();
@@ -82,7 +83,7 @@ const CourseDetail = () => {
           <Text style={styles.description}>{mockCourse.description}</Text>
         </View>
         <View style={styles.bottomArea}>
-          <View style={styles.divider}></View>
+          <Divider />
           <Text style={styles.authorHeader}>Author</Text>
           <TouchableOpacity
             style={styles.authorWrapper}
@@ -177,10 +178,6 @@ const styles = StyleSheet.create({
   },
   bottomArea: {
     flex: 1,
-  },
-  divider: {
-    borderTopWidth: 1,
-    borderColor: COLORS.lightBaseThree,
   },
   authorWrapper: {
     backgroundColor: COLORS.lightBaseTwo,

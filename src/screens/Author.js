@@ -7,6 +7,7 @@ import responsiveFonts from "../utils/ResponsiveFonts";
 import { Ionicons } from "@expo/vector-icons";
 import ProfileCard from "../components/core/ProfileCard";
 import CourseCardList from "../components/core/CourseCardList";
+import Divider from "../components/core/Divider";
 
 const Author = () => {
   const navigation = useNavigation();
@@ -85,7 +86,7 @@ const Author = () => {
           summary={"Software Engineer"}
           iconName={"chatbox-ellipses-outline"}
         />
-        <View style={styles.divider}></View>
+        <Divider />
         <View style={styles.achievementWrapper}>
           <View style={styles.totalStudent}>
             <Ionicons
@@ -150,11 +151,6 @@ const styles = StyleSheet.create({
   navigatorWrapper: {
     flex: 1,
     justifyContent: "flex-end",
-  },
-  divider: {
-    borderTopWidth: 1,
-    width: "100%",
-    borderColor: COLORS.lightBaseThree,
   },
   authorWrapper: {
     width: "100%",
