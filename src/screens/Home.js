@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Dimensions, FlatList } from "react-native";
 import CurrentCourse from "../components/home/CurrentCourse";
 import ProfileCard from "../components/core/ProfileCard";
 import COLORS from "../constants/Colors";
-import CourseCard from "../components/core/CourseCard";
+import CourseCardList from "../components/core/CourseCardList";
 import responsiveFonts from "../utils/ResponsiveFonts";
 const hp = Dimensions.get("window").height;
 
@@ -85,24 +85,9 @@ const Home = () => {
           />
         </View>
         <Text style={styles.recommendationText}>Recommendation</Text>
-        <FlatList
-          style={styles.recommendedCourses}
+        <CourseCardList
           data={recommendedCourses}
-          renderItem={({ item }) => {
-            return (
-              <View style={styles.courseWrapper}>
-                <CourseCard
-                  title={item.title}
-                  author={item.author}
-                  score={item.score}
-                  level={item.level}
-                  price={item.price}
-                />
-              </View>
-            );
-          }}
-          keyExtractor={(course) => course.id}
-          showsVerticalScrollIndicator={false}
+          style={styles.recommendedCourses}
         />
       </View>
     </View>
@@ -141,6 +126,7 @@ const styles = StyleSheet.create({
   recommendedCourses: {
     marginTop: "5%",
     width: "100%",
+    flex: 1,
   },
   bottomContainer: {
     height: hp * 0.65,

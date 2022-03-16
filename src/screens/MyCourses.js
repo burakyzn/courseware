@@ -4,12 +4,11 @@ import {
   Text,
   Dimensions,
   TouchableOpacity,
-  FlatList,
 } from "react-native";
 import React, { useState } from "react";
 import COLORS from "../constants/Colors";
 import NavigatorText from "../components/navigations/NavigatorText";
-import CourseCard from "../components/core/CourseCard";
+import CourseCardList from "../components/core/CourseCardList";
 import responsiveFonts from "../utils/ResponsiveFonts";
 import { useNavigation } from "@react-navigation/native";
 const hp = Dimensions.get("window").height;
@@ -143,23 +142,8 @@ const MyCourses = () => {
           </TouchableOpacity>
         </View>
         <View style={styles.courseListWrapper}>
-          <FlatList
+          <CourseCardList
             data={isDoneTabSelected ? doneCourses : inProgressCourses}
-            renderItem={({ item }) => {
-              return (
-                <View style={styles.courseWrapper}>
-                  <CourseCard
-                    title={item.title}
-                    author={item.author}
-                    score={item.score}
-                    level={item.level}
-                    price={item.price}
-                  />
-                </View>
-              );
-            }}
-            keyExtractor={(course) => course.id}
-            showsVerticalScrollIndicator={false}
           />
         </View>
       </View>

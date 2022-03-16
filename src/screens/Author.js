@@ -14,6 +14,7 @@ import responsiveFonts from "../utils/ResponsiveFonts";
 import CourseCard from "../components/core/CourseCard";
 import { Ionicons } from "@expo/vector-icons";
 import ProfileCard from "../components/core/ProfileCard";
+import CourseCardList from "../components/core/CourseCardList";
 const hp = Dimensions.get("window").height;
 
 const Author = () => {
@@ -124,7 +125,8 @@ const Author = () => {
           <Text style={styles.coursesHeaderText}>Courses</Text>
           <Text style={styles.courseCount}>Total {authorCourses.length}</Text>
         </View>
-        <FlatList
+        <CourseCardList data={authorCourses} style={styles.authorCourses} />
+        {/* <FlatList
           style={styles.authorCourses}
           data={authorCourses}
           renderItem={({ item }) => {
@@ -142,7 +144,7 @@ const Author = () => {
           }}
           keyExtractor={(course) => course.id}
           showsVerticalScrollIndicator={false}
-        />
+        /> */}
       </View>
     </View>
   );

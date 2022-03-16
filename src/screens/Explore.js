@@ -4,7 +4,7 @@ import COLORS from "../constants/Colors";
 import NavigatorText from "../components/navigations/NavigatorText";
 import Searchbox from "../components/Searchbox";
 import CategoryButton from "../utils/CategoryButton";
-import CourseCard from "../components/core/CourseCard";
+import CourseCardList from "../components/core/CourseCardList";
 import responsiveFonts from "../utils/ResponsiveFonts";
 import { useNavigation } from "@react-navigation/native";
 const hp = Dimensions.get("window").height;
@@ -139,24 +139,9 @@ const Explore = () => {
         </View>
         <View style={styles.recommendedWrapper}>
           <Text style={styles.categoryText}>Recommended Courses</Text>
-          <FlatList
-            style={styles.recommendedCourses}
+          <CourseCardList
             data={recommendedCourses}
-            renderItem={({ item }) => {
-              return (
-                <View style={styles.courseWrapper}>
-                  <Course
-                    title={item.title}
-                    author={item.author}
-                    score={item.score}
-                    level={item.level}
-                    price={item.price}
-                  />
-                </View>
-              );
-            }}
-            keyExtractor={(course) => course.id}
-            showsVerticalScrollIndicator={false}
+            style={styles.recommendedCourses}
           />
         </View>
       </View>
@@ -202,7 +187,7 @@ const styles = StyleSheet.create({
     marginTop: "2%",
   },
   recommendedWrapper: {
-    marginTop: "5%",
+    flex: 1,
   },
   recommendedCourses: {
     marginTop: "5%",

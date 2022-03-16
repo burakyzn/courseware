@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { cleanBasket } from "../features/basketSlice";
 import { Button } from "react-native-elements";
 import { itemsSelector, totalPriceSelector } from "../features/basketSlice";
-import CourseCard from "../components/core/CourseCard";
+import CourseCardList from "../components/core/CourseCardList";
 import responsiveFonts from "../utils/ResponsiveFonts";
 
 const Basket = () => {
@@ -39,25 +39,7 @@ const Basket = () => {
       </View>
       <View style={styles.lowerPart}>
         <View style={styles.courseArea}>
-          <FlatList
-            style={styles.coursesInBasket}
-            data={coursesInBasket}
-            renderItem={({ item }) => {
-              return (
-                <View style={styles.courseWrapper}>
-                  <CourseCard
-                    title={item.title}
-                    author={item.author}
-                    score={item.score}
-                    level={item.level}
-                    price={item.price}
-                  />
-                </View>
-              );
-            }}
-            keyExtractor={(course) => course.id}
-            showsVerticalScrollIndicator={false}
-          />
+          <CourseCardList data={coursesInBasket} />
         </View>
         <View style={styles.divider}></View>
         <View style={styles.paymentArea}>
@@ -141,9 +123,6 @@ const styles = StyleSheet.create({
   courseArea: {
     flex: 5,
     paddingVertical: 20,
-  },
-  coursesInBasket: {
-    width: "100%",
   },
   courseWrapper: {
     marginBottom: 20,
