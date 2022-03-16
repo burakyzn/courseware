@@ -1,9 +1,10 @@
 import React from "react";
-import { StyleSheet, Text, useColorScheme, View } from "react-native";
+import { StyleSheet } from "react-native";
 import { Input } from "react-native-elements";
-import COLORS from "../constants/Colors";
+import COLORS from "../../constants/Colors";
+import responsiveFonts from "../../utils/ResponsiveFonts";
 
-const CustomInput = ({ placheHolder, value, ...props }) => {
+const InputBox = ({ placheHolder, value, ...props }) => {
   return (
     <Input
       placeholder={placheHolder}
@@ -16,7 +17,7 @@ const CustomInput = ({ placheHolder, value, ...props }) => {
   );
 };
 
-export default CustomInput;
+export default InputBox;
 
 const styles = StyleSheet.create({
   inputContainer: {
@@ -31,6 +32,6 @@ const styles = StyleSheet.create({
     paddingRight: 0,
   },
   input: {
-    fontSize: 14,
+    fontSize: responsiveFonts(14),
   },
 });

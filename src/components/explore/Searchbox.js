@@ -2,14 +2,14 @@ import { View, StyleSheet } from "react-native";
 import React from "react";
 import { Ionicons } from "@expo/vector-icons";
 import COLORS from "../../constants/Colors";
-import CustomInput from "../../utils/CustomInput";
+import InputBox from "../core/InputBox";
 
-const Searchbox = (props) => {
+const SearchBox = (props) => {
   const { width, height, placeholder } = props;
   return (
     <View width={width} height={height}>
       <View style={styles.container}>
-        <CustomInput
+        <InputBox
           rightIcon={<Ionicons name="search-outline" size={32} color="black" />}
           placheHolder={placeholder}
         />
@@ -18,7 +18,7 @@ const Searchbox = (props) => {
   );
 };
 
-export default Searchbox;
+export default SearchBox;
 
 const styles = StyleSheet.create({
   container: {

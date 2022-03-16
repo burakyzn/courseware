@@ -2,7 +2,7 @@ import { View, StyleSheet, Text, Dimensions } from "react-native";
 import React, { useState } from "react";
 import COLORS from "../constants/Colors";
 import NavigatorText from "../components/navigations/NavigatorText";
-import Searchbox from "../components/explore/Searchbox";
+import Searchbox from "../components/explore/SearchBox";
 import CategoryList from "../components/explore/CategoryList";
 import CourseCardList from "../components/core/CourseCardList";
 import responsiveFonts from "../utils/ResponsiveFonts";
