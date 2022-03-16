@@ -1,13 +1,11 @@
-import { View, StyleSheet, Text, Dimensions } from "react-native";
+import { View, StyleSheet, Dimensions } from "react-native";
 import React, { useState } from "react";
 import COLORS from "../constants/Colors";
 import NavigatorText from "../components/navigations/NavigatorText";
 import Searchbox from "../components/explore/SearchBox";
 import CategoryList from "../components/explore/CategoryList";
 import CourseCardList from "../components/core/CourseCardList";
-import responsiveFonts from "../utils/ResponsiveFonts";
 import { useNavigation } from "@react-navigation/native";
-const hp = Dimensions.get("window").height;
 
 const Explore = () => {
   const navigation = useNavigation();
@@ -124,18 +122,17 @@ const Explore = () => {
             placeholder="Search for courses"
           />
         </View>
-        <View style={styles.categoryWrapper}>
-          <Text style={styles.categoryText}>Browser Category</Text>
-          <CategoryList data={recommendedCategories} />
-        </View>
-        <View style={styles.recommendedWrapper}>
-          <CourseCardList
-            data={recommendedCourses}
-            style={styles.recommendedCourses}
-            header={true}
-            leftText={"Recommended Courses"}
-          />
-        </View>
+        <CategoryList
+          header={true}
+          data={recommendedCategories}
+          style={styles.categoryWrapper}
+        />
+        <CourseCardList
+          data={recommendedCourses}
+          style={styles.recommendedCourses}
+          header={true}
+          leftText={"Recommended Courses"}
+        />
       </View>
     </View>
   );
@@ -168,17 +165,11 @@ const styles = StyleSheet.create({
     flex: 2,
   },
   categoryWrapper: {
-    marginTop: "5%",
+    paddingTop: "5%",
     flex: 2,
   },
-  categoryText: {
-    fontFamily: "DMSans_700Bold",
-    fontSize: responsiveFonts(14),
-  },
-  recommendedWrapper: {
-    flex: 10,
-  },
   recommendedCourses: {
-    marginTop: "5%",
+    paddingTop: "5%",
+    flex: 10,
   },
 });
