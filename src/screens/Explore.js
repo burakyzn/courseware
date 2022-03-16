@@ -129,10 +129,11 @@ const Explore = () => {
           <CategoryList data={recommendedCategories} />
         </View>
         <View style={styles.recommendedWrapper}>
-          <Text style={styles.categoryText}>Recommended Courses</Text>
           <CourseCardList
             data={recommendedCourses}
             style={styles.recommendedCourses}
+            header={true}
+            leftText={"Recommended Courses"}
           />
         </View>
       </View>

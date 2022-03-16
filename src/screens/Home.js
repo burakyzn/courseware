@@ -84,10 +84,11 @@ const Home = () => {
             author={currentCourse.author}
           />
         </View>
-        <Text style={styles.recommendationText}>Recommendation</Text>
         <CourseCardList
           data={recommendedCourses}
           style={styles.recommendedCourses}
+          header={true}
+          leftText={"Recommendation"}
         />
       </View>
     </View>
