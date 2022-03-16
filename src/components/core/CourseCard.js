@@ -14,7 +14,7 @@ import { useDispatch } from "react-redux";
 import { closeTabBar } from "../../features/tabBarSlice";
 const hp = Dimensions.get("window").height;
 
-const Course = (props) => {
+const CourseCard = (props) => {
   const { title, author, score, level, price } = props;
   const navigation = useNavigation();
   const dispatch = useDispatch();
@@ -56,7 +56,7 @@ const Course = (props) => {
   );
 };
 
-export default Course;
+export default CourseCard;
 
 const styles = StyleSheet.create({
   container: {

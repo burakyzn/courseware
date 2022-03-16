@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { cleanBasket } from "../features/basketSlice";
 import { Button } from "react-native-elements";
 import { itemsSelector, totalPriceSelector } from "../features/basketSlice";
-import Course from "../components/core/Course";
+import CourseCard from "../components/core/CourseCard";
 import responsiveFonts from "../utils/ResponsiveFonts";
 
 const Basket = () => {
@@ -45,7 +45,7 @@ const Basket = () => {
             renderItem={({ item }) => {
               return (
                 <View style={styles.courseWrapper}>
-                  <Course
+                  <CourseCard
                     title={item.title}
                     author={item.author}
                     score={item.score}

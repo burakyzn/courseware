@@ -4,7 +4,7 @@ import COLORS from "../constants/Colors";
 import NavigatorText from "../components/navigations/NavigatorText";
 import Searchbox from "../components/Searchbox";
 import CategoryButton from "../utils/CategoryButton";
-import Course from "../components/core/Course";
+import CourseCard from "../components/core/CourseCard";
 import responsiveFonts from "../utils/ResponsiveFonts";
 import { useNavigation } from "@react-navigation/native";
 const hp = Dimensions.get("window").height;
