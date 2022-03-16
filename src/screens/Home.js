@@ -115,12 +115,6 @@ const styles = StyleSheet.create({
   currentCourseWrapper: {
     marginTop: "5%",
   },
-  recommendationText: {
-    width: "100%",
-    fontFamily: "DMSans_700Bold",
-    fontSize: responsiveFonts(14),
-    marginTop: "5%",
-  },
   courseWrapper: {
     marginBottom: 20,
   },

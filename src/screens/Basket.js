@@ -1,4 +1,4 @@
-import { View, StyleSheet, Text, FlatList } from "react-native";
+import { View, StyleSheet, Text } from "react-native";
 import React from "react";
 import COLORS from "../constants/Colors";
 import NavigatorText from "../components/navigations/NavigatorText";
@@ -120,8 +120,5 @@ const styles = StyleSheet.create({
   courseArea: {
     flex: 5,
     paddingVertical: 20,
-  },
-  courseWrapper: {
-    marginBottom: 20,
   },
 });

@@ -1,9 +1,8 @@
-import { View, StyleSheet, Text, Dimensions } from "react-native";
+import { View, StyleSheet } from "react-native";
 import React, { useState } from "react";
 import COLORS from "../constants/Colors";
 import NavigatorText from "../components/navigations/NavigatorText";
 import { useNavigation } from "@react-navigation/native";
-import responsiveFonts from "../utils/ResponsiveFonts";
 import ProfileCard from "../components/core/ProfileCard";
 import CourseCardList from "../components/core/CourseCardList";
 import Divider from "../components/core/Divider";
@@ -129,45 +128,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "flex-end",
   },
-  authorWrapper: {
-    width: "100%",
-    marginTop: "5%",
-    flexDirection: "row",
-    flex: 1,
-    alignItems: "center",
-  },
-  authorInformation: {
-    flex: 1,
-  },
-  authorFullName: {
-    fontSize: responsiveFonts(14),
-    fontFamily: "DMSans_400Regular",
-    color: COLORS.lightBaseOne,
-  },
-  authorSummary: {
-    fontSize: responsiveFonts(12),
-    fontFamily: "DMSans_400Regular",
-    color: COLORS.lightBaseOne,
-  },
   authorCourses: {
     marginTop: "3%",
     width: "100%",
-  },
-  courseWrapper: {
-    marginBottom: 20,
-  },
-  coursesHeader: {
-    flexDirection: "row",
-    width: "100%",
-    justifyContent: "space-between",
-  },
-  coursesHeaderText: {
-    fontFamily: "DMSans_700Bold",
-    fontSize: responsiveFonts(14),
-  },
-  courseCount: {
-    fontFamily: "DMSans_700Bold",
-    color: COLORS.lightBaseThree,
-    fontSize: responsiveFonts(12),
   },
 });
