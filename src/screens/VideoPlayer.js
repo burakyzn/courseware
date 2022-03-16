@@ -4,7 +4,7 @@ import { Video } from "expo-av";
 import COLORS from "../constants/Colors";
 import NavigatorText from "../components/navigations/NavigatorText";
 import { useNavigation } from "@react-navigation/native";
-import Tabs from "../components/videoPlayer/Tabs";
+import VideoTabs from "../components/videoPlayer/VideoTabs";
 
 const VideoPlayer = () => {
   const navigation = useNavigation();
@@ -37,7 +37,7 @@ const VideoPlayer = () => {
         />
       </View>
       <View style={styles.lowerPart}>
-        <Tabs />
+        <VideoTabs />
       </View>
     </View>
   );

@@ -1,97 +1,12 @@
-import {
-  View,
-  StyleSheet,
-  Text,
-  Dimensions,
-  TouchableOpacity,
-} from "react-native";
+import { View, StyleSheet } from "react-native";
 import React, { useState } from "react";
 import COLORS from "../constants/Colors";
 import NavigatorText from "../components/navigations/NavigatorText";
-import CourseCardList from "../components/core/CourseCardList";
-import responsiveFonts from "../utils/ResponsiveFonts";
 import { useNavigation } from "@react-navigation/native";
-const hp = Dimensions.get("window").height;
+import ProgressTabs from "../components/myCourses/ProgressTabs";
 
 const MyCourses = () => {
   const navigation = useNavigation();
-  const [isDoneTabSelected, setIsDoneTabSelected] = useState(false);
-  const [inProgressCourses, setInProgressCourses] = useState([
-    {
-      id: "1",
-      title: "JavaScript Best Practices Course",
-      author: "Burak Yazan",
-      score: 4.5,
-      level: "All Level",
-      price: 25,
-    },
-    {
-      id: "2",
-      title: "Introduction to C++",
-      author: "Şule Aktaş",
-      score: 4.8,
-      level: "All Level",
-      price: 25,
-    },
-    {
-      id: "3",
-      title: "Introduction to Java",
-      author: "Maftun Hashimli",
-      score: 4.3,
-      level: "All Level",
-      price: 25,
-    },
-    {
-      id: "4",
-      title: "Data Visualization With D3.js",
-      author: "Barış Ertakuş",
-      score: 4.2,
-      level: "All Level",
-      price: 25,
-    },
-  ]);
-  const [doneCourses, setDoneCourses] = useState([
-    {
-      id: "1",
-      title: "React Native Crash Course",
-      author: "Burak Yazan",
-      score: 4.5,
-      level: "Entry Level",
-      price: 25,
-    },
-    {
-      id: "2",
-      title: "Responsive Web Design",
-      author: "Barış Ertakuş",
-      score: 4.9,
-      level: "All Level",
-      price: 25,
-    },
-    {
-      id: "3",
-      title: "Data Visualization With D3.js",
-      author: "Barış Ertakuş",
-      score: 4.2,
-      level: "All Level",
-      price: 25,
-    },
-    {
-      id: "4",
-      title: "Data Visualization With D3.js",
-      author: "Barış Ertakuş",
-      score: 4.2,
-      level: "All Level",
-      price: 25,
-    },
-    {
-      id: "5",
-      title: "Data Visualization With D3.js",
-      author: "Barış Ertakuş",
-      score: 4.2,
-      level: "All Level",
-      price: 25,
-    },
-  ]);
 
   return (
     <View style={styles.background}>
@@ -109,43 +24,7 @@ const MyCourses = () => {
         </View>
       </View>
       <View style={styles.lowerPart}>
-        <View style={styles.tabBarContainer}>
-          <TouchableOpacity
-            style={styles.tabContainer}
-            onPress={() => {
-              setIsDoneTabSelected(false);
-            }}
-          >
-            <Text
-              style={[
-                styles.tabText,
-                isDoneTabSelected ? styles.nonSelectedTab : styles.selectedTab,
-              ]}
-            >
-              In Progress
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.tabContainer}
-            onPress={() => {
-              setIsDoneTabSelected(true);
-            }}
-          >
-            <Text
-              style={[
-                styles.tabText,
-                isDoneTabSelected ? styles.selectedTab : styles.nonSelectedTab,
-              ]}
-            >
-              Done
-            </Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.courseListWrapper}>
-          <CourseCardList
-            data={isDoneTabSelected ? doneCourses : inProgressCourses}
-          />
-        </View>
+        <ProgressTabs />
       </View>
     </View>
   );
@@ -172,34 +51,5 @@ const styles = StyleSheet.create({
   navigatorWrapper: {
     flex: 1,
     justifyContent: "flex-end",
-  },
-  courseListWrapper: {
-    flex: 9,
-  },
-  courseList: {
-    height: hp * 0.5,
-  },
-  courseWrapper: {
-    flex: 1,
-    marginBottom: 20,
-  },
-  tabContainer: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  tabBarContainer: {
-    flex: 1,
-    flexDirection: "row",
-  },
-  tabText: {
-    fontFamily: "DMSans_700Bold",
-    fontSize: responsiveFonts(14),
-  },
-  selectedTab: {
-    color: COLORS.darkBaseOne,
-  },
-  nonSelectedTab: {
-    color: COLORS.lightBaseThree,
   },
 });

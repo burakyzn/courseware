@@ -3,10 +3,10 @@ import React, { useState } from "react";
 import Discussion from "./Discussion";
 import CourseContext from "./CourseContext";
 import responsiveFonts from "../../utils/ResponsiveFonts";
-import TabButton from "./TabButton";
+import TabButton from "../core/TabButton";
 import COLORS from "../../constants/Colors";
 
-const Tabs = () => {
+const VideoTabs = () => {
   const [isCourseContent, setIsCourseContent] = useState(true);
 
   return (
@@ -34,7 +34,7 @@ const Tabs = () => {
   );
 };
 
-export default Tabs;
+export default VideoTabs;
 
 const styles = StyleSheet.create({
   container: {

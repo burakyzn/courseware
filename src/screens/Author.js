@@ -1,21 +1,12 @@
-import {
-  View,
-  StyleSheet,
-  Text,
-  FlatList,
-  Image,
-  Dimensions,
-} from "react-native";
+import { View, StyleSheet, Text, Dimensions } from "react-native";
 import React, { useState } from "react";
 import COLORS from "../constants/Colors";
 import NavigatorText from "../components/navigations/NavigatorText";
 import { useNavigation } from "@react-navigation/native";
 import responsiveFonts from "../utils/ResponsiveFonts";
-import CourseCard from "../components/core/CourseCard";
 import { Ionicons } from "@expo/vector-icons";
 import ProfileCard from "../components/core/ProfileCard";
 import CourseCardList from "../components/core/CourseCardList";
-const hp = Dimensions.get("window").height;
 
 const Author = () => {
   const navigation = useNavigation();
@@ -126,25 +117,6 @@ const Author = () => {
           <Text style={styles.courseCount}>Total {authorCourses.length}</Text>
         </View>
         <CourseCardList data={authorCourses} style={styles.authorCourses} />
-        {/* <FlatList
-          style={styles.authorCourses}
-          data={authorCourses}
-          renderItem={({ item }) => {
-            return (
-              <View style={styles.courseWrapper}>
-                <CourseCard
-                  title={item.title}
-                  author={item.author}
-                  score={item.score}
-                  level={item.level}
-                  price={item.price}
-                />
-              </View>
-            );
-          }}
-          keyExtractor={(course) => course.id}
-          showsVerticalScrollIndicator={false}
-        /> */}
       </View>
     </View>
   );
