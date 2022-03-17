@@ -16,6 +16,7 @@ module.exports = function (api) {
             screens: "./src/screens",
             utils: "./src/utils",
           },
+          extensions : [".js", ".jsx", ".json"]
         },
       ],
     ],
