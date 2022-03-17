@@ -23,7 +23,10 @@ const CourseDetail = () => {
     score: 4.5,
     level: "All Level",
     price: 25,
-    categories: ["Swift UI", "Software Development"],
+    categories: [
+      { id: 1, name: "Swift UI" },
+      { id: 2, name: "Software Development" },
+    ],
     description: `Phasellus vestibulum lorem sed risus ultricies tristique nulla aliquet. Vel quam elementum pulvinar etiamnim lobortis scelerisque. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur....`,
   });
 

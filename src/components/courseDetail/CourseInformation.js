@@ -15,7 +15,7 @@ const CourseInformation = (props) => {
         renderItem={({ item }) => {
           return (
             <CategoryButton
-              text={item}
+              text={item.name}
               backgroundColor={COLORS.accentPrimary}
               textColor={COLORS.primary}
             />
