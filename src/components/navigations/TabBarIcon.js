@@ -1,5 +1,5 @@
 import React from "react";
-import COLORS from "../../constants/Colors";
+import COLORS from "constants/Colors";
 import { Ionicons } from "@expo/vector-icons";
 
 const TabBarIcon = ({ focused, name }) => {

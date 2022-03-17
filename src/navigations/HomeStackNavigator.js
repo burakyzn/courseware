@@ -1,10 +1,10 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import * as React from "react";
-import Home from "../screens/Home";
-import CourseDetail from "../screens/CourseDetail";
-import Basket from "../screens/Basket";
-import Author from "../screens/Author";
-import VideoPlayer from "../screens/VideoPlayer";
+import Home from "screens/Home";
+import CourseDetail from "screens/CourseDetail";
+import Basket from "screens/Basket";
+import Author from "screens/Author";
+import VideoPlayer from "screens/VideoPlayer";
 
 const HomeStack = createNativeStackNavigator();
 

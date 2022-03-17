@@ -1,7 +1,7 @@
 import { View, Image, StyleSheet, Text, Dimensions } from "react-native";
 import React from "react";
-import COLORS from "../../constants/Colors";
-import responsiveFonts from "../../utils/ResponsiveFonts";
+import COLORS from "constants/Colors";
+import responsiveFonts from "utils/ResponsiveFonts";
 import { Ionicons } from "@expo/vector-icons";
 
 const hp = Dimensions.get("window").height;
@@ -24,7 +24,7 @@ const ProfileCard = (props) => {
     <View style={styles.container}>
       <Image
         style={handleImageStyle()}
-        source={require("../../../assets/profile-photo.png")}
+        source={require("assets/profile-photo.png")}
       ></Image>
       <View style={styles.information}>
         <Text style={styles.fullName}>{fullName}</Text>

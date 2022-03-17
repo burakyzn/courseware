@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
-import COLORS from "../../constants/Colors";
-import responsiveFonts from "../../utils/ResponsiveFonts";
+import COLORS from "constants/Colors";
+import responsiveFonts from "utils/ResponsiveFonts";
 
 const CategoryButton = (props) => {
   const { text, backgroundColor, textColor } = props;

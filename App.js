@@ -1,10 +1,10 @@
-import RootNavigator from "./src/navigations/RootNavigator";
-import { View, StyleSheet } from "react-native";
-import COLORS from "./src/constants/Colors";
+import RootNavigator from "navigations/RootNavigator";
+import { StyleSheet } from "react-native";
+import COLORS from "constants/Colors";
 import AppLoading from "expo-app-loading";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Provider } from "react-redux";
-import store from "./src/app/store";
+import store from "app/store";
 import {
   useFonts,
   DMSans_400Regular,

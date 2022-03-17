@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Image, Dimensions } from "react-native";
 import React from "react";
-import COLORS from "../../constants/Colors";
-import responsiveFonts from "../../utils/ResponsiveFonts";
+import COLORS from "constants/Colors";
+import responsiveFonts from "utils/ResponsiveFonts";
 
 const hp = Dimensions.get("window").height;
 
@@ -21,7 +21,7 @@ const UserInformation = () => {
     <View style={styles.container}>
       <Image
         style={handleImageStyle()}
-        source={require("../../../assets/profile-photo.png")}
+        source={require("assets/profile-photo.png")}
       ></Image>
       <Text style={styles.fullName}>Burak Yazan</Text>
       <Text style={styles.email}>brkyznn@gmail.com</Text>

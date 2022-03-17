@@ -1,9 +1,9 @@
 import { View, StyleSheet, Text } from "react-native";
 import React from "react";
-import COLORS from "../../constants/Colors";
+import COLORS from "constants/Colors";
 import ProgressBar from "./ProgressBar";
 import { Ionicons } from "@expo/vector-icons";
-import responsiveFonts from "../../utils/ResponsiveFonts";
+import responsiveFonts from "utils/ResponsiveFonts";
 
 const CurrentCourse = (props) => {
   const { width, height, progression, title, author } = props;

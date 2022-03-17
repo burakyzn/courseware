@@ -1,10 +1,10 @@
 import { View, StyleSheet, Dimensions } from "react-native";
 import React, { useState } from "react";
-import COLORS from "../constants/Colors";
-import NavigatorText from "../components/navigations/NavigatorText";
-import Searchbox from "../components/explore/SearchBox";
-import CategoryList from "../components/explore/CategoryList";
-import CourseCardList from "../components/core/CourseCardList";
+import COLORS from "constants/Colors";
+import NavigatorText from "components/navigations/NavigatorText";
+import Searchbox from "components/explore/SearchBox";
+import CategoryList from "components/explore/CategoryList";
+import CourseCardList from "components/core/CourseCardList";
 import { useNavigation } from "@react-navigation/native";
 
 const Explore = () => {

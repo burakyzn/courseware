@@ -1,10 +1,10 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
 import { Video } from "expo-av";
-import COLORS from "../constants/Colors";
-import NavigatorText from "../components/navigations/NavigatorText";
+import COLORS from "constants/Colors";
+import NavigatorText from "components/navigations/NavigatorText";
 import { useNavigation } from "@react-navigation/native";
-import VideoTabs from "../components/videoPlayer/VideoTabs";
+import VideoTabs from "components/videoPlayer/VideoTabs";
 
 const VideoPlayer = () => {
   const navigation = useNavigation();

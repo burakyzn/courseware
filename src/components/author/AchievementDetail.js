@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import React from "react";
-import COLORS from "../../constants/Colors";
+import COLORS from "constants/Colors";
 
 const AchievementDetail = () => {
   return (

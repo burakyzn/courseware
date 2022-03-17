@@ -1,13 +1,13 @@
 import { Text, View, Image, StyleSheet } from "react-native";
 import React from "react";
-import COLORS from "../../constants/Colors";
+import COLORS from "constants/Colors";
 
 const CurrentProgress = ({ height, progression }) => {
   return (
     <View style={styles.container}>
       <Image
         style={{ width: height, height: height }}
-        source={require("../../../assets/achievement.png")}
+        source={require("assets/achievement.png")}
       ></Image>
       <Text style={styles.progression}>Current Progress: </Text>
       <Text style={styles.percentage}>{progression}</Text>

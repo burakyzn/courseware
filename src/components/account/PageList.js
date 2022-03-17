@@ -6,8 +6,8 @@ import {
   Dimensions,
 } from "react-native";
 import React from "react";
-import responsiveFonts from "../../utils/ResponsiveFonts";
-import COLORS from "../../constants/Colors";
+import responsiveFonts from "utils/ResponsiveFonts";
+import COLORS from "constants/Colors";
 import { Ionicons } from "@expo/vector-icons";
 
 const hp = Dimensions.get("window").height;

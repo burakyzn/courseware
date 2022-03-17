@@ -6,9 +6,9 @@ import {
   TouchableOpacity,
 } from "react-native";
 import React, { useState } from "react";
-import COLORS from "../../constants/Colors";
+import COLORS from "constants/Colors";
 import { CheckBox } from "react-native-elements";
-import responsiveFonts from "../../utils/ResponsiveFonts";
+import responsiveFonts from "utils/ResponsiveFonts";
 
 const CourseContext = () => {
   const [isLectureCompleted, setIsLectureCompleted] = useState(false);

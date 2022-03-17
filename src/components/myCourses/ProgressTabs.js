@@ -1,9 +1,9 @@
 import { StyleSheet, View } from "react-native";
 import React, { useState } from "react";
 import CourseCardList from "../core/CourseCardList";
-import responsiveFonts from "../../utils/ResponsiveFonts";
+import responsiveFonts from "utils/ResponsiveFonts";
 import TabButton from "../core/TabButton";
-import COLORS from "../../constants/Colors";
+import COLORS from "constants/Colors";
 
 const ProgressTabs = () => {
   const [isDoneSection, setIsDoneSection] = useState(false);

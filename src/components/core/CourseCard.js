@@ -7,11 +7,11 @@ import {
 } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
-import COLORS from "../../constants/Colors";
-import responsiveFonts from "../../utils/ResponsiveFonts";
+import COLORS from "constants/Colors";
+import responsiveFonts from "utils/ResponsiveFonts";
 import { Ionicons } from "@expo/vector-icons";
 import { useDispatch } from "react-redux";
-import { closeTabBar } from "../../features/tabBarSlice";
+import { closeTabBar } from "features/tabBarSlice";
 const hp = Dimensions.get("window").height;
 
 const CourseCard = (props) => {

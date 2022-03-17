@@ -1,10 +1,10 @@
 import React from "react";
 import { View, StyleSheet, Text } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import COLORS from "../../constants/Colors";
+import COLORS from "constants/Colors";
 import { useNavigation } from "@react-navigation/native";
 import { useDispatch } from "react-redux";
-import { closeTabBar } from "../../features/tabBarSlice";
+import { closeTabBar } from "features/tabBarSlice";
 
 const NavigatorText = (props) => {
   const { width, height, text, onPress, showBasketIcon } = props;

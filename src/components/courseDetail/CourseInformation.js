@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, FlatList } from "react-native";
 import React from "react";
-import COLORS from "../../constants/Colors";
-import responsiveFonts from "../../utils/ResponsiveFonts";
+import COLORS from "constants/Colors";
+import responsiveFonts from "utils/ResponsiveFonts";
 import CategoryButton from "../core/CategoryButton";
 
 const CourseInformation = (props) => {

@@ -1,9 +1,9 @@
 import { View, StyleSheet } from "react-native";
 import React, { useState } from "react";
-import COLORS from "../constants/Colors";
-import NavigatorText from "../components/navigations/NavigatorText";
+import COLORS from "constants/Colors";
+import NavigatorText from "components/navigations/NavigatorText";
 import { useNavigation } from "@react-navigation/native";
-import ProgressTabs from "../components/myCourses/ProgressTabs";
+import ProgressTabs from "components/myCourses/ProgressTabs";
 
 const MyCourses = () => {
   const navigation = useNavigation();

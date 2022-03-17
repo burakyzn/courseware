@@ -1,10 +1,10 @@
 import { View, StyleSheet } from "react-native";
 import React from "react";
-import COLORS from "../constants/Colors";
-import NavigatorText from "../components/navigations/NavigatorText";
+import COLORS from "constants/Colors";
+import NavigatorText from "components/navigations/NavigatorText";
 import { useNavigation } from "@react-navigation/native";
-import UserInformation from "../components/account/UserInformation";
-import PageList from "../components/account/PageList";
+import UserInformation from "components/account/UserInformation";
+import PageList from "components/account/PageList";
 
 const Account = () => {
   const navigation = useNavigation();

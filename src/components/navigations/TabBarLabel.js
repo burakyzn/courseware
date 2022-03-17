@@ -1,7 +1,7 @@
 import { StyleSheet, Text } from "react-native";
 import AppLoading from "expo-app-loading";
 import React from "react";
-import COLORS from "../../constants/Colors";
+import COLORS from "constants/Colors";
 
 const TabBarLabel = ({ focused, text }) => {
   return (

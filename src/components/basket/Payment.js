@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import responsiveFonts from "../../utils/ResponsiveFonts";
-import COLORS from "../../constants/Colors";
+import responsiveFonts from "utils/ResponsiveFonts";
+import COLORS from "constants/Colors";
 import { Button } from "react-native-elements";
 
 const Payment = (props) => {

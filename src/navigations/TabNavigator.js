@@ -6,9 +6,9 @@ import ExploreStackNavigator from "./ExploreStackNavigator";
 import HomeStackNavigator from "./HomeStackNavigator";
 import MyCoursesStackNavigator from "./MyCoursesStackNavigator";
 import { useSelector } from "react-redux";
-import { selectTabBar } from "../features/tabBarSlice";
-import TabBarLabel from "../components/navigations/TabBarLabel";
-import TabBarIcon from "../components/navigations/TabBarIcon";
+import { selectTabBar } from "features/tabBarSlice";
+import TabBarLabel from "components/navigations/TabBarLabel";
+import TabBarIcon from "components/navigations/TabBarIcon";
 
 const Tab = createBottomTabNavigator();
 
