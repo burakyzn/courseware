@@ -1,12 +1,13 @@
-import React from "react";
-import { View, StyleSheet } from "react-native";
-import { Video } from "expo-av";
-import COLORS from "constants/Colors";
-import NavigatorText from "components/navigations/NavigatorText";
-import { useNavigation } from "@react-navigation/native";
-import VideoTabs from "components/videoPlayer/VideoTabs";
+import React from 'react';
+import { View, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { Video } from 'expo-av';
 
-const VideoPlayer = () => {
+import COLORS from 'constants/Colors';
+import NavigatorText from 'components/navigations/NavigatorText';
+import VideoTabs from 'components/videoPlayer/VideoTabs';
+
+function VideoPlayer() {
   const navigation = useNavigation();
   const video = React.useRef(null);
 
@@ -15,9 +16,9 @@ const VideoPlayer = () => {
       <View style={styles.upperPart}>
         <View style={styles.navigatorWrapper}>
           <NavigatorText
-            width={"100%"}
+            width="100%"
             height={50}
-            text={"1. Introduction"}
+            text="1. Introduction"
             onPress={() => {
               navigation.goBack();
             }}
@@ -30,7 +31,7 @@ const VideoPlayer = () => {
           ref={video}
           style={styles.video}
           source={{
-            uri: "http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4",
+            uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4',
           }}
           useNativeControls
           resizeMode="contain"
@@ -41,7 +42,7 @@ const VideoPlayer = () => {
       </View>
     </View>
   );
-};
+}
 
 export default VideoPlayer;
 
@@ -56,8 +57,8 @@ const styles = StyleSheet.create({
   },
   middlePart: {
     flex: 4,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   lowerPart: {
     flex: 7,
@@ -65,11 +66,11 @@ const styles = StyleSheet.create({
   },
   navigatorWrapper: {
     flex: 1,
-    justifyContent: "flex-end",
+    justifyContent: 'flex-end',
   },
   video: {
-    alignSelf: "center",
-    width: "100%",
-    height: "100%",
+    alignSelf: 'center',
+    width: '100%',
+    height: '100%',
   },
 });

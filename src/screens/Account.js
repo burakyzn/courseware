@@ -1,12 +1,13 @@
-import { View, StyleSheet } from "react-native";
-import React from "react";
-import COLORS from "constants/Colors";
-import NavigatorText from "components/navigations/NavigatorText";
-import { useNavigation } from "@react-navigation/native";
-import UserInformation from "components/account/UserInformation";
-import PageList from "components/account/PageList";
+import React from 'react';
+import { View, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-const Account = () => {
+import COLORS from 'constants/Colors';
+import NavigatorText from 'components/navigations/NavigatorText';
+import UserInformation from 'components/account/UserInformation';
+import PageList from 'components/account/PageList';
+
+function Account() {
   const navigation = useNavigation();
 
   return (
@@ -14,13 +15,13 @@ const Account = () => {
       <View style={styles.upperPart}>
         <View style={styles.navigatorWrapper}>
           <NavigatorText
-            width={"100%"}
+            width="100%"
             height={50}
-            text={"Account"}
+            text="Account"
             onPress={() => {
               navigation.goBack();
             }}
-            showBasketIcon={true}
+            showBasketIcon
           />
         </View>
       </View>
@@ -32,7 +33,7 @@ const Account = () => {
       </View>
     </View>
   );
-};
+}
 
 export default Account;
 
@@ -47,7 +48,7 @@ const styles = StyleSheet.create({
   },
   middlePart: {
     flex: 4,
-    justifyContent: "center",
+    justifyContent: 'center',
   },
   lowerPart: {
     flex: 6,
@@ -59,6 +60,6 @@ const styles = StyleSheet.create({
   },
   navigatorWrapper: {
     flex: 1,
-    justifyContent: "flex-end",
+    justifyContent: 'flex-end',
   },
 });

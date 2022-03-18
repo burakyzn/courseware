@@ -1,31 +1,32 @@
-import { View, StyleSheet, Text } from "react-native";
-import React, { useState } from "react";
-import COLORS from "constants/Colors";
-import NavigatorText from "components/navigations/NavigatorText";
-import { useNavigation } from "@react-navigation/native";
-import { useDispatch } from "react-redux";
-import { openTabBar } from "features/tabBarSlice";
-import { addToBasket } from "features/basketSlice";
-import responsiveFonts from "utils/ResponsiveFonts";
-import { Button } from "react-native-elements";
-import Divider from "components/core/Divider";
-import AuthorButton from "components/courseDetail/AuthorButton";
-import CourseInformation from "components/courseDetail/CourseInformation";
+import React, { useState } from 'react';
+import { View, StyleSheet, Text } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { useDispatch } from 'react-redux';
+import { Button } from 'react-native-elements';
 
-const CourseDetail = () => {
+import COLORS from 'constants/Colors';
+import NavigatorText from 'components/navigations/NavigatorText';
+import { openTabBar } from 'features/tabBarSlice';
+import { addToBasket } from 'features/basketSlice';
+import responsiveFonts from 'utils/ResponsiveFonts';
+import Divider from 'components/core/Divider';
+import AuthorButton from 'components/courseDetail/AuthorButton';
+import CourseInformation from 'components/courseDetail/CourseInformation';
+
+function CourseDetail() {
   const navigation = useNavigation();
   const dispatch = useDispatch();
 
-  const [mockCourse, setMockCourse] = useState({
-    id: "1",
-    title: "JavaScript Best Practices Course",
-    author: "Burak Yazan",
+  const [mockCourse] = useState({
+    id: '1',
+    title: 'JavaScript Best Practices Course',
+    author: 'Burak Yazan',
     score: 4.5,
-    level: "All Level",
+    level: 'All Level',
     price: 25,
     categories: [
-      { id: 1, name: "Swift UI" },
-      { id: 2, name: "Software Development" },
+      { id: 1, name: 'Swift UI' },
+      { id: 2, name: 'Software Development' },
     ],
     description: `Phasellus vestibulum lorem sed risus ultricies tristique nulla aliquet. Vel quam elementum pulvinar etiamnim lobortis scelerisque. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur....`,
   });
@@ -40,7 +41,7 @@ const CourseDetail = () => {
   };
 
   const handleSeeDetails = () => {
-    navigation.navigate("VideoPlayer");
+    navigation.navigate('VideoPlayer');
   };
 
   return (
@@ -48,21 +49,18 @@ const CourseDetail = () => {
       <View style={styles.upperPart}>
         <View style={styles.navigatorWrapper}>
           <NavigatorText
-            width={"100%"}
+            width="100%"
             height={50}
-            text={"Course Detail"}
+            text="Course Detail"
             onPress={goBack}
-            showBasketIcon={true}
+            showBasketIcon
           />
         </View>
       </View>
       <View style={styles.middlePart}>
-        <CourseInformation
-          title={mockCourse.title}
-          data={mockCourse.categories}
-        />
+        <CourseInformation title={mockCourse.title} data={mockCourse.categories} />
       </View>
-      <View style={styles.space}></View>
+      <View style={styles.space} />
       <View style={styles.lowerPart}>
         <View style={styles.descriptionWrapper}>
           <Text style={styles.descriptionHeader}>Description</Text>
@@ -72,7 +70,7 @@ const CourseDetail = () => {
           <Divider />
           <AuthorButton
             onPress={() => {
-              navigation.navigate("Author");
+              navigation.navigate('Author');
             }}
           />
           <View style={styles.buttonWrapper}>
@@ -93,7 +91,7 @@ const CourseDetail = () => {
       </View>
     </View>
   );
-};
+}
 
 export default CourseDetail;
 
@@ -108,8 +106,8 @@ const styles = StyleSheet.create({
   },
   middlePart: {
     flex: 3,
-    justifyContent: "flex-end",
-    alignItems: "center",
+    justifyContent: 'flex-end',
+    alignItems: 'center',
     paddingHorizontal: 25,
   },
   lowerPart: {
@@ -122,7 +120,7 @@ const styles = StyleSheet.create({
   },
   navigatorWrapper: {
     flex: 1,
-    justifyContent: "flex-end",
+    justifyContent: 'flex-end',
   },
   space: {
     flex: 1,
@@ -132,14 +130,14 @@ const styles = StyleSheet.create({
   },
   descriptionHeader: {
     fontSize: responsiveFonts(12),
-    fontFamily: "DMSans_400Regular",
+    fontFamily: 'DMSans_400Regular',
     color: COLORS.lightBaseThree,
   },
   description: {
     fontSize: responsiveFonts(14),
-    fontFamily: "DMSans_400Regular",
+    fontFamily: 'DMSans_400Regular',
     color: COLORS.darkBaseOne,
-    marginTop: "5%",
+    marginTop: '5%',
     lineHeight: 22,
   },
   bottomArea: {
@@ -147,14 +145,14 @@ const styles = StyleSheet.create({
   },
   buttonWrapper: {
     flex: 1,
-    flexDirection: "row",
-    alignItems: "flex-end",
+    flexDirection: 'row',
+    alignItems: 'flex-end',
     paddingTop: 10,
   },
   button: {
     backgroundColor: COLORS.primary,
     borderRadius: 10,
-    height: "100%",
+    height: '100%',
   },
   buttonSuccess: {
     backgroundColor: COLORS.success,

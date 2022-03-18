@@ -1,16 +1,16 @@
-import { View, StyleSheet } from "react-native";
-import React from "react";
-import COLORS from "constants/Colors";
-import NavigatorText from "components/navigations/NavigatorText";
-import { useNavigation } from "@react-navigation/native";
-import { useDispatch, useSelector } from "react-redux";
-import { cleanBasket } from "features/basketSlice";
-import { itemsSelector, totalPriceSelector } from "features/basketSlice";
-import CourseCardList from "components/core/CourseCardList";
-import Divider from "components/core/Divider";
-import Payment from "components/basket/Payment";
+import React from 'react';
+import { View, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { useDispatch, useSelector } from 'react-redux';
 
-const Basket = () => {
+import COLORS from 'constants/Colors';
+import NavigatorText from 'components/navigations/NavigatorText';
+import { cleanBasket, itemsSelector, totalPriceSelector } from 'features/basketSlice';
+import CourseCardList from 'components/core/CourseCardList';
+import Divider from 'components/core/Divider';
+import Payment from 'components/basket/Payment';
+
+function Basket() {
   const navigation = useNavigation();
   const dispatch = useDispatch();
   const totalPrice = useSelector(totalPriceSelector);
@@ -29,9 +29,9 @@ const Basket = () => {
       <View style={styles.upperPart}>
         <View style={styles.navigatorWrapper}>
           <NavigatorText
-            width={"100%"}
+            width="100%"
             height={50}
-            text={"Basket"}
+            text="Basket"
             onPress={goBack}
             showBasketIcon={false}
           />
@@ -44,7 +44,7 @@ const Basket = () => {
       </View>
     </View>
   );
-};
+}
 
 export default Basket;
 
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
   },
   navigatorWrapper: {
     flex: 1,
-    justifyContent: "flex-end",
+    justifyContent: 'flex-end',
   },
   courseList: {
     flex: 5,

@@ -1,11 +1,12 @@
-import { View, StyleSheet } from "react-native";
-import React, { useState } from "react";
-import COLORS from "constants/Colors";
-import NavigatorText from "components/navigations/NavigatorText";
-import { useNavigation } from "@react-navigation/native";
-import ProgressTabs from "components/myCourses/ProgressTabs";
+import React from 'react';
+import { View, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-const MyCourses = () => {
+import COLORS from 'constants/Colors';
+import NavigatorText from 'components/navigations/NavigatorText';
+import ProgressTabs from 'components/myCourses/ProgressTabs';
+
+function MyCourses() {
   const navigation = useNavigation();
 
   return (
@@ -13,13 +14,13 @@ const MyCourses = () => {
       <View style={styles.upperPart}>
         <View style={styles.navigatorWrapper}>
           <NavigatorText
-            width={"100%"}
+            width="100%"
             height={50}
-            text={"My Courses"}
+            text="My Courses"
             onPress={() => {
-              navigation.navigate("HomeStack");
+              navigation.navigate('HomeStack');
             }}
-            showBasketIcon={true}
+            showBasketIcon
           />
         </View>
       </View>
@@ -28,7 +29,7 @@ const MyCourses = () => {
       </View>
     </View>
   );
-};
+}
 
 export default MyCourses;
 
@@ -50,6 +51,6 @@ const styles = StyleSheet.create({
   },
   navigatorWrapper: {
     flex: 1,
-    justifyContent: "flex-end",
+    justifyContent: 'flex-end',
   },
 });

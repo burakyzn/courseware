@@ -1,63 +1,64 @@
-import { View, StyleSheet } from "react-native";
-import React, { useState } from "react";
-import COLORS from "constants/Colors";
-import NavigatorText from "components/navigations/NavigatorText";
-import { useNavigation } from "@react-navigation/native";
-import ProfileCard from "components/core/ProfileCard";
-import CourseCardList from "components/core/CourseCardList";
-import Divider from "components/core/Divider";
-import AchievementDetail from "components/author/AchievementDetail";
+import React, { useState } from 'react';
+import { View, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-const Author = () => {
+import COLORS from 'constants/Colors';
+import NavigatorText from 'components/navigations/NavigatorText';
+import ProfileCard from 'components/core/ProfileCard';
+import CourseCardList from 'components/core/CourseCardList';
+import Divider from 'components/core/Divider';
+import AchievementDetail from 'components/author/AchievementDetail';
+
+function Author() {
   const navigation = useNavigation();
 
-  const [authorCourses, setAuthorCourses] = useState([
+  const [authorCourses] = useState([
     {
-      id: "1",
-      title: "JavaScript Best Practices Course",
-      author: "Burak Yazan",
+      id: '1',
+      title: 'JavaScript Best Practices Course',
+      author: 'Burak Yazan',
       score: 4.5,
-      level: "All Level",
+      level: 'All Level',
       price: 25,
     },
     {
-      id: "2",
-      title: "Introduction to C++",
-      author: "Şule Aktaş",
+      id: '2',
+      title: 'Introduction to C++',
+      author: 'Şule Aktaş',
       score: 4.8,
-      level: "All Level",
+      level: 'All Level',
       price: 25,
     },
     {
-      id: "3",
-      title: "Introduction to Java",
-      author: "Maftun Hashimli",
+      id: '3',
+      title: 'Introduction to Java',
+      author: 'Maftun Hashimli',
       score: 4.3,
-      level: "All Level",
+      level: 'All Level',
       price: 25,
     },
     {
-      id: "4",
-      title: "React Native Crash Course",
-      author: "Burak Yazan",
+      id: '4',
+      title: 'React Native Crash Course',
+      author: 'Burak Yazan',
       score: 4.5,
-      level: "Entry Level",
+      level: 'Entry Level',
       price: 25,
     },
     {
-      id: "5",
-      title: "Responsive Web Design",
-      author: "Barış Ertakuş",
+      id: '5',
+      title: 'Responsive Web Design',
+      author: 'Barış Ertakuş',
       score: 4.9,
-      level: "All Level",
+      level: 'All Level',
       price: 25,
     },
     {
-      id: "6",
-      title: "Data Visualization With D3.js",
-      author: "Barış Ertakuş",
+      id: '6',
+      title: 'Data Visualization With D3.js',
+      author: 'Barış Ertakuş',
       score: 4.2,
-      level: "All Level",
+      level: 'All Level',
       price: 25,
     },
   ]);
@@ -67,21 +68,21 @@ const Author = () => {
       <View style={styles.upperPart}>
         <View style={styles.navigatorWrapper}>
           <NavigatorText
-            width={"100%"}
+            width="100%"
             height={50}
-            text={"Author"}
+            text="Author"
             onPress={() => {
               navigation.goBack();
             }}
-            showBasketIcon={true}
+            showBasketIcon
           />
         </View>
       </View>
       <View style={styles.middlePart}>
         <ProfileCard
-          fullName={"Burak Yazan"}
-          summary={"Software Engineer"}
-          iconName={"chatbox-ellipses-outline"}
+          fullName="Burak Yazan"
+          summary="Software Engineer"
+          iconName="chatbox-ellipses-outline"
         />
         <Divider />
         <AchievementDetail />
@@ -90,14 +91,14 @@ const Author = () => {
         <CourseCardList
           data={authorCourses}
           style={styles.authorCourses}
-          header={true}
-          leftText={"Courses"}
-          rightText={"Total " + authorCourses.length}
+          header
+          leftText="Courses"
+          rightText={`Total ${authorCourses.length}`}
         />
       </View>
     </View>
   );
-};
+}
 
 export default Author;
 
@@ -112,8 +113,8 @@ const styles = StyleSheet.create({
   },
   middlePart: {
     flex: 3,
-    justifyContent: "flex-end",
-    alignItems: "center",
+    justifyContent: 'flex-end',
+    alignItems: 'center',
     paddingHorizontal: 25,
   },
   lowerPart: {
@@ -126,10 +127,10 @@ const styles = StyleSheet.create({
   },
   navigatorWrapper: {
     flex: 1,
-    justifyContent: "flex-end",
+    justifyContent: 'flex-end',
   },
   authorCourses: {
-    marginTop: "3%",
-    width: "100%",
+    marginTop: '3%',
+    width: '100%',
   },
 });
