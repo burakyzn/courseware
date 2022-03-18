@@ -1,6 +1,8 @@
 import React from 'react';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
 
+import PropTypes from 'prop-types';
+
 import Colors from '~constants/Colors';
 import responsiveFonts from '~utils/ResponsiveFonts';
 
@@ -39,6 +41,30 @@ function CourseCardList(props) {
     </View>
   );
 }
+
+CourseCardList.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      author: PropTypes.string.isRequired,
+      score: PropTypes.number.isRequired,
+      level: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+    })
+  ).isRequired,
+  style: PropTypes.shape(),
+  header: PropTypes.bool,
+  leftText: PropTypes.string,
+  rightText: PropTypes.string,
+};
+
+CourseCardList.defaultProps = {
+  style: {},
+  header: null,
+  leftText: null,
+  rightText: null,
+};
 
 export default CourseCardList;
 

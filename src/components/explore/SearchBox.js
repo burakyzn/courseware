@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
+import PropTypes from 'prop-types';
+
 import { Ionicons } from '@expo/vector-icons';
 
 import Colors from '~constants/Colors';
@@ -20,6 +22,16 @@ function SearchBox(props) {
     </View>
   );
 }
+
+SearchBox.propTypes = {
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  placeholder: PropTypes.string,
+};
+
+SearchBox.defaultProps = {
+  placeholder: '',
+};
 
 export default SearchBox;
 

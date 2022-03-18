@@ -1,6 +1,8 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
 
+import PropTypes from 'prop-types';
+
 import Colors from '~constants/Colors';
 
 const actievementPhoto = require('~assets/achievement.png');
@@ -14,6 +16,11 @@ function CurrentProgress({ height, progression }) {
     </View>
   );
 }
+
+CurrentProgress.propTypes = {
+  height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  progression: PropTypes.string.isRequired,
+};
 
 export default CurrentProgress;
 

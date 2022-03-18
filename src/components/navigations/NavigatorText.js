@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 
 import { Ionicons } from '@expo/vector-icons';
@@ -43,6 +44,18 @@ function NavigatorText(props) {
     </View>
   );
 }
+
+NavigatorText.propTypes = {
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  text: PropTypes.string.isRequired,
+  onPress: PropTypes.func.isRequired,
+  showBasketIcon: PropTypes.bool,
+};
+
+NavigatorText.defaultProps = {
+  showBasketIcon: false,
+};
 
 export default NavigatorText;
 

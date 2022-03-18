@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
+import PropTypes from 'prop-types';
+
 import Colors from '~constants/Colors';
 
 function ProgressBar({ progression }) {
@@ -10,6 +12,10 @@ function ProgressBar({ progression }) {
     </View>
   );
 }
+
+ProgressBar.propTypes = {
+  progression: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+};
 
 export default ProgressBar;
 

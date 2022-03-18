@@ -1,6 +1,8 @@
 import React from 'react';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
 
+import PropTypes from 'prop-types';
+
 import Colors from '~constants/Colors';
 import responsiveFonts from '~utils/ResponsiveFonts';
 
@@ -11,7 +13,7 @@ function CourseInformation(props) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{title}</Text>
+      {title ? <Text style={styles.title}>{title}</Text> : null}
       <FlatList
         data={data}
         renderItem={({ item }) => (
@@ -28,6 +30,20 @@ function CourseInformation(props) {
     </View>
   );
 }
+
+CourseInformation.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  title: PropTypes.string,
+};
+
+CourseInformation.defaultProps = {
+  title: null,
+};
 
 export default CourseInformation;
 

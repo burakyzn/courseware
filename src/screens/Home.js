@@ -53,7 +53,7 @@ function Home() {
       author: 'Barış Ertakuş',
       score: 4.9,
       level: 'All Level',
-      price: '25',
+      price: 25,
     },
     {
       id: '6',
@@ -61,7 +61,7 @@ function Home() {
       author: 'Barış Ertakuş',
       score: 4.2,
       level: 'All Level',
-      price: '25',
+      price: 25,
     },
   ]);
 

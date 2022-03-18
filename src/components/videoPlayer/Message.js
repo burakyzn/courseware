@@ -1,6 +1,8 @@
 import React from 'react';
 import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
 
+import PropTypes from 'prop-types';
+
 import Colors from '~constants/Colors';
 import responsiveFonts from '~utils/ResponsiveFonts';
 
@@ -30,6 +32,12 @@ function Message(props) {
     </View>
   );
 }
+
+Message.propTypes = {
+  sender: PropTypes.string.isRequired,
+  message: PropTypes.string.isRequired,
+  photoUrl: PropTypes.string.isRequired,
+};
 
 export default Message;
 

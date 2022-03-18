@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 
+import PropTypes from 'prop-types';
+
 import Colors from '~constants/Colors';
 import responsiveFonts from '~utils/ResponsiveFonts';
 
@@ -18,6 +20,12 @@ function TabButton(props) {
     </TouchableOpacity>
   );
 }
+
+TabButton.propTypes = {
+  text: PropTypes.string.isRequired,
+  onPress: PropTypes.func.isRequired,
+  condition: PropTypes.bool.isRequired,
+};
 
 export default TabButton;
 

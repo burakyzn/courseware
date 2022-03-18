@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
+import PropTypes from 'prop-types';
 import { Input } from 'react-native-elements';
 
 import Colors from '~constants/Colors';
@@ -20,6 +21,16 @@ function InputBox(props) {
     />
   );
 }
+
+InputBox.propTypes = {
+  placeholder: PropTypes.string,
+  rightIcon: PropTypes.element,
+};
+
+InputBox.defaultProps = {
+  placeholder: null,
+  rightIcon: null,
+};
 
 export default InputBox;
 

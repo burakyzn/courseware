@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
+import PropTypes from 'prop-types';
+
 import { Ionicons } from '@expo/vector-icons';
 
 import Colors from '~constants/Colors';
@@ -21,6 +23,14 @@ function AuthorButton(props) {
     </TouchableOpacity>
   );
 }
+
+AuthorButton.propTypes = {
+  onPress: PropTypes.func,
+};
+
+AuthorButton.defaultProps = {
+  onPress: () => {},
+};
 
 export default AuthorButton;
 

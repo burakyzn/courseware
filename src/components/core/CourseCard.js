@@ -1,6 +1,7 @@
 import React from 'react';
 import { Dimensions, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 
 import { Ionicons } from '@expo/vector-icons';
@@ -53,6 +54,14 @@ function CourseCard(props) {
     </TouchableOpacity>
   );
 }
+
+CourseCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  score: PropTypes.number.isRequired,
+  level: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+};
 
 export default CourseCard;
 

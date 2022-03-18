@@ -1,6 +1,8 @@
 import React from 'react';
 import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
 
+import PropTypes from 'prop-types';
+
 import { Ionicons } from '@expo/vector-icons';
 
 import Colors from '~constants/Colors';
@@ -34,6 +36,12 @@ function ProfileCard(props) {
     </View>
   );
 }
+
+ProfileCard.propTypes = {
+  fullName: PropTypes.string.isRequired,
+  summary: PropTypes.string.isRequired,
+  iconName: PropTypes.string.isRequired,
+};
 
 export default ProfileCard;
 

@@ -1,6 +1,8 @@
 import React from 'react';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
 
+import PropTypes from 'prop-types';
+
 import responsiveFonts from '~utils/ResponsiveFonts';
 
 import CategoryButton from '../core/CategoryButton';
@@ -22,6 +24,22 @@ function CategoryList(props) {
     </View>
   );
 }
+
+CategoryList.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  header: PropTypes.bool,
+  style: PropTypes.shape({}),
+};
+
+CategoryList.defaultProps = {
+  header: null,
+  style: {},
+};
 
 export default CategoryList;
 

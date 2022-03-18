@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text } from 'react-native';
 
+import PropTypes from 'prop-types';
+
 import Colors from '~constants/Colors';
 
 function TabBarLabel({ focused, text }) {
@@ -8,6 +10,11 @@ function TabBarLabel({ focused, text }) {
     <Text style={[styles.text, focused ? styles.activeColor : styles.defaultColor]}>{text}</Text>
   );
 }
+
+TabBarLabel.propTypes = {
+  focused: PropTypes.bool.isRequired,
+  text: PropTypes.string.isRequired,
+};
 
 export default TabBarLabel;
 

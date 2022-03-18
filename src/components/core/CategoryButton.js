@@ -1,26 +1,31 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 
+import PropTypes from 'prop-types';
+
 import Colors from '~constants/Colors';
 import responsiveFonts from '~utils/ResponsiveFonts';
 
 function CategoryButton(props) {
   const { text, backgroundColor, textColor } = props;
 
-  const handleBackgroundColor = () => ({
-    backgroundColor: backgroundColor || Colors.primary,
-  });
-
-  const handleTextColor = () => ({
-    color: textColor || Colors.lightBaseOne,
-  });
-
   return (
-    <TouchableOpacity style={[styles.container, handleBackgroundColor()]}>
-      <Text style={[handleTextColor(), styles.text]}>{text}</Text>
+    <TouchableOpacity style={[styles.container, { backgroundColor }]}>
+      <Text style={[{ color: textColor }, styles.text]}>{text}</Text>
     </TouchableOpacity>
   );
 }
+
+CategoryButton.propTypes = {
+  text: PropTypes.string.isRequired,
+  backgroundColor: PropTypes.string,
+  textColor: PropTypes.string,
+};
+
+CategoryButton.defaultProps = {
+  backgroundColor: Colors.primary,
+  textColor: Colors.lightBaseOne,
+};
 
 export default CategoryButton;
 

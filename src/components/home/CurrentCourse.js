@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
+import PropTypes from 'prop-types';
+
 import { Ionicons } from '@expo/vector-icons';
 
 import Colors from '~constants/Colors';
@@ -10,7 +12,6 @@ import ProgressBar from './ProgressBar';
 
 function CurrentCourse(props) {
   const { width, height, progression, title, author } = props;
-  if (!width || !height) return <View />;
 
   return (
     <View height={height} width={width}>
@@ -38,6 +39,14 @@ function CurrentCourse(props) {
     </View>
   );
 }
+
+CurrentCourse.propTypes = {
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  progression: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+};
 
 export default CurrentCourse;
 
