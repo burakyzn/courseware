@@ -7,14 +7,14 @@ module.exports = function (api) {
         "module-resolver",
         {
           alias: {
-            assets: "./assets",
-            app: "./src/app",
-            components: "./src/components",
-            constants: "./src/constants",
-            features: "./src/features",
-            navigations: "./src/navigations",
-            screens: "./src/screens",
-            utils: "./src/utils",
+            "~assets": "./assets",
+            "~app": "./src/app",
+            "~components": "./src/components",
+            "~constants": "./src/constants",
+            "~features": "./src/features",
+            "~navigations": "./src/navigations",
+            "~screens": "./src/screens",
+            "~utils": "./src/utils",
           },
           extensions : [".js", ".jsx", ".json"]
         },

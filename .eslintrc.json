@@ -20,7 +20,8 @@
   },
   "plugins": [
     "react",
-    "react-native"
+    "react-native",
+    "simple-import-sort"
   ],
   "rules": {
     "react/react-in-jsx-scope": "off",
@@ -30,34 +31,45 @@
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "no-use-before-define": ["error", { "variables": false }],
     // "react/prop-types": ["error", {"ignore": ["navigation", "navigation.navigate"]}],
-    "import/order": [
-      1, 
-      { "groups": 
-        [
-          "external", 
-          "builtin", 
-          "internal", 
-          "sibling", 
-          "parent", 
-          "index"
-        ]
-      } 
-    ]
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error"
   },
   "settings": {
     "import/resolver": {
       "alias": {
         "map": [
-          [ "assets", "./assets" ],
-          [ "app", "./src/app" ],
-          [ "components", "./src/components" ],
-          [ "constants", "./src/constants" ],
-          [ "features", "./src/features" ],
-          [ "navigations", "./src/navigations" ],
-          [ "screens", "./src/screens" ],
-          [ "utils", "./src/utils" ]
+          [ "~assets", "./assets" ],
+          [ "~app", "./src/app" ],
+          [ "~components", "./src/components" ],
+          [ "~constants", "./src/constants" ],
+          [ "~features", "./src/features" ],
+          [ "~navigations", "./src/navigations" ],
+          [ "~screens", "./src/screens" ],
+          [ "~utils", "./src/utils" ]
         ]
       }
     }
-  }
+  },
+  "overrides": [
+    {
+      "files": ["**/*.js", "**/*.ts", "**/*.tsx"],
+      "rules": {
+        "simple-import-sort/imports": [
+          "error",
+          {
+            "groups": [
+              ["^react$","^react-native$"],
+              ["^[a-z]"],
+              ["^@"],
+              ["^~"],
+              ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+              ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+              ["^.+\\.s?css$"],
+              ["^\\u0000"]
+            ]
+          }
+        ]
+      }
+    }
+  ]
 }
