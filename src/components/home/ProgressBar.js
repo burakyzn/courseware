@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import COLORS from '~constants/Colors';
+import Colors from '~constants/Colors';
 
 function ProgressBar({ progression }) {
   return (
@@ -17,12 +17,12 @@ const styles = StyleSheet.create({
   container: {
     width: '100%',
     height: '100%',
-    backgroundColor: COLORS.lightBaseTwo,
+    backgroundColor: Colors.lightBaseTwo,
     borderRadius: 25,
   },
   progression: {
     height: '100%',
-    backgroundColor: COLORS.success,
+    backgroundColor: Colors.success,
     borderRadius: 25,
   },
 });

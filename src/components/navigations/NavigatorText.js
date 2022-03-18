@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
-import COLORS from '~constants/Colors';
+import Colors from '~constants/Colors';
 import { closeTabBar } from '~features/TabBarSlice';
 
 function NavigatorText(props) {
@@ -23,7 +23,7 @@ function NavigatorText(props) {
           <Ionicons
             name="chevron-back-outline"
             size={32}
-            color={COLORS.lightBaseOne}
+            color={Colors.lightBaseOne}
             onPress={onPress}
           />
           <Text style={styles.text}>{text}</Text>
@@ -32,7 +32,7 @@ function NavigatorText(props) {
           <Ionicons
             name="cart-outline"
             size={32}
-            color={COLORS.lightBaseOne}
+            color={Colors.lightBaseOne}
             onPress={() => {
               dispatch(closeTabBar());
               navigation.navigate('Basket');
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   text: {
-    color: COLORS.lightBaseOne,
+    color: Colors.lightBaseOne,
     fontFamily: 'DMSans_400Regular',
     marginLeft: 20,
   },

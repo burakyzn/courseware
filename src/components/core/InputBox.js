@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 
 import { Input } from 'react-native-elements';
 
-import COLORS from '~constants/Colors';
+import Colors from '~constants/Colors';
 import responsiveFonts from '~utils/ResponsiveFonts';
 
 function InputBox(props) {
@@ -14,7 +14,7 @@ function InputBox(props) {
       placeholder={placeholder}
       containerStyle={styles.container}
       inputContainerStyle={styles.inputContainer}
-      placeholderTextColor={COLORS.lightBaseThree}
+      placeholderTextColor={Colors.lightBaseThree}
       inputStyle={styles.input}
       rightIcon={rightIcon}
     />
@@ -26,7 +26,7 @@ export default InputBox;
 const styles = StyleSheet.create({
   inputContainer: {
     borderBottomWidth: 0,
-    backgroundColor: COLORS.lightBaseOne,
+    backgroundColor: Colors.lightBaseOne,
     padding: 7,
     paddingLeft: 20,
     borderRadius: 10,

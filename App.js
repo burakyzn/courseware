@@ -12,7 +12,7 @@ import {
 } from '@expo-google-fonts/dm-sans';
 
 import store from '~app/store';
-import COLORS from '~constants/Colors';
+import Colors from '~constants/Colors';
 import RootNavigator from '~navigations/RootNavigator';
 
 export default function App() {
@@ -37,7 +37,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: COLORS.lightBaseTwo,
+    backgroundColor: Colors.lightBaseTwo,
     justifyContent: 'center',
   },
 });

@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 
-import COLORS from '~constants/Colors';
+import Colors from '~constants/Colors';
 import responsiveFonts from '~utils/ResponsiveFonts';
 
 function TabButton(props) {
@@ -28,13 +28,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   selectedTabContainer: {
-    backgroundColor: COLORS.lightBaseTwo,
+    backgroundColor: Colors.lightBaseTwo,
   },
   selectedTab: {
-    color: COLORS.darkBaseOne,
+    color: Colors.darkBaseOne,
   },
   nonSelectedTab: {
-    color: COLORS.lightBaseThree,
+    color: Colors.lightBaseThree,
   },
   tabText: {
     fontFamily: 'DMSans_700Bold',

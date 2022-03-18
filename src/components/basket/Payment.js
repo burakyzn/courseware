@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import { Button } from 'react-native-elements';
 
-import COLORS from '~constants/Colors';
+import Colors from '~constants/Colors';
 import responsiveFonts from '~utils/ResponsiveFonts';
 
 function Payment(props) {
@@ -39,21 +39,21 @@ const styles = StyleSheet.create({
     marginTop: '5%',
   },
   totalPriceText: {
-    color: COLORS.lightBaseThree,
+    color: Colors.lightBaseThree,
     fontSize: responsiveFonts(12),
     fontFamily: 'DMSans_700Bold',
   },
   totalPriceValue: {
     fontSize: responsiveFonts(12),
     fontFamily: 'DMSans_700Bold',
-    color: COLORS.darkBaseOne,
+    color: Colors.darkBaseOne,
   },
   buttonCheckoutWrapper: {
     flex: 1,
     justifyContent: 'flex-end',
   },
   buttonCheckoutStyle: {
-    backgroundColor: COLORS.success,
+    backgroundColor: Colors.success,
     borderRadius: 10,
     height: '100%',
   },

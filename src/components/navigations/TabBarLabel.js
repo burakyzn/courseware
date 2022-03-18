@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text } from 'react-native';
 
-import COLORS from '~constants/Colors';
+import Colors from '~constants/Colors';
 
 function TabBarLabel({ focused, text }) {
   return (
@@ -18,9 +18,9 @@ const styles = StyleSheet.create({
     fontFamily: 'DMSans_400Regular',
   },
   activeColor: {
-    color: COLORS.secondary,
+    color: Colors.secondary,
   },
   defaultColor: {
-    color: COLORS.darkBaseOne,
+    color: Colors.darkBaseOne,
   },
 });

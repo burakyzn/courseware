@@ -1,7 +1,7 @@
 import React from 'react';
 import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
 
-import COLORS from '~constants/Colors';
+import Colors from '~constants/Colors';
 import responsiveFonts from '~utils/ResponsiveFonts';
 
 const hp = Dimensions.get('window').height;
@@ -36,12 +36,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   fullName: {
-    color: COLORS.lightBaseOne,
+    color: Colors.lightBaseOne,
     fontSize: responsiveFonts(24),
     fontFamily: 'DMSans_700Bold',
   },
   email: {
-    color: COLORS.lightBaseOne,
+    color: Colors.lightBaseOne,
     fontSize: responsiveFonts(14),
     fontFamily: 'DMSans_400Regular',
   },

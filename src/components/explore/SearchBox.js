@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native';
 
 import { Ionicons } from '@expo/vector-icons';
 
-import COLORS from '~constants/Colors';
+import Colors from '~constants/Colors';
 
 import InputBox from '../core/InputBox';
 
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     borderRadius: 10,
-    backgroundColor: COLORS.lightBaseOne,
+    backgroundColor: Colors.lightBaseOne,
   },
   iconWrapper: {
     flex: 1,
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   placeholder: {
-    color: COLORS.lightBaseThree,
+    color: Colors.lightBaseThree,
     marginLeft: 15,
   },
 });

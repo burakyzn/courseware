@@ -1,7 +1,7 @@
 import React from 'react';
 import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
 
-import COLORS from '~constants/Colors';
+import Colors from '~constants/Colors';
 import responsiveFonts from '~utils/ResponsiveFonts';
 
 const hp = Dimensions.get('window').height;
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
   fullName: {
     fontSize: responsiveFonts(12),
     fontFamily: 'DMSans_700Bold',
-    color: COLORS.primary,
+    color: Colors.primary,
   },
   message: {
     fontSize: responsiveFonts(12),

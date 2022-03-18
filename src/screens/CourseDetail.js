@@ -10,7 +10,7 @@ import Divider from '~components/core/Divider';
 import AuthorButton from '~components/courseDetail/AuthorButton';
 import CourseInformation from '~components/courseDetail/CourseInformation';
 import NavigatorText from '~components/navigations/NavigatorText';
-import COLORS from '~constants/Colors';
+import Colors from '~constants/Colors';
 import { addToBasket } from '~features/BasketSlice';
 import { openTabBar } from '~features/TabBarSlice';
 import responsiveFonts from '~utils/ResponsiveFonts';
@@ -99,7 +99,7 @@ export default CourseDetail;
 
 const styles = StyleSheet.create({
   background: {
-    backgroundColor: COLORS.primary,
+    backgroundColor: Colors.primary,
     flex: 1,
   },
   upperPart: {
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
   },
   lowerPart: {
     flex: 6,
-    backgroundColor: COLORS.lightBaseOne,
+    backgroundColor: Colors.lightBaseOne,
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
     paddingHorizontal: 25,
@@ -133,12 +133,12 @@ const styles = StyleSheet.create({
   descriptionHeader: {
     fontSize: responsiveFonts(12),
     fontFamily: 'DMSans_400Regular',
-    color: COLORS.lightBaseThree,
+    color: Colors.lightBaseThree,
   },
   description: {
     fontSize: responsiveFonts(14),
     fontFamily: 'DMSans_400Regular',
-    color: COLORS.darkBaseOne,
+    color: Colors.darkBaseOne,
     marginTop: '5%',
     lineHeight: 22,
   },
@@ -152,12 +152,12 @@ const styles = StyleSheet.create({
     paddingTop: 10,
   },
   button: {
-    backgroundColor: COLORS.primary,
+    backgroundColor: Colors.primary,
     borderRadius: 10,
     height: '100%',
   },
   buttonSuccess: {
-    backgroundColor: COLORS.success,
+    backgroundColor: Colors.success,
   },
   buttonSeeDetailContainer: {
     flex: 1,

@@ -1,18 +1,18 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 
-import COLORS from '~constants/Colors';
+import Colors from '~constants/Colors';
 import responsiveFonts from '~utils/ResponsiveFonts';
 
 function CategoryButton(props) {
   const { text, backgroundColor, textColor } = props;
 
   const handleBackgroundColor = () => ({
-    backgroundColor: backgroundColor || COLORS.primary,
+    backgroundColor: backgroundColor || Colors.primary,
   });
 
   const handleTextColor = () => ({
-    color: textColor || COLORS.lightBaseOne,
+    color: textColor || Colors.lightBaseOne,
   });
 
   return (

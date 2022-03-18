@@ -3,7 +3,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 import { Ionicons } from '@expo/vector-icons';
 
-import COLORS from '~constants/Colors';
+import Colors from '~constants/Colors';
 import responsiveFonts from '~utils/ResponsiveFonts';
 
 function AuthorButton(props) {
@@ -26,7 +26,7 @@ export default AuthorButton;
 
 const styles = StyleSheet.create({
   authorWrapper: {
-    backgroundColor: COLORS.lightBaseTwo,
+    backgroundColor: Colors.lightBaseTwo,
     width: '100%',
     marginTop: '5%',
     borderRadius: 20,
@@ -45,11 +45,11 @@ const styles = StyleSheet.create({
   authorFullName: {
     fontSize: responsiveFonts(14),
     fontFamily: 'DMSans_400Regular',
-    color: COLORS.darkBaseOne,
+    color: Colors.darkBaseOne,
   },
   authorSummary: {
     fontSize: responsiveFonts(10),
     fontFamily: 'DMSans_400Regular',
-    color: COLORS.lightBaseThree,
+    color: Colors.lightBaseThree,
   },
 });

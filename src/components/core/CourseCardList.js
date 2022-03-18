@@ -1,7 +1,7 @@
 import React from 'react';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
 
-import COLORS from '~constants/Colors';
+import Colors from '~constants/Colors';
 import responsiveFonts from '~utils/ResponsiveFonts';
 
 import CourseCard from './CourseCard';
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
   },
   headerRightText: {
     fontFamily: 'DMSans_700Bold',
-    color: COLORS.lightBaseThree,
+    color: Colors.lightBaseThree,
     fontSize: responsiveFonts(12),
   },
 });

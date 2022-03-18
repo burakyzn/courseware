@@ -3,7 +3,7 @@ import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
 
 import { Ionicons } from '@expo/vector-icons';
 
-import COLORS from '~constants/Colors';
+import Colors from '~constants/Colors';
 import responsiveFonts from '~utils/ResponsiveFonts';
 
 const hp = Dimensions.get('window').height;
@@ -30,7 +30,7 @@ function ProfileCard(props) {
         <Text style={styles.fullName}>{fullName}</Text>
         <Text style={styles.summary}>{summary}</Text>
       </View>
-      <Ionicons name={iconName} size={32} color={COLORS.lightBaseOne} />
+      <Ionicons name={iconName} size={32} color={Colors.lightBaseOne} />
     </View>
   );
 }
@@ -51,11 +51,11 @@ const styles = StyleSheet.create({
   fullName: {
     fontSize: responsiveFonts(14),
     fontFamily: 'DMSans_400Regular',
-    color: COLORS.lightBaseOne,
+    color: Colors.lightBaseOne,
   },
   summary: {
     fontSize: responsiveFonts(12),
     fontFamily: 'DMSans_400Regular',
-    color: COLORS.lightBaseOne,
+    color: Colors.lightBaseOne,
   },
 });

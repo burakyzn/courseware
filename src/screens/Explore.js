@@ -7,7 +7,7 @@ import CourseCardList from '~components/core/CourseCardList';
 import CategoryList from '~components/explore/CategoryList';
 import Searchbox from '~components/explore/SearchBox';
 import NavigatorText from '~components/navigations/NavigatorText';
-import COLORS from '~constants/Colors';
+import Colors from '~constants/Colors';
 
 function Explore() {
   const navigation = useNavigation();
@@ -136,7 +136,7 @@ export default Explore;
 
 const styles = StyleSheet.create({
   background: {
-    backgroundColor: COLORS.primary,
+    backgroundColor: Colors.primary,
     flex: 1,
   },
   upperPart: {
@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
   },
   lowerPart: {
     flex: 10,
-    backgroundColor: COLORS.lightBaseTwo,
+    backgroundColor: Colors.lightBaseTwo,
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
     paddingHorizontal: 25,

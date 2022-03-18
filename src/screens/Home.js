@@ -4,7 +4,7 @@ import { Dimensions, StyleSheet, View } from 'react-native';
 import CourseCardList from '~components/core/CourseCardList';
 import ProfileCard from '~components/core/ProfileCard';
 import CurrentCourse from '~components/home/CurrentCourse';
-import COLORS from '~constants/Colors';
+import Colors from '~constants/Colors';
 
 const hp = Dimensions.get('window').height;
 
@@ -100,7 +100,7 @@ export default Home;
 
 const styles = StyleSheet.create({
   background: {
-    backgroundColor: COLORS.primary,
+    backgroundColor: Colors.primary,
     flex: 1,
   },
   container: {
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
   },
   bottomContainer: {
     height: hp * 0.65,
-    backgroundColor: COLORS.lightBaseTwo,
+    backgroundColor: Colors.lightBaseTwo,
     bottom: 0,
     left: 0,
     right: 0,

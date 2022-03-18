@@ -3,7 +3,7 @@ import { Dimensions, SectionList, StyleSheet, Text, TouchableOpacity } from 'rea
 
 import { Ionicons } from '@expo/vector-icons';
 
-import COLORS from '~constants/Colors';
+import Colors from '~constants/Colors';
 import responsiveFonts from '~utils/ResponsiveFonts';
 
 const hp = Dimensions.get('window').height;
@@ -23,7 +23,7 @@ function PageList() {
   const renderPage = (page) => (
     <TouchableOpacity style={styles.pageContainer}>
       <Text style={styles.pageName}>{page}</Text>
-      <Ionicons name="chevron-forward-outline" size={hp * 0.04} color={COLORS.lightBaseThree} />
+      <Ionicons name="chevron-forward-outline" size={hp * 0.04} color={Colors.lightBaseThree} />
     </TouchableOpacity>
   );
 
@@ -51,12 +51,12 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   pageName: {
-    color: COLORS.darkBaseOne,
+    color: Colors.darkBaseOne,
     fontSize: responsiveFonts(14),
     fontFamily: 'DMSans_400Regular',
   },
   pageHeaderName: {
-    color: COLORS.lightBaseThree,
+    color: Colors.lightBaseThree,
     fontSize: responsiveFonts(10),
     fontFamily: 'DMSans_400Regular',
   },
