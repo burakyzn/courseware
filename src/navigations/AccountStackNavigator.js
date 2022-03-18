@@ -1,14 +1,14 @@
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import * as React from "react";
-import Account from "screens/Account";
-import CourseDetail from "screens/CourseDetail";
-import Basket from "screens/Basket";
-import Author from "screens/Author";
-import VideoPlayer from "screens/VideoPlayer";
+import React from 'react';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Account from 'screens/Account';
+import CourseDetail from 'screens/CourseDetail';
+import Basket from 'screens/Basket';
+import Author from 'screens/Author';
+import VideoPlayer from 'screens/VideoPlayer';
 
 const AccountStack = createNativeStackNavigator();
 
-const AccountStackNavigator = () => {
+function AccountStackNavigator() {
   return (
     <AccountStack.Navigator>
       <AccountStack.Screen
@@ -48,6 +48,6 @@ const AccountStackNavigator = () => {
       />
     </AccountStack.Navigator>
   );
-};
+}
 
 export default AccountStackNavigator;

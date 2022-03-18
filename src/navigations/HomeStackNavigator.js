@@ -1,14 +1,15 @@
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import * as React from "react";
-import Home from "screens/Home";
-import CourseDetail from "screens/CourseDetail";
-import Basket from "screens/Basket";
-import Author from "screens/Author";
-import VideoPlayer from "screens/VideoPlayer";
+import React from 'react';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+import Home from 'screens/Home';
+import CourseDetail from 'screens/CourseDetail';
+import Basket from 'screens/Basket';
+import Author from 'screens/Author';
+import VideoPlayer from 'screens/VideoPlayer';
 
 const HomeStack = createNativeStackNavigator();
 
-const HomeStackNavigator = () => {
+function HomeStackNavigator() {
   return (
     <HomeStack.Navigator>
       <HomeStack.Screen
@@ -48,6 +49,6 @@ const HomeStackNavigator = () => {
       />
     </HomeStack.Navigator>
   );
-};
+}
 
 export default HomeStackNavigator;

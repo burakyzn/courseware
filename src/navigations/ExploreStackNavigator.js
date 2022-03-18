@@ -1,14 +1,14 @@
-import * as React from "react";
-import Explore from "screens/Explore";
-import CourseDetail from "screens/CourseDetail";
-import Author from "screens/Author";
-import Basket from "screens/Basket";
-import VideoPlayer from "screens/VideoPlayer";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import React from 'react';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Explore from 'screens/Explore';
+import CourseDetail from 'screens/CourseDetail';
+import Author from 'screens/Author';
+import Basket from 'screens/Basket';
+import VideoPlayer from 'screens/VideoPlayer';
 
 const ExploreStack = createNativeStackNavigator();
 
-const ExploreStackNavigator = () => {
+function ExploreStackNavigator() {
   return (
     <ExploreStack.Navigator>
       <ExploreStack.Screen
@@ -48,6 +48,6 @@ const ExploreStackNavigator = () => {
       />
     </ExploreStack.Navigator>
   );
-};
+}
 
 export default ExploreStackNavigator;
