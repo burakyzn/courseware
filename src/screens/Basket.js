@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { useNavigation } from '@react-navigation/native';
 
@@ -10,20 +10,15 @@ import CourseCardList from '~components/core/CourseCardList';
 import Divider from '~components/core/Divider';
 import NavigatorText from '~components/navigations/NavigatorText';
 import Colors from '~constants/Colors';
-import { cleanBasket, itemsSelector, totalPriceSelector } from '~features/BasketSlice';
+import { itemsSelector } from '~features/BasketSlice';
 
 function Basket() {
   const navigation = useNavigation();
-  const dispatch = useDispatch();
-  const totalPrice = useSelector(totalPriceSelector);
+
   const coursesInBasket = useSelector(itemsSelector);
 
   const goBack = () => {
     navigation.goBack();
-  };
-
-  const handleCheckout = () => {
-    dispatch(cleanBasket());
   };
 
   return (
@@ -42,7 +37,7 @@ function Basket() {
       <View style={styles.lowerPart}>
         <CourseCardList style={styles.courseList} data={coursesInBasket} />
         <Divider />
-        <Payment totalPrice={totalPrice} onPress={handleCheckout} />
+        <Payment />
       </View>
     </View>
   );

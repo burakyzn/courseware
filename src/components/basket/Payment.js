@@ -2,12 +2,19 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 import { Button } from 'react-native-elements';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Colors from '~constants/Colors';
+import { cleanBasket, totalPriceSelector } from '~features/BasketSlice';
 import responsiveFonts from '~utils/ResponsiveFonts';
 
-function Payment(props) {
-  const { totalPrice, onPress } = props;
+function Payment() {
+  const dispatch = useDispatch();
+  const totalPrice = useSelector(totalPriceSelector);
+
+  const handleCheckout = () => {
+    dispatch(cleanBasket());
+  };
 
   return (
     <View style={styles.container}>
@@ -20,7 +27,7 @@ function Payment(props) {
           title="Checkout Now"
           buttonStyle={styles.buttonCheckoutStyle}
           containerStyle={styles.buttonCheckoutContainer}
-          onPress={onPress}
+          onPress={handleCheckout}
         />
       </View>
     </View>
