@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+
 import { useNavigation } from '@react-navigation/native';
 
-import COLORS from 'constants/Colors';
-import NavigatorText from 'components/navigations/NavigatorText';
-import Searchbox from 'components/explore/SearchBox';
-import CategoryList from 'components/explore/CategoryList';
-import CourseCardList from 'components/core/CourseCardList';
+import CourseCardList from '~components/core/CourseCardList';
+import CategoryList from '~components/explore/CategoryList';
+import Searchbox from '~components/explore/SearchBox';
+import NavigatorText from '~components/navigations/NavigatorText';
+import COLORS from '~constants/Colors';
 
 function Explore() {
   const navigation = useNavigation();

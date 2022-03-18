@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import COLORS from 'constants/Colors';
+import COLORS from '~constants/Colors';
 
 function Divider() {
   return <View style={styles.divider} />;

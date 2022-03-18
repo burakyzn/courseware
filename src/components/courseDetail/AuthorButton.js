@@ -1,9 +1,10 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+
 import { Ionicons } from '@expo/vector-icons';
 
-import COLORS from 'constants/Colors';
-import responsiveFonts from 'utils/ResponsiveFonts';
+import COLORS from '~constants/Colors';
+import responsiveFonts from '~utils/ResponsiveFonts';
 
 function AuthorButton(props) {
   const { onPress } = props;

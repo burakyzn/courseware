@@ -1,9 +1,10 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+
 import { Button } from 'react-native-elements';
 
-import responsiveFonts from 'utils/ResponsiveFonts';
-import COLORS from 'constants/Colors';
+import COLORS from '~constants/Colors';
+import responsiveFonts from '~utils/ResponsiveFonts';
 
 function Payment(props) {
   const { totalPrice, onPress } = props;

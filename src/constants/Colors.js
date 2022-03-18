@@ -1,4 +1,4 @@
-const COLORS = {
+const Colors = {
   lightBaseOne: '#FCFCFF',
   lightBaseTwo: '#F1F1FA',
   lightBaseThree: '#91919F',
@@ -10,4 +10,4 @@ const COLORS = {
   warning: '#FFC960',
 };
 
-export default COLORS;
+export default Colors;

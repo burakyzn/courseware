@@ -1,8 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, View, Dimensions, Image } from 'react-native';
+import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
 
-import responsiveFonts from 'utils/ResponsiveFonts';
-import COLORS from 'constants/Colors';
+import COLORS from '~constants/Colors';
+import responsiveFonts from '~utils/ResponsiveFonts';
 
 const hp = Dimensions.get('window').height;
 

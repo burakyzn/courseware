@@ -1,9 +1,10 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
+
 import { Input } from 'react-native-elements';
 
-import COLORS from 'constants/Colors';
-import responsiveFonts from 'utils/ResponsiveFonts';
+import COLORS from '~constants/Colors';
+import responsiveFonts from '~utils/ResponsiveFonts';
 
 function InputBox(props) {
   const { placeholder, rightIcon } = props;

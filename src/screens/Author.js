@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+
 import { useNavigation } from '@react-navigation/native';
 
-import COLORS from 'constants/Colors';
-import NavigatorText from 'components/navigations/NavigatorText';
-import ProfileCard from 'components/core/ProfileCard';
-import CourseCardList from 'components/core/CourseCardList';
-import Divider from 'components/core/Divider';
-import AchievementDetail from 'components/author/AchievementDetail';
+import AchievementDetail from '~components/author/AchievementDetail';
+import CourseCardList from '~components/core/CourseCardList';
+import Divider from '~components/core/Divider';
+import ProfileCard from '~components/core/ProfileCard';
+import NavigatorText from '~components/navigations/NavigatorText';
+import COLORS from '~constants/Colors';
 
 function Author() {
   const navigation = useNavigation();

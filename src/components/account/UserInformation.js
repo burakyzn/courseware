@@ -1,11 +1,11 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Dimensions } from 'react-native';
+import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
 
-import COLORS from 'constants/Colors';
-import responsiveFonts from 'utils/ResponsiveFonts';
+import COLORS from '~constants/Colors';
+import responsiveFonts from '~utils/ResponsiveFonts';
 
 const hp = Dimensions.get('window').height;
-const profilePhoto = require('assets/profile-photo.png');
+const profilePhoto = require('~assets/profile-photo.png');
 
 function UserInformation() {
   const handleImageStyle = () => {

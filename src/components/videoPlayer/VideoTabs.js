@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import responsiveFonts from 'utils/ResponsiveFonts';
-import COLORS from 'constants/Colors';
-import Discussion from './Discussion';
-import CourseContext from './CourseContext';
+import COLORS from '~constants/Colors';
+import responsiveFonts from '~utils/ResponsiveFonts';
+
 import TabButton from '../core/TabButton';
+
+import CourseContext from './CourseContext';
+import Discussion from './Discussion';
 
 function VideoTabs() {
   const [isCourseContent, setIsCourseContent] = useState(true);

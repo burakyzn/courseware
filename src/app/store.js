@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
-import tabBarReducer from 'features/TabBarSlice';
-import basketReducer from 'features/BasketSlice';
+
+import basketReducer from '~features/BasketSlice';
+import tabBarReducer from '~features/TabBarSlice';
 
 const store = configureStore({
   reducer: {

@@ -1,10 +1,11 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+
 import { useNavigation } from '@react-navigation/native';
 
-import COLORS from 'constants/Colors';
-import NavigatorText from 'components/navigations/NavigatorText';
-import ProgressTabs from 'components/myCourses/ProgressTabs';
+import ProgressTabs from '~components/myCourses/ProgressTabs';
+import NavigatorText from '~components/navigations/NavigatorText';
+import COLORS from '~constants/Colors';
 
 function MyCourses() {
   const navigation = useNavigation();

@@ -1,7 +1,8 @@
 import React from 'react';
-import { StyleSheet, FlatList, View, Text } from 'react-native';
+import { FlatList, StyleSheet, Text, View } from 'react-native';
 
-import responsiveFonts from 'utils/ResponsiveFonts';
+import responsiveFonts from '~utils/ResponsiveFonts';
+
 import CategoryButton from '../core/CategoryButton';
 
 function CategoryList(props) {

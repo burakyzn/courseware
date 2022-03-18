@@ -1,7 +1,8 @@
-import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 import React from 'react';
-import responsiveFonts from 'utils/ResponsiveFonts';
-import COLORS from 'constants/Colors';
+import { StyleSheet, Text, TouchableOpacity } from 'react-native';
+
+import COLORS from '~constants/Colors';
+import responsiveFonts from '~utils/ResponsiveFonts';
 
 function TabButton(props) {
   const { text, onPress, condition } = props;

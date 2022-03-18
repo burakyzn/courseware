@@ -1,11 +1,13 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { StyleSheet, View } from 'react-native';
+
 import { Video } from 'expo-av';
 
-import COLORS from 'constants/Colors';
-import NavigatorText from 'components/navigations/NavigatorText';
-import VideoTabs from 'components/videoPlayer/VideoTabs';
+import { useNavigation } from '@react-navigation/native';
+
+import NavigatorText from '~components/navigations/NavigatorText';
+import VideoTabs from '~components/videoPlayer/VideoTabs';
+import COLORS from '~constants/Colors';
 
 function VideoPlayer() {
   const navigation = useNavigation();

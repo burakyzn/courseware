@@ -1,9 +1,10 @@
 import React from 'react';
-import { StyleSheet, Text, SectionList, TouchableOpacity, Dimensions } from 'react-native';
+import { Dimensions, SectionList, StyleSheet, Text, TouchableOpacity } from 'react-native';
 
 import { Ionicons } from '@expo/vector-icons';
-import responsiveFonts from 'utils/ResponsiveFonts';
-import COLORS from 'constants/Colors';
+
+import COLORS from '~constants/Colors';
+import responsiveFonts from '~utils/ResponsiveFonts';
 
 const hp = Dimensions.get('window').height;
 

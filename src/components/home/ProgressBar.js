@@ -1,7 +1,7 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
-import COLORS from 'constants/Colors';
+import COLORS from '~constants/Colors';
 
 function ProgressBar({ progression }) {
   return (

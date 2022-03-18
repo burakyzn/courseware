@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, SectionList, TouchableOpacity } from 'react-native';
+import { SectionList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+
 import { CheckBox } from 'react-native-elements';
 
-import COLORS from 'constants/Colors';
-import responsiveFonts from 'utils/ResponsiveFonts';
+import COLORS from '~constants/Colors';
+import responsiveFonts from '~utils/ResponsiveFonts';
 
 function CourseContext() {
   const [isLectureCompleted, setIsLectureCompleted] = useState(false);

@@ -1,11 +1,14 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
+
 import { useSelector } from 'react-redux';
+
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import { selectTabBar } from 'features/TabBarSlice';
-import TabBarLabel from 'components/navigations/TabBarLabel';
-import TabBarIcon from 'components/navigations/TabBarIcon';
+import TabBarIcon from '~components/navigations/TabBarIcon';
+import TabBarLabel from '~components/navigations/TabBarLabel';
+import { selectTabBar } from '~features/TabBarSlice';
+
 import AccountStackNavigator from './AccountStackNavigator';
 import ExploreStackNavigator from './ExploreStackNavigator';
 import HomeStackNavigator from './HomeStackNavigator';

@@ -1,9 +1,9 @@
 import React from 'react';
-import { Text, View, Image, StyleSheet } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
 
-import COLORS from 'constants/Colors';
+import COLORS from '~constants/Colors';
 
-const actievementPhoto = require('assets/achievement.png');
+const actievementPhoto = require('~assets/achievement.png');
 
 function CurrentProgress({ height, progression }) {
   return (

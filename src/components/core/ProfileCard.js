@@ -1,12 +1,13 @@
 import React from 'react';
-import { View, Image, StyleSheet, Text, Dimensions } from 'react-native';
+import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
+
 import { Ionicons } from '@expo/vector-icons';
 
-import COLORS from 'constants/Colors';
-import responsiveFonts from 'utils/ResponsiveFonts';
+import COLORS from '~constants/Colors';
+import responsiveFonts from '~utils/ResponsiveFonts';
 
 const hp = Dimensions.get('window').height;
-const profilePhoto = require('assets/profile-photo.png');
+const profilePhoto = require('~assets/profile-photo.png');
 
 function ProfileCard(props) {
   const { fullName, summary, iconName } = props;

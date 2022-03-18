@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, FlatList } from 'react-native';
+import { FlatList, StyleSheet } from 'react-native';
 
 import Message from './Message';
 

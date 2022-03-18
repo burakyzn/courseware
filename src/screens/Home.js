@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Dimensions } from 'react-native';
+import { Dimensions, StyleSheet, View } from 'react-native';
 
-import CurrentCourse from 'components/home/CurrentCourse';
-import ProfileCard from 'components/core/ProfileCard';
-import COLORS from 'constants/Colors';
-import CourseCardList from 'components/core/CourseCardList';
+import CourseCardList from '~components/core/CourseCardList';
+import ProfileCard from '~components/core/ProfileCard';
+import CurrentCourse from '~components/home/CurrentCourse';
+import COLORS from '~constants/Colors';
 
 const hp = Dimensions.get('window').height;
 

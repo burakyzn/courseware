@@ -1,14 +1,16 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { StyleSheet, View } from 'react-native';
+
 import { useDispatch, useSelector } from 'react-redux';
 
-import COLORS from 'constants/Colors';
-import NavigatorText from 'components/navigations/NavigatorText';
-import { cleanBasket, itemsSelector, totalPriceSelector } from 'features/BasketSlice';
-import CourseCardList from 'components/core/CourseCardList';
-import Divider from 'components/core/Divider';
-import Payment from 'components/basket/Payment';
+import { useNavigation } from '@react-navigation/native';
+
+import Payment from '~components/basket/Payment';
+import CourseCardList from '~components/core/CourseCardList';
+import Divider from '~components/core/Divider';
+import NavigatorText from '~components/navigations/NavigatorText';
+import COLORS from '~constants/Colors';
+import { cleanBasket, itemsSelector, totalPriceSelector } from '~features/BasketSlice';
 
 function Basket() {
   const navigation = useNavigation();

@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, Text } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { useDispatch } from 'react-redux';
-import { Button } from 'react-native-elements';
+import { StyleSheet, Text, View } from 'react-native';
 
-import COLORS from 'constants/Colors';
-import NavigatorText from 'components/navigations/NavigatorText';
-import { openTabBar } from 'features/TabBarSlice';
-import { addToBasket } from 'features/BasketSlice';
-import responsiveFonts from 'utils/ResponsiveFonts';
-import Divider from 'components/core/Divider';
-import AuthorButton from 'components/courseDetail/AuthorButton';
-import CourseInformation from 'components/courseDetail/CourseInformation';
+import { Button } from 'react-native-elements';
+import { useDispatch } from 'react-redux';
+
+import { useNavigation } from '@react-navigation/native';
+
+import Divider from '~components/core/Divider';
+import AuthorButton from '~components/courseDetail/AuthorButton';
+import CourseInformation from '~components/courseDetail/CourseInformation';
+import NavigatorText from '~components/navigations/NavigatorText';
+import COLORS from '~constants/Colors';
+import { addToBasket } from '~features/BasketSlice';
+import { openTabBar } from '~features/TabBarSlice';
+import responsiveFonts from '~utils/ResponsiveFonts';
 
 function CourseDetail() {
   const navigation = useNavigation();

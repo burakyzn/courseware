@@ -1,10 +1,13 @@
 import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
+
+import { useDispatch } from 'react-redux';
+
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-import { useDispatch } from 'react-redux';
-import COLORS from 'constants/Colors';
-import { closeTabBar } from 'features/TabBarSlice';
+
+import COLORS from '~constants/Colors';
+import { closeTabBar } from '~features/TabBarSlice';
 
 function NavigatorText(props) {
   const { width, height, text, onPress, showBasketIcon } = props;

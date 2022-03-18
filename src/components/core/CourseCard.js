@@ -1,11 +1,14 @@
-import { View, StyleSheet, TouchableOpacity, Text, Dimensions } from 'react-native';
 import React from 'react';
-import { useNavigation } from '@react-navigation/native';
-import { Ionicons } from '@expo/vector-icons';
+import { Dimensions, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+
 import { useDispatch } from 'react-redux';
-import COLORS from 'constants/Colors';
-import responsiveFonts from 'utils/ResponsiveFonts';
-import { closeTabBar } from 'features/TabBarSlice';
+
+import { Ionicons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
+
+import COLORS from '~constants/Colors';
+import { closeTabBar } from '~features/TabBarSlice';
+import responsiveFonts from '~utils/ResponsiveFonts';
 
 const hp = Dimensions.get('window').height;
 
