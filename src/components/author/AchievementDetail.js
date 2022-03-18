@@ -1,9 +1,10 @@
-import { StyleSheet, Text, View } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
-import React from "react";
-import COLORS from "constants/Colors";
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 
-const AchievementDetail = () => {
+import COLORS from 'constants/Colors';
+
+function AchievementDetail() {
   return (
     <View style={styles.container}>
       <View style={styles.totalStudent}>
@@ -22,27 +23,27 @@ const AchievementDetail = () => {
       </View>
     </View>
   );
-};
+}
 
 export default AchievementDetail;
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: "row",
+    flexDirection: 'row',
     flex: 1,
-    justifyContent: "space-between",
-    width: "100%",
+    justifyContent: 'space-between',
+    width: '100%',
   },
   reviews: {
     flex: 1,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   totalStudent: {
     flex: 1,
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   actievementText: {
     color: COLORS.lightBaseOne,

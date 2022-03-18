@@ -6,8 +6,8 @@ import { Button } from 'react-native-elements';
 
 import COLORS from 'constants/Colors';
 import NavigatorText from 'components/navigations/NavigatorText';
-import { openTabBar } from 'features/tabBarSlice';
-import { addToBasket } from 'features/basketSlice';
+import { openTabBar } from 'features/TabBarSlice';
+import { addToBasket } from 'features/BasketSlice';
 import responsiveFonts from 'utils/ResponsiveFonts';
 import Divider from 'components/core/Divider';
 import AuthorButton from 'components/courseDetail/AuthorButton';

@@ -1,45 +1,32 @@
-import {
-  StyleSheet,
-  Text,
-  SectionList,
-  TouchableOpacity,
-  Dimensions,
-} from "react-native";
-import React from "react";
-import responsiveFonts from "utils/ResponsiveFonts";
-import COLORS from "constants/Colors";
-import { Ionicons } from "@expo/vector-icons";
+import React from 'react';
+import { StyleSheet, Text, SectionList, TouchableOpacity, Dimensions } from 'react-native';
 
-const hp = Dimensions.get("window").height;
+import { Ionicons } from '@expo/vector-icons';
+import responsiveFonts from 'utils/ResponsiveFonts';
+import COLORS from 'constants/Colors';
 
-const PageList = () => {
+const hp = Dimensions.get('window').height;
+
+function PageList() {
   const pageList = [
     {
-      title: "Account Settings",
-      data: ["Account Security", "Notification Preferences", "Reminders"],
+      title: 'Account Settings',
+      data: ['Account Security', 'Notification Preferences', 'Reminders'],
     },
     {
-      title: "Support",
-      data: ["Ask Question", "F.A.Q", "About"],
+      title: 'Support',
+      data: ['Ask Question', 'F.A.Q', 'About'],
     },
   ];
 
-  const renderPage = (page) => {
-    return (
-      <TouchableOpacity style={styles.pageContainer}>
-        <Text style={styles.pageName}>{page}</Text>
-        <Ionicons
-          name="chevron-forward-outline"
-          size={hp * 0.04}
-          color={COLORS.lightBaseThree}
-        />
-      </TouchableOpacity>
-    );
-  };
+  const renderPage = (page) => (
+    <TouchableOpacity style={styles.pageContainer}>
+      <Text style={styles.pageName}>{page}</Text>
+      <Ionicons name="chevron-forward-outline" size={hp * 0.04} color={COLORS.lightBaseThree} />
+    </TouchableOpacity>
+  );
 
-  const renderPageHeader = (title) => {
-    return <Text style={styles.pageHeaderName}>{title}</Text>;
-  };
+  const renderPageHeader = (title) => <Text style={styles.pageHeaderName}>{title}</Text>;
 
   return (
     <SectionList
@@ -50,7 +37,7 @@ const PageList = () => {
       renderSectionHeader={({ section: { title } }) => renderPageHeader(title)}
     />
   );
-};
+}
 
 export default PageList;
 
@@ -58,18 +45,18 @@ const styles = StyleSheet.create({
   pageContainer: {
     marginVertical: 10,
     flex: 1,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
   pageName: {
     color: COLORS.darkBaseOne,
     fontSize: responsiveFonts(14),
-    fontFamily: "DMSans_400Regular",
+    fontFamily: 'DMSans_400Regular',
   },
   pageHeaderName: {
     color: COLORS.lightBaseThree,
     fontSize: responsiveFonts(10),
-    fontFamily: "DMSans_400Regular",
+    fontFamily: 'DMSans_400Regular',
   },
 });

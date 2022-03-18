@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import { useSelector } from 'react-redux';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import { selectTabBar } from 'features/tabBarSlice';
+import { selectTabBar } from 'features/TabBarSlice';
 import TabBarLabel from 'components/navigations/TabBarLabel';
 import TabBarIcon from 'components/navigations/TabBarIcon';
 import AccountStackNavigator from './AccountStackNavigator';

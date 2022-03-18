@@ -1,9 +1,9 @@
-import { StyleSheet, Text, TouchableOpacity } from "react-native";
-import React from "react";
-import responsiveFonts from "utils/ResponsiveFonts";
-import COLORS from "constants/Colors";
+import { StyleSheet, Text, TouchableOpacity } from 'react-native';
+import React from 'react';
+import responsiveFonts from 'utils/ResponsiveFonts';
+import COLORS from 'constants/Colors';
 
-const TabButton = (props) => {
+function TabButton(props) {
   const { text, onPress, condition } = props;
 
   return (
@@ -11,25 +11,20 @@ const TabButton = (props) => {
       style={[styles.tab, condition ? styles.selectedTabContainer : null]}
       onPress={onPress}
     >
-      <Text
-        style={[
-          styles.tabText,
-          condition ? styles.selectedTab : styles.nonSelectedTab,
-        ]}
-      >
+      <Text style={[styles.tabText, condition ? styles.selectedTab : styles.nonSelectedTab]}>
         {text}
       </Text>
     </TouchableOpacity>
   );
-};
+}
 
 export default TabButton;
 
 const styles = StyleSheet.create({
   tab: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   selectedTabContainer: {
     backgroundColor: COLORS.lightBaseTwo,
@@ -41,7 +36,7 @@ const styles = StyleSheet.create({
     color: COLORS.lightBaseThree,
   },
   tabText: {
-    fontFamily: "DMSans_700Bold",
+    fontFamily: 'DMSans_700Bold',
     fontSize: responsiveFonts(14),
   },
 });

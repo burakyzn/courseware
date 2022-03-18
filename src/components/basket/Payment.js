@@ -1,10 +1,11 @@
-import { StyleSheet, Text, View } from "react-native";
-import React from "react";
-import responsiveFonts from "utils/ResponsiveFonts";
-import COLORS from "constants/Colors";
-import { Button } from "react-native-elements";
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import { Button } from 'react-native-elements';
 
-const Payment = (props) => {
+import responsiveFonts from 'utils/ResponsiveFonts';
+import COLORS from 'constants/Colors';
+
+function Payment(props) {
   const { totalPrice, onPress } = props;
 
   return (
@@ -23,7 +24,7 @@ const Payment = (props) => {
       </View>
     </View>
   );
-};
+}
 
 export default Payment;
 
@@ -32,32 +33,32 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   totalPriceWrapper: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    marginTop: "5%",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: '5%',
   },
   totalPriceText: {
     color: COLORS.lightBaseThree,
     fontSize: responsiveFonts(12),
-    fontFamily: "DMSans_700Bold",
+    fontFamily: 'DMSans_700Bold',
   },
   totalPriceValue: {
     fontSize: responsiveFonts(12),
-    fontFamily: "DMSans_700Bold",
+    fontFamily: 'DMSans_700Bold',
     color: COLORS.darkBaseOne,
   },
   buttonCheckoutWrapper: {
     flex: 1,
-    justifyContent: "flex-end",
+    justifyContent: 'flex-end',
   },
   buttonCheckoutStyle: {
     backgroundColor: COLORS.success,
     borderRadius: 10,
-    height: "100%",
+    height: '100%',
   },
   buttonCheckoutContainer: {
-    alignSelf: "center",
-    width: "100%",
-    marginTop: "5%",
+    alignSelf: 'center',
+    width: '100%',
+    marginTop: '5%',
   },
 });

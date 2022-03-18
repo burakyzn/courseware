@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import COLORS from 'constants/Colors';
 import NavigatorText from 'components/navigations/NavigatorText';
-import { cleanBasket, itemsSelector, totalPriceSelector } from 'features/basketSlice';
+import { cleanBasket, itemsSelector, totalPriceSelector } from 'features/BasketSlice';
 import CourseCardList from 'components/core/CourseCardList';
 import Divider from 'components/core/Divider';
 import Payment from 'components/basket/Payment';

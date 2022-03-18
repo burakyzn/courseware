@@ -1,21 +1,24 @@
-import React from "react";
-import { StyleSheet } from "react-native";
-import { Input } from "react-native-elements";
-import COLORS from "constants/Colors";
-import responsiveFonts from "utils/ResponsiveFonts";
+import React from 'react';
+import { StyleSheet } from 'react-native';
+import { Input } from 'react-native-elements';
 
-const InputBox = ({ placheHolder, value, ...props }) => {
+import COLORS from 'constants/Colors';
+import responsiveFonts from 'utils/ResponsiveFonts';
+
+function InputBox(props) {
+  const { placeholder, rightIcon } = props;
+
   return (
     <Input
-      placeholder={placheHolder}
+      placeholder={placeholder}
       containerStyle={styles.container}
       inputContainerStyle={styles.inputContainer}
       placeholderTextColor={COLORS.lightBaseThree}
       inputStyle={styles.input}
-      {...props}
+      rightIcon={rightIcon}
     />
   );
-};
+}
 
 export default InputBox;
 

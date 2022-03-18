@@ -1,32 +1,27 @@
-import {
-  View,
-  StyleSheet,
-  TouchableOpacity,
-  Text,
-  Dimensions,
-} from "react-native";
-import React from "react";
-import { useNavigation } from "@react-navigation/native";
-import COLORS from "constants/Colors";
-import responsiveFonts from "utils/ResponsiveFonts";
-import { Ionicons } from "@expo/vector-icons";
-import { useDispatch } from "react-redux";
-import { closeTabBar } from "features/tabBarSlice";
-const hp = Dimensions.get("window").height;
+import { View, StyleSheet, TouchableOpacity, Text, Dimensions } from 'react-native';
+import React from 'react';
+import { useNavigation } from '@react-navigation/native';
+import { Ionicons } from '@expo/vector-icons';
+import { useDispatch } from 'react-redux';
+import COLORS from 'constants/Colors';
+import responsiveFonts from 'utils/ResponsiveFonts';
+import { closeTabBar } from 'features/TabBarSlice';
 
-const CourseCard = (props) => {
+const hp = Dimensions.get('window').height;
+
+function CourseCard(props) {
   const { title, author, score, level, price } = props;
   const navigation = useNavigation();
   const dispatch = useDispatch();
 
   const goToCourseDetail = () => {
     dispatch(closeTabBar());
-    navigation.navigate("CourseDetail");
+    navigation.navigate('CourseDetail');
   };
 
   return (
     <TouchableOpacity onPress={goToCourseDetail}>
-      <View height={hp * 0.15} width={"100%"}>
+      <View height={hp * 0.15} width="100%">
         <View style={styles.container}>
           <View style={styles.descriptionWrapper}>
             <View style={styles.description}>
@@ -42,11 +37,11 @@ const CourseCard = (props) => {
               name="star"
               size={15}
               color={COLORS.warning}
-              style={{ marginBottom: "0.5%" }}
+              style={{ marginBottom: '0.5%' }}
             />
             <Text style={styles.score}>{score}</Text>
             <Text style={styles.author}>
-              {" "}
+              {' '}
               • By {author} • {level}
             </Text>
           </View>
@@ -54,7 +49,7 @@ const CourseCard = (props) => {
       </View>
     </TouchableOpacity>
   );
-};
+}
 
 export default CourseCard;
 
@@ -67,39 +62,39 @@ const styles = StyleSheet.create({
   },
   descriptionWrapper: {
     flex: 1,
-    flexDirection: "row",
+    flexDirection: 'row',
   },
   title: {
     color: COLORS.darkBaseOne,
     fontSize: responsiveFonts(14),
-    fontFamily: "DMSans_400Regular",
+    fontFamily: 'DMSans_400Regular',
   },
   description: {
     flex: 3,
   },
   price: {
-    marginTop: "5%",
+    marginTop: '5%',
     fontSize: responsiveFonts(14),
     color: COLORS.darkBaseOne,
-    fontFamily: "DMSans_700Bold",
+    fontFamily: 'DMSans_700Bold',
   },
   iconWrapper: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   score: {
     fontSize: responsiveFonts(12),
-    fontFamily: "DMSans_700Bold",
+    fontFamily: 'DMSans_700Bold',
     marginLeft: 5,
   },
   author: {
     fontSize: responsiveFonts(12),
-    fontFamily: "DMSans_400Regular",
+    fontFamily: 'DMSans_400Regular',
   },
   courseInfoWrapper: {
     flex: 1,
-    flexDirection: "row",
-    alignItems: "flex-end",
+    flexDirection: 'row',
+    alignItems: 'flex-end',
   },
 });

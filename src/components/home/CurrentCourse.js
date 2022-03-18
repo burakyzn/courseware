@@ -1,11 +1,12 @@
-import { View, StyleSheet, Text } from "react-native";
-import React from "react";
-import COLORS from "constants/Colors";
-import ProgressBar from "./ProgressBar";
-import { Ionicons } from "@expo/vector-icons";
-import responsiveFonts from "utils/ResponsiveFonts";
+import React from 'react';
+import { View, StyleSheet, Text } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 
-const CurrentCourse = (props) => {
+import COLORS from 'constants/Colors';
+import responsiveFonts from 'utils/ResponsiveFonts';
+import ProgressBar from './ProgressBar';
+
+function CurrentCourse(props) {
   const { width, height, progression, title, author } = props;
   if (!width || !height) return <View />;
 
@@ -34,7 +35,7 @@ const CurrentCourse = (props) => {
       </View>
     </View>
   );
-};
+}
 
 export default CurrentCourse;
 
@@ -47,12 +48,12 @@ const styles = StyleSheet.create({
   },
   descriptionWrapper: {
     flex: 1,
-    flexDirection: "row",
+    flexDirection: 'row',
   },
   title: {
     color: COLORS.darkBaseOne,
     fontSize: responsiveFonts(14),
-    fontFamily: "DMSans_400Regular",
+    fontFamily: 'DMSans_400Regular',
   },
   description: {
     flex: 3,
@@ -60,30 +61,30 @@ const styles = StyleSheet.create({
   descriptionText: {
     color: COLORS.darkBaseOne,
     fontSize: responsiveFonts(14),
-    fontFamily: "DMSans_400Regular",
+    fontFamily: 'DMSans_400Regular',
   },
   author: {
-    marginTop: "5%",
+    marginTop: '5%',
     fontSize: responsiveFonts(12),
     color: COLORS.darkBaseOne,
-    fontFamily: "DMSans_400Regular_Italic",
+    fontFamily: 'DMSans_400Regular_Italic',
   },
   iconWrapper: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   progression: {
     marginLeft: 10,
-    alignContent: "center",
-    justifyContent: "center",
-    fontFamily: "DMSans_400Regular",
+    alignContent: 'center',
+    justifyContent: 'center',
+    fontFamily: 'DMSans_400Regular',
     fontSize: responsiveFonts(14),
     color: COLORS.lightBaseThree,
   },
   percentage: {
     marginLeft: 5,
-    fontFamily: "DMSans_400Regular",
+    fontFamily: 'DMSans_400Regular',
     fontSize: responsiveFonts(14),
     color: COLORS.darkBaseOne,
   },
@@ -92,12 +93,12 @@ const styles = StyleSheet.create({
   },
   progressTextWrapper: {
     flex: 1,
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   progressBarWrapper: {
     flex: 0.5,
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
   },
 });

@@ -1,19 +1,17 @@
-import React from "react";
-import { View, StyleSheet, Text } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
-import COLORS from "constants/Colors";
-import { useNavigation } from "@react-navigation/native";
-import { useDispatch } from "react-redux";
-import { closeTabBar } from "features/tabBarSlice";
+import React from 'react';
+import { View, StyleSheet, Text } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
+import { useDispatch } from 'react-redux';
+import COLORS from 'constants/Colors';
+import { closeTabBar } from 'features/TabBarSlice';
 
-const NavigatorText = (props) => {
+function NavigatorText(props) {
   const { width, height, text, onPress, showBasketIcon } = props;
   const navigation = useNavigation();
   const dispatch = useDispatch();
 
-  const handleShowIcon = () => {
-    return { display: showBasketIcon ? null : "none" };
-  };
+  const handleShowIcon = () => ({ display: showBasketIcon ? null : 'none' });
 
   return (
     <View width={width} height={height}>
@@ -34,35 +32,35 @@ const NavigatorText = (props) => {
             color={COLORS.lightBaseOne}
             onPress={() => {
               dispatch(closeTabBar());
-              navigation.navigate("Basket");
+              navigation.navigate('Basket');
             }}
           />
         </View>
       </View>
     </View>
   );
-};
+}
 
 export default NavigatorText;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: "row",
+    flexDirection: 'row',
   },
   leftWrapper: {
     flex: 1,
-    justifyContent: "flex-start",
-    flexDirection: "row",
-    alignItems: "center",
+    justifyContent: 'flex-start',
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   text: {
     color: COLORS.lightBaseOne,
-    fontFamily: "DMSans_400Regular",
+    fontFamily: 'DMSans_400Regular',
     marginLeft: 20,
   },
   rightWrapper: {
-    justifyContent: "center",
+    justifyContent: 'center',
     paddingRight: 5,
   },
 });

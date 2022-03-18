@@ -1,15 +1,16 @@
-import { StyleSheet, Text, View, Dimensions, Image } from "react-native";
-import React from "react";
-import responsiveFonts from "utils/ResponsiveFonts";
-import COLORS from "constants/Colors";
+import React from 'react';
+import { StyleSheet, Text, View, Dimensions, Image } from 'react-native';
 
-const hp = Dimensions.get("window").height;
+import responsiveFonts from 'utils/ResponsiveFonts';
+import COLORS from 'constants/Colors';
 
-const Message = (props) => {
+const hp = Dimensions.get('window').height;
+
+function Message(props) {
   const { sender, message, photoUrl } = props;
 
   const handleImageStyle = () => {
-    let ratio = hp * 0.05;
+    const ratio = hp * 0.05;
 
     return {
       width: ratio,
@@ -21,21 +22,21 @@ const Message = (props) => {
 
   return (
     <View style={styles.messageContainer}>
-      <Image style={handleImageStyle()} source={{ uri: photoUrl }}></Image>
+      <Image style={handleImageStyle()} source={{ uri: photoUrl }} />
       <View style={styles.messageWrapper}>
         <Text style={styles.fullName}>{sender}</Text>
         <Text style={styles.message}>{message}</Text>
       </View>
     </View>
   );
-};
+}
 
 export default Message;
 
 const styles = StyleSheet.create({
   messageContainer: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
     marginBottom: 20,
   },
   messageWrapper: {
@@ -43,12 +44,12 @@ const styles = StyleSheet.create({
   },
   fullName: {
     fontSize: responsiveFonts(12),
-    fontFamily: "DMSans_700Bold",
+    fontFamily: 'DMSans_700Bold',
     color: COLORS.primary,
   },
   message: {
     fontSize: responsiveFonts(12),
-    fontFamily: "DMSans_400Regular",
-    textAlign: "justify",
+    fontFamily: 'DMSans_400Regular',
+    textAlign: 'justify',
   },
 });

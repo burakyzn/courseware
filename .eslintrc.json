@@ -24,11 +24,12 @@
   ],
   "rules": {
     "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
     "camelcase": "off",
     "no-param-reassign": [2, { "props": false }],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "no-use-before-define": ["error", { "variables": false }],
-    "react/prop-types": ["error", {"ignore": ["navigation", "navigation.navigate"]}],
+    // "react/prop-types": ["error", {"ignore": ["navigation", "navigation.navigate"]}],
     "import/order": [
       1, 
       { "groups": 

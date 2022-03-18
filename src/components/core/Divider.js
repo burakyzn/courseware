@@ -1,17 +1,18 @@
-import { StyleSheet, View } from "react-native";
-import React from "react";
-import COLORS from "constants/Colors";
+import React from 'react';
+import { StyleSheet, View } from 'react-native';
 
-const Divider = () => {
-  return <View style={styles.divider}></View>;
-};
+import COLORS from 'constants/Colors';
+
+function Divider() {
+  return <View style={styles.divider} />;
+}
 
 export default Divider;
 
 const styles = StyleSheet.create({
   divider: {
     borderTopWidth: 1,
-    width: "100%",
+    width: '100%',
     borderColor: COLORS.lightBaseThree,
   },
 });
