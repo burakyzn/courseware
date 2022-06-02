@@ -1,23 +1,23 @@
 import React, { useState, useEffect,  } from 'react';
 import { Dimensions, StyleSheet, View } from 'react-native';
+import { useSelector, useDispatch } from 'react-redux';
 
 import CourseCardList from '~components/core/CourseCardList';
 import ProfileCard from '~components/core/ProfileCard';
 import CurrentCourse from '~components/home/CurrentCourse';
 import Colors from '~constants/Colors';
 import courseService from '../services/courseService'
+import {lastCourseSelector, fetchUserData} from '~features/AuthSlice';
 
 const hp = Dimensions.get('window').height;
 
 function Home() {
-  const [currentCourse] = useState({
-    title: 'Zero to hero Java Spring Boot crash course',
-    author: 'Barış Ertakuş',
-    progression: '25%',
-  });
+  const dispatch = useDispatch();
 
+  const currentCourse = useSelector(lastCourseSelector);
   const [recommendedCourses, setRecommendedCourses] = useState([]);
 
+  useEffect(() => dispatch(fetchUserData()),[])
   useEffect(async () => setRecommendedCourses(await courseService.getAll()), [])
   
   return (
