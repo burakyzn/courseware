@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect,  } from 'react';
 import { Dimensions, StyleSheet, View } from 'react-native';
 
 import CourseCardList from '~components/core/CourseCardList';
 import ProfileCard from '~components/core/ProfileCard';
 import CurrentCourse from '~components/home/CurrentCourse';
 import Colors from '~constants/Colors';
+import courseService from '../services/courseService'
 
 const hp = Dimensions.get('window').height;
 
@@ -14,57 +15,11 @@ function Home() {
     author: 'Barış Ertakuş',
     progression: '25%',
   });
-  const [recommendedCourses] = useState([
-    {
-      id: '1',
-      title: 'JavaScript Best Practices Course',
-      author: 'Burak Yazan',
-      score: 4.5,
-      level: 'All Level',
-      price: 25,
-    },
-    {
-      id: '2',
-      title: 'Introduction to C++',
-      author: 'Şule Aktaş',
-      score: 4.8,
-      level: 'All Level',
-      price: 25,
-    },
-    {
-      id: '3',
-      title: 'Introduction to Java',
-      author: 'Maftun Hashimli',
-      score: 4.3,
-      level: 'All Level',
-      price: 25,
-    },
-    {
-      id: '4',
-      title: 'React Native Crash Course',
-      author: 'Burak Yazan',
-      score: 4.5,
-      level: 'Entry Level',
-      price: 25,
-    },
-    {
-      id: '5',
-      title: 'Responsive Web Design',
-      author: 'Barış Ertakuş',
-      score: 4.9,
-      level: 'All Level',
-      price: 25,
-    },
-    {
-      id: '6',
-      title: 'Data Visualization With D3.js',
-      author: 'Barış Ertakuş',
-      score: 4.2,
-      level: 'All Level',
-      price: 25,
-    },
-  ]);
 
+  const [recommendedCourses, setRecommendedCourses] = useState([]);
+
+  useEffect(async () => setRecommendedCourses(await courseService.getAll()), [])
+  
   return (
     <View style={styles.background}>
       <View style={styles.bottomContainer} />
