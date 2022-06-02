@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { StyleSheet, View, Text} from 'react-native';
 
 import { useNavigation } from '@react-navigation/native';
 
@@ -8,9 +8,14 @@ import CategoryList from '~components/explore/CategoryList';
 import Searchbox from '~components/explore/SearchBox';
 import NavigatorText from '~components/navigations/NavigatorText';
 import Colors from '~constants/Colors';
+import courseService from '../services/courseService';
 
 function Explore() {
   const navigation = useNavigation();
+
+  const [recommendedCourses, setRecommendedCourses] = useState([]);
+  const [search, setSearch] = useState("");
+
   const [recommendedCategories] = useState([
     {
       id: '1',
@@ -50,56 +55,29 @@ function Explore() {
     },
   ]);
 
-  const [recommendedCourses] = useState([
-    {
-      id: '1',
-      title: 'JavaScript Best Practices Course',
-      author: 'Burak Yazan',
-      score: 4.5,
-      level: 'All Level',
-      price: 25,
-    },
-    {
-      id: '2',
-      title: 'Introduction to C++',
-      author: 'Şule Aktaş',
-      score: 4.8,
-      level: 'All Level',
-      price: 25,
-    },
-    {
-      id: '3',
-      title: 'Introduction to Java',
-      author: 'Maftun Hashimli',
-      score: 4.3,
-      level: 'All Level',
-      price: 25,
-    },
-    {
-      id: '4',
-      title: 'React Native Crash Course',
-      author: 'Burak Yazan',
-      score: 4.5,
-      level: 'Entry Level',
-      price: 25,
-    },
-    {
-      id: '5',
-      title: 'Responsive Web Design',
-      author: 'Barış Ertakuş',
-      score: 4.9,
-      level: 'All Level',
-      price: 25,
-    },
-    {
-      id: '6',
-      title: 'Data Visualization With D3.js',
-      author: 'Barış Ertakuş',
-      score: 4.2,
-      level: 'All Level',
-      price: 25,
-    },
-  ]);
+  useEffect(async () => {
+    let allCourses = await courseService.getAll();
+
+    allCourses = allCourses.map(course => {
+      return {
+        ...course,
+        visible: true
+      }
+    })
+
+    setRecommendedCourses(allCourses)
+  }, []);
+
+  useEffect(() => {
+    let filteredCourses = recommendedCourses.map((course) => {
+      return {
+        ...course,
+        visible: course.title.includes(search)
+      }
+    });
+    
+    setRecommendedCourses(filteredCourses);
+  }, [search])
 
   return (
     <View style={styles.background}>
@@ -118,11 +96,11 @@ function Explore() {
       </View>
       <View style={styles.lowerPart}>
         <View style={styles.searchboxWrapper}>
-          <Searchbox width="100%" height={60} placeholder="Search for courses" />
+          <Searchbox width="100%" height={60} placeholder="Search for courses" setSearch={setSearch} />
         </View>
         <CategoryList header data={recommendedCategories} style={styles.categoryWrapper} />
         <CourseCardList
-          data={recommendedCourses}
+          data={recommendedCourses.filter(course => course.visible)}
           style={styles.recommendedCourses}
           header
           leftText="Recommended Courses"

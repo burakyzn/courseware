@@ -8,7 +8,7 @@ import Colors from '~constants/Colors';
 import responsiveFonts from '~utils/ResponsiveFonts';
 
 function InputBox(props) {
-  const { placeholder, rightIcon } = props;
+  const { placeholder, rightIcon, onChangeText } = props;
 
   return (
     <Input
@@ -18,6 +18,7 @@ function InputBox(props) {
       placeholderTextColor={Colors.lightBaseThree}
       inputStyle={styles.input}
       rightIcon={rightIcon}
+      onChangeText={onChangeText}
     />
   );
 }
@@ -25,11 +26,13 @@ function InputBox(props) {
 InputBox.propTypes = {
   placeholder: PropTypes.string,
   rightIcon: PropTypes.element,
+  onChangeText: PropTypes.func
 };
 
 InputBox.defaultProps = {
   placeholder: null,
   rightIcon: null,
+  onChangeText: null
 };
 
 export default InputBox;

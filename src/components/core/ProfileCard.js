@@ -42,6 +42,7 @@ ProfileCard.propTypes = {
   fullName: PropTypes.string.isRequired,
   summary: PropTypes.string.isRequired,
   iconName: PropTypes.string.isRequired,
+  imageURL: PropTypes.string.isRequired
 };
 
 export default ProfileCard;

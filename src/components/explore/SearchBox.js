@@ -10,13 +10,13 @@ import Colors from '~constants/Colors';
 import InputBox from '../core/InputBox';
 
 function SearchBox(props) {
-  const { width, height, placeholder } = props;
+  const { width, height, placeholder, setSearch } = props;
   return (
     <View width={width} height={height}>
       <View style={styles.container}>
         <InputBox
           rightIcon={<Ionicons name="search-outline" size={32} color="black" />}
-          placeholder={placeholder}
+          placeholder={placeholder} onChangeText={setSearch}
         />
       </View>
     </View>
@@ -27,10 +27,12 @@ SearchBox.propTypes = {
   width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   placeholder: PropTypes.string,
+  setSearch: PropTypes.func
 };
 
 SearchBox.defaultProps = {
   placeholder: '',
+  setSearch: null
 };
 
 export default SearchBox;
