@@ -1,7 +1,7 @@
 import api from "../api"
 
 const authService = {
-  geyUserData: async () => {
+  getUserData: async () => {
     return api.get("user").then(response => response.data);
   }
 };

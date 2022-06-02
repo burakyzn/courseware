@@ -18,7 +18,7 @@ const initialState = {
 export const fetchUserData = createAsyncThunk(
   'auth/fetchUserData',
   async () => {
-    let user = await authService.geyUserData();
+    let user = await authService.getUserData();
     if(user)
       return user[0];
     return null;
