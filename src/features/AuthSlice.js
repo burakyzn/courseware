@@ -5,7 +5,8 @@ const initialState = {
   user: {
     id : "0",
     name: "-",
-    imageURL: "",
+    email: "-",
+    imageURL: "https://avatars.githubusercontent.com/u/102129762",
   },
   lastCourse: {
     title: "-",
@@ -33,6 +34,7 @@ const AuthSlice = createSlice({
       if(action.payload){
         state.user.id = action.payload.id
         state.user.name = action.payload.name
+        state.user.email = action.payload.email
         state.user.imageURL = action.payload.imageURL
         state.lastCourse.author = action.payload.lastCourse.author
         state.lastCourse.title = action.payload.lastCourse.title

@@ -1,13 +1,16 @@
 import React from 'react';
 import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
+import { useSelector } from 'react-redux';
 
 import Colors from '~constants/Colors';
 import responsiveFonts from '~utils/ResponsiveFonts';
+import {userSelector} from '~features/AuthSlice';
 
 const hp = Dimensions.get('window').height;
-const profilePhoto = require('~assets/profile-photo.png');
 
 function UserInformation() {
+  const userData = useSelector(userSelector);
+
   const handleImageStyle = () => {
     const ratio = hp * 0.13;
 
@@ -21,9 +24,9 @@ function UserInformation() {
 
   return (
     <View style={styles.container}>
-      <Image style={handleImageStyle()} source={profilePhoto} />
-      <Text style={styles.fullName}>Burak Yazan</Text>
-      <Text style={styles.email}>brkyznn@gmail.com</Text>
+      <Image style={handleImageStyle()} source={{uri: userData.imageURL}} />
+      <Text style={styles.fullName}>{userData.name}</Text>
+      <Text style={styles.email}>{userData.email}</Text>
     </View>
   );
 }
