@@ -9,10 +9,9 @@ import Colors from '~constants/Colors';
 import responsiveFonts from '~utils/ResponsiveFonts';
 
 const hp = Dimensions.get('window').height;
-const profilePhoto = require('~assets/profile-photo.png');
 
 function ProfileCard(props) {
-  const { fullName, summary, iconName } = props;
+  const { fullName, summary, iconName, imageURL} = props;
 
   const handleImageStyle = () => {
     const ratio = hp * 0.06;
@@ -27,7 +26,9 @@ function ProfileCard(props) {
 
   return (
     <View style={styles.container}>
-      <Image style={handleImageStyle()} source={profilePhoto} />
+      <Image style={handleImageStyle()} source={{
+          uri: imageURL
+        }} />
       <View style={styles.information}>
         <Text style={styles.fullName}>{fullName}</Text>
         <Text style={styles.summary}>{summary}</Text>

@@ -7,14 +7,15 @@ import ProfileCard from '~components/core/ProfileCard';
 import CurrentCourse from '~components/home/CurrentCourse';
 import Colors from '~constants/Colors';
 import courseService from '../services/courseService'
-import {lastCourseSelector, fetchUserData} from '~features/AuthSlice';
+import {lastCourseSelector, fetchUserData, userSelector} from '~features/AuthSlice';
 
 const hp = Dimensions.get('window').height;
 
 function Home() {
   const dispatch = useDispatch();
-
   const currentCourse = useSelector(lastCourseSelector);
+  const userData = useSelector(userSelector);
+
   const [recommendedCourses, setRecommendedCourses] = useState([]);
 
   useEffect(() => dispatch(fetchUserData()),[])
@@ -26,9 +27,10 @@ function Home() {
       <View style={styles.container}>
         <View style={styles.profileWrapper}>
           <ProfileCard
-            fullName="Burak Yazan"
+            fullName={userData.name}
             summary="Welcome back"
             iconName="notifications-outline"
+            imageURL={userData.imageURL}
           />
         </View>
         <View style={styles.currentCourseWrapper}>
