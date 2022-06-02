@@ -9,51 +9,14 @@ import Searchbox from '~components/explore/SearchBox';
 import NavigatorText from '~components/navigations/NavigatorText';
 import Colors from '~constants/Colors';
 import courseService from '../services/courseService';
+import categoryService from '../services/categoryService'
 
 function Explore() {
   const navigation = useNavigation();
 
   const [recommendedCourses, setRecommendedCourses] = useState([]);
+  const [categories, setCategories] = useState([]);
   const [search, setSearch] = useState("");
-
-  const [recommendedCategories] = useState([
-    {
-      id: '1',
-      name: 'Technology',
-    },
-    {
-      id: '2',
-      name: 'JavaScript',
-    },
-    {
-      id: '3',
-      name: 'Science',
-    },
-    {
-      id: '4',
-      name: 'English',
-    },
-    {
-      id: '5',
-      name: 'React Native',
-    },
-    {
-      id: '6',
-      name: 'React',
-    },
-    {
-      id: '7',
-      name: 'Programming',
-    },
-    {
-      id: '8',
-      name: 'Swift',
-    },
-    {
-      id: '9',
-      name: 'Finance',
-    },
-  ]);
 
   useEffect(async () => {
     let allCourses = await courseService.getAll();
@@ -67,6 +30,8 @@ function Explore() {
 
     setRecommendedCourses(allCourses)
   }, []);
+
+  useEffect(async () => setCategories(await categoryService.getAll()),[]);
 
   useEffect(() => {
     let filteredCourses = recommendedCourses.map((course) => {
@@ -98,7 +63,7 @@ function Explore() {
         <View style={styles.searchboxWrapper}>
           <Searchbox width="100%" height={60} placeholder="Search for courses" setSearch={setSearch} />
         </View>
-        <CategoryList header data={recommendedCategories} style={styles.categoryWrapper} />
+        <CategoryList header data={categories} style={styles.categoryWrapper} />
         <CourseCardList
           data={recommendedCourses.filter(course => course.visible)}
           style={styles.recommendedCourses}
