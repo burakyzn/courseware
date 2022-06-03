@@ -37,13 +37,15 @@ function Explore() {
     let filteredCourses = recommendedCourses.map((course) => {
       return {
         ...course,
-        visible: course.title.includes(search)
+        visible: course.title.toUpperCase().includes(search)
       }
     });
     
     setRecommendedCourses(filteredCourses);
   }, [search])
 
+  const handleSetSearch = (value) => setSearch(value.toUpperCase())
+  
   return (
     <View style={styles.background}>
       <View style={styles.upperPart}>
@@ -61,7 +63,7 @@ function Explore() {
       </View>
       <View style={styles.lowerPart}>
         <View style={styles.searchboxWrapper}>
-          <Searchbox width="100%" height={60} placeholder="Search for courses" setSearch={setSearch} />
+          <Searchbox width="100%" height={60} placeholder="Search for courses" setSearch={handleSetSearch} />
         </View>
         <CategoryList header data={categories} style={styles.categoryWrapper} />
         <CourseCardList

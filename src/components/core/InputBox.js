@@ -19,6 +19,9 @@ function InputBox(props) {
       inputStyle={styles.input}
       rightIcon={rightIcon}
       onChangeText={onChangeText}
+      autoCapitalize="none"
+      autoCompleteType="off"
+      autoCorrect={false}
     />
   );
 }
