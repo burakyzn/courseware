@@ -13,6 +13,8 @@ const initialState = {
     author: "-",
     progression: "0%"
   },
+  inProgress : [],
+  done: []
 }
 
 export const fetchUserData = createAsyncThunk(
@@ -39,6 +41,8 @@ const AuthSlice = createSlice({
         state.lastCourse.author = action.payload.lastCourse.author
         state.lastCourse.title = action.payload.lastCourse.title
         state.lastCourse.progression = action.payload.lastCourse.progression
+        state.inProgress = action.payload.inProgress;
+        state.done = action.payload.done;
       }
     })
   },
@@ -46,6 +50,9 @@ const AuthSlice = createSlice({
 
 export const userSelector = (state) => state.auth.user;
 export const lastCourseSelector = (state) => state.auth.lastCourse;
+export const inProgressCourseSelector = (state) => state.auth.inProgress;
+export const doneCourseSelector = (state) => state.auth.done;
+
 export const {} = AuthSlice.actions
 export default AuthSlice.reducer
 

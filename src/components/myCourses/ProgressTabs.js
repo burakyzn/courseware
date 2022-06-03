@@ -1,91 +1,49 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useLayoutEffect} from 'react';
 import { StyleSheet, View } from 'react-native';
+import { useSelector } from 'react-redux';
 
 import Colors from '~constants/Colors';
 import responsiveFonts from '~utils/ResponsiveFonts';
+import {inProgressCourseSelector, doneCourseSelector} from '~features/AuthSlice';
+import courseService from '../../services/courseService'
 
 import CourseCardList from '../core/CourseCardList';
 import TabButton from '../core/TabButton';
 
 function ProgressTabs() {
+  const [courses, setCourses] = useState([]);
   const [isDoneSection, setIsDoneSection] = useState(false);
-  const [inProgressCourses] = useState([
-    {
-      id: '1',
-      title: 'JavaScript Best Practices Course',
-      author: 'Burak Yazan',
-      score: 4.5,
-      level: 'All Level',
-      price: 25,
-    },
-    {
-      id: '2',
-      title: 'Introduction to C++',
-      author: 'Şule Aktaş',
-      score: 4.8,
-      level: 'All Level',
-      price: 25,
-    },
-    {
-      id: '3',
-      title: 'Introduction to Java',
-      author: 'Maftun Hashimli',
-      score: 4.3,
-      level: 'All Level',
-      price: 25,
-    },
-    {
-      id: '4',
-      title: 'Data Visualization With D3.js',
-      author: 'Barış Ertakuş',
-      score: 4.2,
-      level: 'All Level',
-      price: 25,
-    },
-  ]);
-  const [doneCourses] = useState([
-    {
-      id: '1',
-      title: 'React Native Crash Course',
-      author: 'Burak Yazan',
-      score: 4.5,
-      level: 'Entry Level',
-      price: 25,
-    },
-    {
-      id: '2',
-      title: 'Responsive Web Design',
-      author: 'Barış Ertakuş',
-      score: 4.9,
-      level: 'All Level',
-      price: 25,
-    },
-    {
-      id: '3',
-      title: 'Data Visualization With D3.js',
-      author: 'Barış Ertakuş',
-      score: 4.2,
-      level: 'All Level',
-      price: 25,
-    },
-    {
-      id: '4',
-      title: 'Data Visualization With D3.js',
-      author: 'Barış Ertakuş',
-      score: 4.2,
-      level: 'All Level',
-      price: 25,
-    },
-    {
-      id: '5',
-      title: 'Data Visualization With D3.js',
-      author: 'Barış Ertakuş',
-      score: 4.2,
-      level: 'All Level',
-      price: 25,
-    },
-  ]);
+  const [inProgressCourses, setInProgressCourses] = useState([]);
+  const [doneCourses, setDoneCourses] = useState([]);
 
+  const inProgressCourseIds = useSelector(inProgressCourseSelector);
+  const doneCourseIds = useSelector(doneCourseSelector);
+
+  useLayoutEffect(() => {
+    let fetchData = async () => {
+      let course = await courseService.getAll();
+      setCourses(course);
+    }
+
+    fetchData().catch(console.error);
+  }, [])
+
+  useEffect(async () => {
+    let inProgressCourses = courses.filter((course) => {
+      return inProgressCourseIds.includes(course.id);
+    });
+
+    setInProgressCourses(inProgressCourses);
+  }, [inProgressCourseIds, courses])
+
+  useEffect(async () => {
+    let doneCourses = courses.filter((course) => {
+      return doneCourseIds.includes(course.id);
+    });
+
+    setDoneCourses(doneCourses);
+  }, [doneCourseIds, courses])
+  
   return (
     <View style={styles.container}>
       <View style={styles.tabBarContainer}>
