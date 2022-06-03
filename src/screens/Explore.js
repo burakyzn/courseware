@@ -34,7 +34,7 @@ function Explore() {
   }, []);
   
   const handleCategoryChange = async (categoryId) => {
-    let course = await courseService.getByCategory(categoryId);
+    let course = await courseService.getByCategoryId(categoryId);
 
     course = course.map(course => {
       return {

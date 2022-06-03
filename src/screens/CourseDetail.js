@@ -103,7 +103,8 @@ function CourseDetail() {
                 authorName: author.name,
                 courseCount: author.courseCount,
                 studentCount: author.studentCount,
-                reviewCount: author.reviewCount
+                reviewCount: author.reviewCount,
+                imageURL:author.imageURL
               });
             }}
           />

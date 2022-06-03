@@ -5,21 +5,23 @@ import { Ionicons } from '@expo/vector-icons';
 
 import Colors from '~constants/Colors';
 
-function AchievementDetail() {
+function AchievementDetail(props) {
+  const {studentCount, reviewCount} = props;
+
   return (
     <View style={styles.container}>
       <View style={styles.totalStudent}>
         <Ionicons name="trophy-outline" size={45} color={Colors.lightBaseOne} />
         <View>
           <Text style={styles.actievementText}>Total Students</Text>
-          <Text style={styles.actievementText}>2405</Text>
+          <Text style={styles.actievementText}>{studentCount}</Text>
         </View>
       </View>
       <View style={styles.reviews}>
         <Ionicons name="trophy-outline" size={45} color={Colors.lightBaseOne} />
         <View>
           <Text style={styles.actievementText}>Reviews</Text>
-          <Text style={styles.actievementText}>1205</Text>
+          <Text style={styles.actievementText}>{reviewCount}</Text>
         </View>
       </View>
     </View>

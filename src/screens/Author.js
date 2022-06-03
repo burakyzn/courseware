@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 
 import AchievementDetail from '~components/author/AchievementDetail';
 import CourseCardList from '~components/core/CourseCardList';
@@ -9,61 +9,29 @@ import Divider from '~components/core/Divider';
 import ProfileCard from '~components/core/ProfileCard';
 import NavigatorText from '~components/navigations/NavigatorText';
 import Colors from '~constants/Colors';
+import courseService from '../services/courseService'
 
 function Author() {
   const navigation = useNavigation();
+  const {
+    authorId,
+    authorName,
+    studentCount,
+    reviewCount,
+    imageURL
+  } = useRoute().params;
 
-  const [authorCourses] = useState([
-    {
-      id: '1',
-      title: 'JavaScript Best Practices Course',
-      author: 'Burak Yazan',
-      score: 4.5,
-      level: 'All Level',
-      price: 25,
-    },
-    {
-      id: '2',
-      title: 'Introduction to C++',
-      author: 'Şule Aktaş',
-      score: 4.8,
-      level: 'All Level',
-      price: 25,
-    },
-    {
-      id: '3',
-      title: 'Introduction to Java',
-      author: 'Maftun Hashimli',
-      score: 4.3,
-      level: 'All Level',
-      price: 25,
-    },
-    {
-      id: '4',
-      title: 'React Native Crash Course',
-      author: 'Burak Yazan',
-      score: 4.5,
-      level: 'Entry Level',
-      price: 25,
-    },
-    {
-      id: '5',
-      title: 'Responsive Web Design',
-      author: 'Barış Ertakuş',
-      score: 4.9,
-      level: 'All Level',
-      price: 25,
-    },
-    {
-      id: '6',
-      title: 'Data Visualization With D3.js',
-      author: 'Barış Ertakuş',
-      score: 4.2,
-      level: 'All Level',
-      price: 25,
-    },
-  ]);
+  const [authorCourses, setAuthorCourses] = useState([])
 
+  useEffect(async () => {
+    let fetchAuthorCourses = async () => {
+      let courses = await courseService.getByAuthorId(authorId);
+      setAuthorCourses(courses);
+    }
+
+    fetchAuthorCourses().catch(console.error);
+  }, [])
+  
   return (
     <View style={styles.background}>
       <View style={styles.upperPart}>
@@ -81,12 +49,13 @@ function Author() {
       </View>
       <View style={styles.middlePart}>
         <ProfileCard
-          fullName="Burak Yazan"
+          fullName={authorName}
           summary="Software Engineer"
+          imageURL={imageURL}
           iconName="chatbox-ellipses-outline"
         />
         <Divider />
-        <AchievementDetail />
+        <AchievementDetail studentCount={studentCount} reviewCount={reviewCount} />
       </View>
       <View style={styles.lowerPart}>
         <CourseCardList
