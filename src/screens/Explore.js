@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, View} from 'react-native';
+import {useSelector} from 'react-redux';
 
 import { useNavigation } from '@react-navigation/native';
 
@@ -9,14 +10,15 @@ import Searchbox from '~components/explore/SearchBox';
 import NavigatorText from '~components/navigations/NavigatorText';
 import Colors from '~constants/Colors';
 import courseService from '../services/courseService';
-import categoryService from '../services/categoryService'
+import {categorySelector} from '~features/CategorySlice';
 
 function Explore() {
   const navigation = useNavigation();
 
   const [searchResultText, setSearchResultText] = useState("Recommended Courses");
   const [recommendedCourses, setRecommendedCourses] = useState([]);
-  const [categories, setCategories] = useState([]);
+
+  const categories = useSelector(categorySelector);
 
   useEffect(async () => {
     let allCourses = await courseService.getAll();
@@ -30,9 +32,7 @@ function Explore() {
 
     setRecommendedCourses(allCourses)
   }, []);
-
-  useEffect(async () => setCategories(await categoryService.getAll()),[]);
-
+  
   const handleCategoryChange = async (categoryId) => {
     let course = await courseService.getByCategory(categoryId);
 

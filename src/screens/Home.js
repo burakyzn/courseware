@@ -8,6 +8,7 @@ import CurrentCourse from '~components/home/CurrentCourse';
 import Colors from '~constants/Colors';
 import courseService from '../services/courseService'
 import {lastCourseSelector, fetchUserData, userSelector} from '~features/AuthSlice';
+import {fetchCategoryData} from '~features/CategorySlice';
 
 const hp = Dimensions.get('window').height;
 
@@ -19,6 +20,7 @@ function Home() {
   const [recommendedCourses, setRecommendedCourses] = useState([]);
 
   useEffect(() => dispatch(fetchUserData()),[])
+  useEffect(() => dispatch(fetchCategoryData()),[])
   useEffect(async () => setRecommendedCourses(await courseService.getAll()), [])
   
   return (
