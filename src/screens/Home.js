@@ -21,7 +21,13 @@ function Home() {
 
   useEffect(() => dispatch(fetchUserData()),[])
   useEffect(() => dispatch(fetchCategoryData()),[])
-  useEffect(async () => setRecommendedCourses(await courseService.getAll()), [])
+  useEffect(() => {
+    let fetchAllCourses = async () => {
+      let allCourses = await courseService.getAll();
+      setRecommendedCourses(allCourses);
+    }
+    fetchAllCourses().catch(console.error);
+  }, [])
   
   return (
     <View style={styles.background}>

@@ -32,9 +32,12 @@ function CourseDetail() {
   const categoryList = useSelector(categorySelector);
   const dispatch = useDispatch();
 
-  useEffect(async () => {
-    let author = await authorService.getById(authorId);
-    setAuthor(author);
+  useEffect(() => {
+    let fetchAuthor = async () => {
+      let author = await authorService.getById(authorId);
+      setAuthor(author);
+    }
+    fetchAuthor().catch(console.error);
   }, [])
   
 

@@ -23,12 +23,11 @@ function Author() {
 
   const [authorCourses, setAuthorCourses] = useState([])
 
-  useEffect(async () => {
+  useEffect(() => {
     let fetchAuthorCourses = async () => {
       let courses = await courseService.getByAuthorId(authorId);
       setAuthorCourses(courses);
     }
-
     fetchAuthorCourses().catch(console.error);
   }, [])
   

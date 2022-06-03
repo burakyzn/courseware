@@ -28,20 +28,24 @@ function ProgressTabs() {
     fetchData().catch(console.error);
   }, [])
 
-  useEffect(async () => {
-    let inProgressCourses = courses.filter((course) => {
-      return inProgressCourseIds.includes(course.id);
-    });
-
-    setInProgressCourses(inProgressCourses);
+  useEffect(() => {
+    let fetchInprogressCourses = async () => {
+      let inProgressCourses = courses.filter((course) => {
+        return inProgressCourseIds.includes(course.id);
+      });
+      setInProgressCourses(inProgressCourses);
+    }
+    fetchInprogressCourses().catch(console.error);
   }, [inProgressCourseIds, courses])
 
-  useEffect(async () => {
-    let doneCourses = courses.filter((course) => {
-      return doneCourseIds.includes(course.id);
-    });
-
-    setDoneCourses(doneCourses);
+  useEffect(() => {
+    let fetchDoneCourses = async () => {
+      let doneCourses = courses.filter((course) => {
+        return doneCourseIds.includes(course.id);
+      });
+      setDoneCourses(doneCourses);
+    }
+    fetchDoneCourses().catch(console.error);
   }, [doneCourseIds, courses])
   
   return (

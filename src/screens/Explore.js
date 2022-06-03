@@ -20,22 +20,22 @@ function Explore() {
 
   const categories = useSelector(categorySelector);
 
-  useEffect(async () => {
-    let allCourses = await courseService.getAll();
-
-    allCourses = allCourses.map(course => {
-      return {
-        ...course,
-        visible: true
-      }
-    })
-
-    setRecommendedCourses(allCourses)
+  useEffect(() => {
+    let fetchAllCourses = async () => {
+      let allCourses = await courseService.getAll();
+      allCourses = allCourses.map(course => {
+        return {
+          ...course,
+          visible: true
+        }
+      })
+      setRecommendedCourses(allCourses)
+    }
+    fetchAllCourses().catch(console.error);
   }, []);
   
   const handleCategoryChange = async (categoryId) => {
     let course = await courseService.getByCategoryId(categoryId);
-
     course = course.map(course => {
       return {
         ...course,
@@ -55,8 +55,8 @@ function Explore() {
       }
     });
 
-      setSearchResultText("Search Result");
-      setRecommendedCourses(filteredCourses);
+    setSearchResultText("Search Result");
+    setRecommendedCourses(filteredCourses);
   }
   
   return (
