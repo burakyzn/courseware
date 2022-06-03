@@ -8,7 +8,7 @@ import responsiveFonts from '~utils/ResponsiveFonts';
 import CategoryButton from '../core/CategoryButton';
 
 function CategoryList(props) {
-  const { header, data, style } = props;
+  const { header, data, style, onCategoryChange } = props;
 
   return (
     <View style={style}>
@@ -16,7 +16,7 @@ function CategoryList(props) {
       <FlatList
         style={styles.categories}
         data={data}
-        renderItem={({ item }) => <CategoryButton text={item.name} />}
+        renderItem={({ item }) => <CategoryButton onPress={() => onCategoryChange(item.id)} text={item.name} />}
         keyExtractor={(item) => item.id}
         horizontal
         showsHorizontalScrollIndicator={false}
@@ -34,11 +34,13 @@ CategoryList.propTypes = {
   ).isRequired,
   header: PropTypes.bool,
   style: PropTypes.shape({}),
+  onCategoryChange: PropTypes.func
 };
 
 CategoryList.defaultProps = {
-  header: null,
+  header: false,
   style: {},
+  onCategoryChange: () => {}
 };
 
 export default CategoryList;

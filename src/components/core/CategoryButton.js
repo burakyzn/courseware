@@ -7,10 +7,10 @@ import Colors from '~constants/Colors';
 import responsiveFonts from '~utils/ResponsiveFonts';
 
 function CategoryButton(props) {
-  const { text, backgroundColor, textColor } = props;
+  const { text, backgroundColor, textColor, onPress } = props;
 
   return (
-    <TouchableOpacity style={[styles.container, { backgroundColor }]}>
+    <TouchableOpacity onPress={onPress} style={[styles.container, { backgroundColor }]}>
       <Text style={[{ color: textColor }, styles.text]}>{text}</Text>
     </TouchableOpacity>
   );
@@ -20,11 +20,13 @@ CategoryButton.propTypes = {
   text: PropTypes.string.isRequired,
   backgroundColor: PropTypes.string,
   textColor: PropTypes.string,
+  onPress : PropTypes.func
 };
 
 CategoryButton.defaultProps = {
   backgroundColor: Colors.primary,
   textColor: Colors.lightBaseOne,
+  onPress: () => {}
 };
 
 export default CategoryButton;

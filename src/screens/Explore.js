@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, View, Text} from 'react-native';
+import { StyleSheet, View} from 'react-native';
 
 import { useNavigation } from '@react-navigation/native';
 
@@ -14,9 +14,9 @@ import categoryService from '../services/categoryService'
 function Explore() {
   const navigation = useNavigation();
 
+  const [searchResultText, setSearchResultText] = useState("Recommended Courses");
   const [recommendedCourses, setRecommendedCourses] = useState([]);
   const [categories, setCategories] = useState([]);
-  const [search, setSearch] = useState("");
 
   useEffect(async () => {
     let allCourses = await courseService.getAll();
@@ -33,18 +33,31 @@ function Explore() {
 
   useEffect(async () => setCategories(await categoryService.getAll()),[]);
 
-  useEffect(() => {
+  const handleCategoryChange = async (categoryId) => {
+    let course = await courseService.getByCategory(categoryId);
+
+    course = course.map(course => {
+      return {
+        ...course,
+        visible: true
+      }
+    })
+    
+    setSearchResultText("Search Result");
+    setRecommendedCourses(course);
+  }
+
+  const handleSearchTextChange = async (searchText) => {
     let filteredCourses = recommendedCourses.map((course) => {
       return {
         ...course,
-        visible: course.title.toUpperCase().includes(search)
+        visible: course.title.toUpperCase().includes(searchText.toUpperCase())
       }
     });
-    
-    setRecommendedCourses(filteredCourses);
-  }, [search])
 
-  const handleSetSearch = (value) => setSearch(value.toUpperCase())
+      setSearchResultText("Search Result");
+      setRecommendedCourses(filteredCourses);
+  }
   
   return (
     <View style={styles.background}>
@@ -63,14 +76,14 @@ function Explore() {
       </View>
       <View style={styles.lowerPart}>
         <View style={styles.searchboxWrapper}>
-          <Searchbox width="100%" height={60} placeholder="Search for courses" setSearch={handleSetSearch} />
+          <Searchbox width="100%" height={60} placeholder="Search for courses" onSearchTextChange={handleSearchTextChange} />
         </View>
-        <CategoryList header data={categories} style={styles.categoryWrapper} />
+        <CategoryList onCategoryChange={handleCategoryChange} header data={categories} style={styles.categoryWrapper} />
         <CourseCardList
           data={recommendedCourses.filter(course => course.visible)}
           style={styles.recommendedCourses}
           header
-          leftText="Recommended Courses"
+          leftText={searchResultText}
         />
       </View>
     </View>
