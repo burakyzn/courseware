@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 import { Button } from 'react-native-elements';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute} from '@react-navigation/native';
 
 import Divider from '~components/core/Divider';
 import AuthorButton from '~components/courseDetail/AuthorButton';
@@ -13,25 +12,15 @@ import NavigatorText from '~components/navigations/NavigatorText';
 import Colors from '~constants/Colors';
 import { addToBasket } from '~features/BasketSlice';
 import { openTabBar } from '~features/TabBarSlice';
+import {categorySelector} from '~features/CategorySlice';
 import responsiveFonts from '~utils/ResponsiveFonts';
 
 function CourseDetail() {
   const navigation = useNavigation();
-  const dispatch = useDispatch();
+  const {id, title, author, score, level, price, categories, description} = useRoute().params;
 
-  const [mockCourse] = useState({
-    id: '1',
-    title: 'JavaScript Best Practices Course',
-    author: 'Burak Yazan',
-    score: 4.5,
-    level: 'All Level',
-    price: 25,
-    categories: [
-      { id: '1', name: 'Swift UI' },
-      { id: '2', name: 'Software Development' },
-    ],
-    description: `Phasellus vestibulum lorem sed risus ultricies tristique nulla aliquet. Vel quam elementum pulvinar etiamnim lobortis scelerisque. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur....`,
-  });
+  const categoryList = useSelector(categorySelector);
+  const dispatch = useDispatch();
 
   const goBack = () => {
     dispatch(openTabBar());
@@ -39,12 +28,29 @@ function CourseDetail() {
   };
 
   const handleAddToBasket = () => {
-    dispatch(addToBasket(mockCourse));
+    let course = {
+      id,
+      title,
+      author,
+      score,
+      level,
+      price,
+      categories,
+      description
+    }
+
+    dispatch(addToBasket(course));
   };
 
   const handleSeeDetails = () => {
     navigation.navigate('VideoPlayer');
   };
+
+  const handleCourseCategories = () => {
+    return categories.map((categoryId) => {
+      return {id: categoryId.toString(), name : categoryList.find(category => category.id == categoryId).name}
+    });
+  }
 
   return (
     <View style={styles.background}>
@@ -60,17 +66,18 @@ function CourseDetail() {
         </View>
       </View>
       <View style={styles.middlePart}>
-        <CourseInformation title={mockCourse.title} data={mockCourse.categories} />
+        <CourseInformation title={title} data={handleCourseCategories()} />
       </View>
       <View style={styles.space} />
       <View style={styles.lowerPart}>
         <View style={styles.descriptionWrapper}>
           <Text style={styles.descriptionHeader}>Description</Text>
-          <Text style={styles.description}>{mockCourse.description}</Text>
+          <Text style={styles.description}>{description}</Text>
         </View>
         <View style={styles.bottomArea}>
           <Divider />
           <AuthorButton
+            name={author}
             onPress={() => {
               navigation.navigate('Author');
             }}

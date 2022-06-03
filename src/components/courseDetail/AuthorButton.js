@@ -9,7 +9,7 @@ import Colors from '~constants/Colors';
 import responsiveFonts from '~utils/ResponsiveFonts';
 
 function AuthorButton(props) {
-  const { onPress } = props;
+  const { name, onPress } = props;
 
   return (
     <TouchableOpacity style={styles.authorWrapper} onPress={onPress}>
@@ -17,7 +17,7 @@ function AuthorButton(props) {
         <Ionicons name="person-circle" size={60} color="black" />
       </View>
       <View style={styles.authorInformation}>
-        <Text style={styles.authorFullName}>Burak Yazan</Text>
+        <Text style={styles.authorFullName}>{name}</Text>
         <Text style={styles.authorSummary}>14 Courses • 1400 Students</Text>
       </View>
     </TouchableOpacity>
@@ -25,6 +25,7 @@ function AuthorButton(props) {
 }
 
 AuthorButton.propTypes = {
+  name: PropTypes.string.isRequired,
   onPress: PropTypes.func,
 };
 

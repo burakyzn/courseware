@@ -27,7 +27,10 @@ function CourseCardList(props) {
         renderItem={({ item }) => (
           <View style={styles.courseWrapper}>
             <CourseCard
+              id={item.id}
               title={item.title}
+              description={item.description}
+              categories={item.categories}
               author={item.author}
               score={item.score}
               level={item.level}

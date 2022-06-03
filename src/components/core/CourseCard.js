@@ -14,13 +14,22 @@ import responsiveFonts from '~utils/ResponsiveFonts';
 const hp = Dimensions.get('window').height;
 
 function CourseCard(props) {
-  const { title, author, score, level, price } = props;
+  const { id, title, description, categories, author, score, level, price } = props;
   const navigation = useNavigation();
   const dispatch = useDispatch();
 
   const goToCourseDetail = () => {
     dispatch(closeTabBar());
-    navigation.navigate('CourseDetail');
+    navigation.navigate('CourseDetail', {
+      id,
+      title,
+      author,
+      score,
+      level,
+      price,
+      categories,
+      description
+    });
   };
 
   return (
@@ -56,7 +65,10 @@ function CourseCard(props) {
 }
 
 CourseCard.propTypes = {
+  id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  categories: PropTypes.array.isRequired,
   author: PropTypes.string.isRequired,
   score: PropTypes.number.isRequired,
   level: PropTypes.string.isRequired,
