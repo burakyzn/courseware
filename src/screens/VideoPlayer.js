@@ -37,6 +37,7 @@ function VideoPlayer() {
           }}
           useNativeControls
           resizeMode="contain"
+          backgroundColor="black"
         />
       </View>
       <View style={styles.lowerPart}>
