@@ -1,3 +1,4 @@
+import { useEffect, useState} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 import { Button } from 'react-native-elements';
@@ -14,13 +15,28 @@ import { addToBasket } from '~features/BasketSlice';
 import { openTabBar } from '~features/TabBarSlice';
 import {categorySelector} from '~features/CategorySlice';
 import responsiveFonts from '~utils/ResponsiveFonts';
+import authorService from '../services/authorService';
 
 function CourseDetail() {
   const navigation = useNavigation();
-  const {id, title, author, score, level, price, categories, description} = useRoute().params;
+  const {id, title, authorId, score, level, price, categories, description} = useRoute().params;
+
+  const [author, setAuthor] = useState({
+    name: "",
+    imageURL: "https://avatars.githubusercontent.com/u/102129762",
+    courseCount: 0,
+    studentCount: 0,
+    reviewCount: 0
+  })
 
   const categoryList = useSelector(categorySelector);
   const dispatch = useDispatch();
+
+  useEffect(async () => {
+    let author = await authorService.getById(authorId);
+    setAuthor(author);
+  }, [])
+  
 
   const goBack = () => {
     dispatch(openTabBar());
@@ -31,12 +47,12 @@ function CourseDetail() {
     let course = {
       id,
       title,
-      author,
       score,
       level,
       price,
       categories,
-      description
+      description,
+      author : author.name,
     }
 
     dispatch(addToBasket(course));
@@ -77,9 +93,18 @@ function CourseDetail() {
         <View style={styles.bottomArea}>
           <Divider />
           <AuthorButton
-            name={author}
+            name={author.name}
+            imageURL={author.imageURL}
+            courseCount={author.courseCount}
+            studentCount={author.studentCount}
             onPress={() => {
-              navigation.navigate('Author');
+              navigation.navigate('Author', {
+                authorId: author.id,
+                authorName: author.name,
+                courseCount: author.courseCount,
+                studentCount: author.studentCount,
+                reviewCount: author.reviewCount
+              });
             }}
           />
           <View style={styles.buttonWrapper}>

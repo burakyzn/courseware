@@ -32,6 +32,7 @@ function CourseCardList(props) {
               description={item.description}
               categories={item.categories}
               author={item.author}
+              authorId={item.authorId}
               score={item.score}
               level={item.level}
               price={item.price}
@@ -51,6 +52,7 @@ CourseCardList.propTypes = {
       id: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
       author: PropTypes.string.isRequired,
+      authorId: PropTypes.string.isRequired,
       score: PropTypes.number.isRequired,
       level: PropTypes.string.isRequired,
       price: PropTypes.number.isRequired,

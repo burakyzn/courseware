@@ -14,7 +14,7 @@ import responsiveFonts from '~utils/ResponsiveFonts';
 const hp = Dimensions.get('window').height;
 
 function CourseCard(props) {
-  const { id, title, description, categories, author, score, level, price } = props;
+  const { id, title, description, categories, author, authorId, score, level, price } = props;
   const navigation = useNavigation();
   const dispatch = useDispatch();
 
@@ -24,6 +24,7 @@ function CourseCard(props) {
       id,
       title,
       author,
+      authorId,
       score,
       level,
       price,
@@ -69,7 +70,7 @@ CourseCard.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   categories: PropTypes.array.isRequired,
-  author: PropTypes.string.isRequired,
+  authorId: PropTypes.string.isRequired,
   score: PropTypes.number.isRequired,
   level: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
