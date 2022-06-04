@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import CourseCardList from '~components/core/CourseCardList';
 import ProfileCard from '~components/core/ProfileCard';
 import CurrentCourse from '~components/home/CurrentCourse';
-import Colors from '~constants/Colors';
+import COLORS from '~constants/colors';
 import courseService from '../services/courseService'
 import {lastCourseSelector, fetchUserData, userSelector} from '~features/AuthSlice';
 import {fetchCategoryData} from '~features/CategorySlice';
@@ -65,7 +65,7 @@ export default Home;
 
 const styles = StyleSheet.create({
   background: {
-    backgroundColor: Colors.primary,
+    backgroundColor: COLORS.primary,
     flex: 1,
   },
   container: {
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
   },
   bottomContainer: {
     height: hp * 0.65,
-    backgroundColor: Colors.lightBaseTwo,
+    backgroundColor: COLORS.lightBaseTwo,
     bottom: 0,
     left: 0,
     right: 0,

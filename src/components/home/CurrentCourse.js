@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import { Ionicons } from '@expo/vector-icons';
 
-import Colors from '~constants/Colors';
+import COLORS from '~constants/colors';
 import responsiveFonts from '~utils/ResponsiveFonts';
 
 import ProgressBar from './ProgressBar';
@@ -52,7 +52,7 @@ export default CurrentCourse;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: Colors.lightBaseOne,
+    backgroundColor: COLORS.lightBaseOne,
     flex: 1,
     borderRadius: 10,
     padding: 15,
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   title: {
-    color: Colors.darkBaseOne,
+    color: COLORS.darkBaseOne,
     fontSize: responsiveFonts(14),
     fontFamily: 'DMSans_400Regular',
   },
@@ -70,14 +70,14 @@ const styles = StyleSheet.create({
     flex: 3,
   },
   descriptionText: {
-    color: Colors.darkBaseOne,
+    color: COLORS.darkBaseOne,
     fontSize: responsiveFonts(14),
     fontFamily: 'DMSans_400Regular',
   },
   author: {
     marginTop: '5%',
     fontSize: responsiveFonts(12),
-    color: Colors.darkBaseOne,
+    color: COLORS.darkBaseOne,
     fontFamily: 'DMSans_400Regular_Italic',
   },
   iconWrapper: {
@@ -91,13 +91,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     fontFamily: 'DMSans_400Regular',
     fontSize: responsiveFonts(14),
-    color: Colors.lightBaseThree,
+    color: COLORS.lightBaseThree,
   },
   percentage: {
     marginLeft: 5,
     fontFamily: 'DMSans_400Regular',
     fontSize: responsiveFonts(14),
-    color: Colors.darkBaseOne,
+    color: COLORS.darkBaseOne,
   },
   progressWrapper: {
     flex: 1,

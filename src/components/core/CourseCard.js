@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
-import Colors from '~constants/Colors';
+import COLORS from '~constants/colors';
 import { closeTabBar } from '~features/TabBarSlice';
 import responsiveFonts from '~utils/ResponsiveFonts';
 
@@ -50,7 +50,7 @@ function CourseCard(props) {
             <Ionicons
               name="star"
               size={15}
-              color={Colors.warning}
+              color={COLORS.warning}
               style={{ marginBottom: '0.5%' }}
             />
             <Text style={styles.score}>{score}</Text>
@@ -80,7 +80,7 @@ export default CourseCard;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: Colors.lightBaseOne,
+    backgroundColor: COLORS.lightBaseOne,
     flex: 1,
     borderRadius: 10,
     padding: 15,
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   title: {
-    color: Colors.darkBaseOne,
+    color: COLORS.darkBaseOne,
     fontSize: responsiveFonts(14),
     fontFamily: 'DMSans_400Regular',
   },
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
   price: {
     marginTop: '5%',
     fontSize: responsiveFonts(14),
-    color: Colors.darkBaseOne,
+    color: COLORS.darkBaseOne,
     fontFamily: 'DMSans_700Bold',
   },
   iconWrapper: {

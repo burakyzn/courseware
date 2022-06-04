@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native';
 
 import PropTypes from 'prop-types';
 
-import Colors from '~constants/Colors';
+import COLORS from '~constants/colors';
 
 function ProgressBar({ progression }) {
   return (
@@ -23,12 +23,12 @@ const styles = StyleSheet.create({
   container: {
     width: '100%',
     height: '100%',
-    backgroundColor: Colors.lightBaseTwo,
+    backgroundColor: COLORS.lightBaseTwo,
     borderRadius: 25,
   },
   progression: {
     height: '100%',
-    backgroundColor: Colors.success,
+    backgroundColor: COLORS.success,
     borderRadius: 25,
   },
 });

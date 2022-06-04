@@ -9,7 +9,7 @@ import Payment from '~components/basket/Payment';
 import CourseCardList from '~components/core/CourseCardList';
 import Divider from '~components/core/Divider';
 import NavigatorText from '~components/navigations/NavigatorText';
-import Colors from '~constants/Colors';
+import COLORS from '~constants/colors';
 import { itemsSelector } from '~features/BasketSlice';
 
 function Basket() {
@@ -47,7 +47,7 @@ export default Basket;
 
 const styles = StyleSheet.create({
   background: {
-    backgroundColor: Colors.primary,
+    backgroundColor: COLORS.primary,
     flex: 1,
   },
   upperPart: {
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
   },
   lowerPart: {
     flex: 10,
-    backgroundColor: Colors.lightBaseTwo,
+    backgroundColor: COLORS.lightBaseTwo,
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
     paddingHorizontal: 25,

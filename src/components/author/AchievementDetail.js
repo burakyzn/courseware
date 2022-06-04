@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import { Ionicons } from '@expo/vector-icons';
 
-import Colors from '~constants/Colors';
+import COLORS from '~constants/colors';
 
 function AchievementDetail(props) {
   const {studentCount, reviewCount} = props;
@@ -11,14 +11,14 @@ function AchievementDetail(props) {
   return (
     <View style={styles.container}>
       <View style={styles.totalStudent}>
-        <Ionicons name="trophy-outline" size={45} color={Colors.lightBaseOne} />
+        <Ionicons name="trophy-outline" size={45} color={COLORS.lightBaseOne} />
         <View>
           <Text style={styles.actievementText}>Total Students</Text>
           <Text style={styles.actievementText}>{studentCount}</Text>
         </View>
       </View>
       <View style={styles.reviews}>
-        <Ionicons name="trophy-outline" size={45} color={Colors.lightBaseOne} />
+        <Ionicons name="trophy-outline" size={45} color={COLORS.lightBaseOne} />
         <View>
           <Text style={styles.actievementText}>Reviews</Text>
           <Text style={styles.actievementText}>{reviewCount}</Text>
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   actievementText: {
-    color: Colors.lightBaseOne,
+    color: COLORS.lightBaseOne,
     paddingLeft: 10,
   },
 });

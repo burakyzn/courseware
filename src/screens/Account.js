@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 import PageList from '~components/account/PageList';
 import UserInformation from '~components/account/UserInformation';
 import NavigatorText from '~components/navigations/NavigatorText';
-import Colors from '~constants/Colors';
+import COLORS from '~constants/colors';
 
 function Account() {
   const navigation = useNavigation();
@@ -41,7 +41,7 @@ export default Account;
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    backgroundColor: Colors.primary,
+    backgroundColor: COLORS.primary,
   },
   upperPart: {
     flex: 1,
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
   },
   lowerPart: {
     flex: 6,
-    backgroundColor: Colors.lightBaseTwo,
+    backgroundColor: COLORS.lightBaseTwo,
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
     paddingHorizontal: 25,

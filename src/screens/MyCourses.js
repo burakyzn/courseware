@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 
 import ProgressTabs from '~components/myCourses/ProgressTabs';
 import NavigatorText from '~components/navigations/NavigatorText';
-import Colors from '~constants/Colors';
+import COLORS from '~constants/colors';
 
 function MyCourses() {
   const navigation = useNavigation();
@@ -36,7 +36,7 @@ export default MyCourses;
 
 const styles = StyleSheet.create({
   background: {
-    backgroundColor: Colors.primary,
+    backgroundColor: COLORS.primary,
     flex: 1,
   },
   upperPart: {
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
   },
   lowerPart: {
     flex: 10,
-    backgroundColor: Colors.lightBaseTwo,
+    backgroundColor: COLORS.lightBaseTwo,
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
     paddingHorizontal: 25,

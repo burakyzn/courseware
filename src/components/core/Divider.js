@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import Colors from '~constants/Colors';
+import COLORS from '~constants/colors';
 
 function Divider() {
   return <View style={styles.divider} />;
@@ -13,6 +13,6 @@ const styles = StyleSheet.create({
   divider: {
     borderTopWidth: 1,
     width: '100%',
-    borderColor: Colors.lightBaseThree,
+    borderColor: COLORS.lightBaseThree,
   },
 });

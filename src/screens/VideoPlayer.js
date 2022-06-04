@@ -7,7 +7,7 @@ import { useNavigation } from '@react-navigation/native';
 
 import NavigatorText from '~components/navigations/NavigatorText';
 import VideoTabs from '~components/videoPlayer/VideoTabs';
-import Colors from '~constants/Colors';
+import COLORS from '~constants/colors';
 
 function VideoPlayer() {
   const navigation = useNavigation();
@@ -52,7 +52,7 @@ export default VideoPlayer;
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    backgroundColor: Colors.primary,
+    backgroundColor: COLORS.primary,
   },
   upperPart: {
     flex: 1,
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
   },
   lowerPart: {
     flex: 7,
-    backgroundColor: Colors.lightBaseOne,
+    backgroundColor: COLORS.lightBaseOne,
   },
   navigatorWrapper: {
     flex: 1,

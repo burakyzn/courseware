@@ -2,7 +2,7 @@ import React from 'react';
 import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
 import { useSelector } from 'react-redux';
 
-import Colors from '~constants/Colors';
+import COLORS from '~constants/colors';
 import responsiveFonts from '~utils/ResponsiveFonts';
 import {userSelector} from '~features/AuthSlice';
 
@@ -39,12 +39,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   fullName: {
-    color: Colors.lightBaseOne,
+    color: COLORS.lightBaseOne,
     fontSize: responsiveFonts(24),
     fontFamily: 'DMSans_700Bold',
   },
   email: {
-    color: Colors.lightBaseOne,
+    color: COLORS.lightBaseOne,
     fontSize: responsiveFonts(14),
     fontFamily: 'DMSans_400Regular',
   },

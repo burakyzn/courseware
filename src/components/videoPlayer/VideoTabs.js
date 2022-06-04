@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import Colors from '~constants/Colors';
+import COLORS from '~constants/colors';
 import responsiveFonts from '~utils/ResponsiveFonts';
 
 import TabButton from '../core/TabButton';
@@ -60,12 +60,12 @@ const styles = StyleSheet.create({
     fontSize: responsiveFonts(14),
   },
   selectedTabContainer: {
-    backgroundColor: Colors.lightBaseTwo,
+    backgroundColor: COLORS.lightBaseTwo,
   },
   selectedTab: {
-    color: Colors.darkBaseOne,
+    color: COLORS.darkBaseOne,
   },
   nonSelectedTab: {
-    color: Colors.lightBaseThree,
+    color: COLORS.lightBaseThree,
   },
 });

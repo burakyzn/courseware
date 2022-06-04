@@ -3,7 +3,7 @@ import { SectionList, StyleSheet, Text, TouchableOpacity, View } from 'react-nat
 
 import { CheckBox } from 'react-native-elements';
 
-import Colors from '~constants/Colors';
+import COLORS from '~constants/colors';
 import responsiveFonts from '~utils/ResponsiveFonts';
 
 function CourseContext() {
@@ -29,7 +29,7 @@ function CourseContext() {
       <CheckBox
         center
         checked={isLectureCompleted}
-        checkedColor={Colors.secondary}
+        checkedColor={COLORS.secondary}
         onPress={() => setIsLectureCompleted(!isLectureCompleted)}
       />
     </TouchableOpacity>
@@ -61,32 +61,32 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   lectureName: {
-    color: Colors.darkBaseOne,
+    color: COLORS.darkBaseOne,
     fontSize: responsiveFonts(14),
     fontFamily: 'DMSans_400Regular',
     paddingHorizontal: 25,
   },
   lectureType: {
     fontSize: responsiveFonts(10),
-    color: Colors.lightBaseThree,
+    color: COLORS.lightBaseThree,
     fontFamily: 'DMSans_400Regular',
     paddingHorizontal: 25,
   },
   lectureGroupName: {
     fontSize: responsiveFonts(14),
     marginBottom: 5,
-    color: Colors.darkBaseOne,
+    color: COLORS.darkBaseOne,
     marginTop: 15,
   },
   lectureGroupType: {
     fontSize: responsiveFonts(10),
-    color: Colors.lightBaseThree,
+    color: COLORS.lightBaseThree,
   },
   lectureGroupHeader: {
     paddingBottom: 10,
     borderBottomWidth: 1,
-    borderColor: Colors.lightBaseThree,
+    borderColor: COLORS.lightBaseThree,
     paddingHorizontal: 25,
-    backgroundColor: Colors.lightBaseOne,
+    backgroundColor: COLORS.lightBaseOne,
   },
 });

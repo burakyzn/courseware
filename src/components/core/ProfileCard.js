@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import { Ionicons } from '@expo/vector-icons';
 
-import Colors from '~constants/Colors';
+import COLORS from '~constants/colors';
 import responsiveFonts from '~utils/ResponsiveFonts';
 
 const hp = Dimensions.get('window').height;
@@ -33,7 +33,7 @@ function ProfileCard(props) {
         <Text style={styles.fullName}>{fullName}</Text>
         <Text style={styles.summary}>{summary}</Text>
       </View>
-      <Ionicons name={iconName} size={32} color={Colors.lightBaseOne} />
+      <Ionicons name={iconName} size={32} color={COLORS.lightBaseOne} />
     </View>
   );
 }
@@ -61,11 +61,11 @@ const styles = StyleSheet.create({
   fullName: {
     fontSize: responsiveFonts(14),
     fontFamily: 'DMSans_400Regular',
-    color: Colors.lightBaseOne,
+    color: COLORS.lightBaseOne,
   },
   summary: {
     fontSize: responsiveFonts(12),
     fontFamily: 'DMSans_400Regular',
-    color: Colors.lightBaseOne,
+    color: COLORS.lightBaseOne,
   },
 });

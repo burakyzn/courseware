@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import { Ionicons } from '@expo/vector-icons';
 
-import Colors from '~constants/Colors';
+import COLORS from '~constants/colors';
 import responsiveFonts from '~utils/ResponsiveFonts';
 
 const hp = Dimensions.get('window').height;
@@ -54,7 +54,7 @@ export default AuthorButton;
 
 const styles = StyleSheet.create({
   authorWrapper: {
-    backgroundColor: Colors.lightBaseTwo,
+    backgroundColor: COLORS.lightBaseTwo,
     width: '100%',
     marginTop: '5%',
     borderRadius: 20,
@@ -73,11 +73,11 @@ const styles = StyleSheet.create({
   authorFullName: {
     fontSize: responsiveFonts(14),
     fontFamily: 'DMSans_400Regular',
-    color: Colors.darkBaseOne,
+    color: COLORS.darkBaseOne,
   },
   authorSummary: {
     fontSize: responsiveFonts(10),
     fontFamily: 'DMSans_400Regular',
-    color: Colors.lightBaseThree,
+    color: COLORS.lightBaseThree,
   },
 });

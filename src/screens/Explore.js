@@ -8,7 +8,7 @@ import CourseCardList from '~components/core/CourseCardList';
 import CategoryList from '~components/explore/CategoryList';
 import Searchbox from '~components/explore/SearchBox';
 import NavigatorText from '~components/navigations/NavigatorText';
-import Colors from '~constants/Colors';
+import COLORS from '~constants/colors';
 import courseService from '../services/courseService';
 import {categorySelector} from '~features/CategorySlice';
 
@@ -94,7 +94,7 @@ export default Explore;
 
 const styles = StyleSheet.create({
   background: {
-    backgroundColor: Colors.primary,
+    backgroundColor: COLORS.primary,
     flex: 1,
   },
   upperPart: {
@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
   },
   lowerPart: {
     flex: 10,
-    backgroundColor: Colors.lightBaseTwo,
+    backgroundColor: COLORS.lightBaseTwo,
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
     paddingHorizontal: 25,

@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 
 import { Ionicons } from '@expo/vector-icons';
 
-import Colors from '~constants/Colors';
+import COLORS from '~constants/colors';
 
 function TabBarIcon({ focused, name }) {
-  return <Ionicons name={name} size={22} color={focused ? Colors.secondary : Colors.darkBaseOne} />;
+  return <Ionicons name={name} size={22} color={focused ? COLORS.secondary : COLORS.darkBaseOne} />;
 }
 
 TabBarIcon.propTypes = {

@@ -8,7 +8,7 @@ import CourseCardList from '~components/core/CourseCardList';
 import Divider from '~components/core/Divider';
 import ProfileCard from '~components/core/ProfileCard';
 import NavigatorText from '~components/navigations/NavigatorText';
-import Colors from '~constants/Colors';
+import COLORS from '~constants/colors';
 import courseService from '../services/courseService'
 
 function Author() {
@@ -73,7 +73,7 @@ export default Author;
 
 const styles = StyleSheet.create({
   background: {
-    backgroundColor: Colors.primary,
+    backgroundColor: COLORS.primary,
     flex: 1,
   },
   upperPart: {
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
   },
   lowerPart: {
     flex: 7,
-    backgroundColor: Colors.lightBaseTwo,
+    backgroundColor: COLORS.lightBaseTwo,
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
     paddingHorizontal: 25,

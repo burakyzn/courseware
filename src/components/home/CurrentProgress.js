@@ -3,7 +3,7 @@ import { Image, StyleSheet, Text, View } from 'react-native';
 
 import PropTypes from 'prop-types';
 
-import Colors from '~constants/Colors';
+import COLORS from '~constants/colors';
 
 const actievementPhoto = require('~assets/achievement.png');
 
@@ -37,12 +37,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     fontFamily: 'DMSans_400Regular',
     fontSize: 14,
-    color: Colors.lightBaseThree,
+    color: COLORS.lightBaseThree,
   },
   percentage: {
     marginLeft: 5,
     fontFamily: 'DMSans_400Regular',
     fontSize: 14,
-    color: Colors.darkBaseOne,
+    color: COLORS.darkBaseOne,
   },
 });

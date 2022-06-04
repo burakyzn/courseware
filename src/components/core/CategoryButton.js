@@ -3,7 +3,7 @@ import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 
 import PropTypes from 'prop-types';
 
-import Colors from '~constants/Colors';
+import COLORS from '~constants/colors';
 import responsiveFonts from '~utils/ResponsiveFonts';
 
 function CategoryButton(props) {
@@ -24,8 +24,8 @@ CategoryButton.propTypes = {
 };
 
 CategoryButton.defaultProps = {
-  backgroundColor: Colors.primary,
-  textColor: Colors.lightBaseOne,
+  backgroundColor: COLORS.primary,
+  textColor: COLORS.lightBaseOne,
   onPress: () => {}
 };
 

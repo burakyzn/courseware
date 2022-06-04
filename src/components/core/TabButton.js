@@ -3,7 +3,7 @@ import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 
 import PropTypes from 'prop-types';
 
-import Colors from '~constants/Colors';
+import COLORS from '~constants/colors';
 import responsiveFonts from '~utils/ResponsiveFonts';
 
 function TabButton(props) {
@@ -36,13 +36,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   selectedTabContainer: {
-    backgroundColor: Colors.lightBaseTwo,
+    backgroundColor: COLORS.lightBaseTwo,
   },
   selectedTab: {
-    color: Colors.darkBaseOne,
+    color: COLORS.darkBaseOne,
   },
   nonSelectedTab: {
-    color: Colors.lightBaseThree,
+    color: COLORS.lightBaseThree,
   },
   tabText: {
     fontFamily: 'DMSans_700Bold',

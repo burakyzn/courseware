@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Button } from 'react-native-elements';
 import { useDispatch, useSelector } from 'react-redux';
 
-import Colors from '~constants/Colors';
+import COLORS from '~constants/colors';
 import { cleanBasket, totalPriceSelector } from '~features/BasketSlice';
 import responsiveFonts from '~utils/ResponsiveFonts';
 
@@ -46,21 +46,21 @@ const styles = StyleSheet.create({
     marginTop: '5%',
   },
   totalPriceText: {
-    color: Colors.lightBaseThree,
+    color: COLORS.lightBaseThree,
     fontSize: responsiveFonts(12),
     fontFamily: 'DMSans_700Bold',
   },
   totalPriceValue: {
     fontSize: responsiveFonts(12),
     fontFamily: 'DMSans_700Bold',
-    color: Colors.darkBaseOne,
+    color: COLORS.darkBaseOne,
   },
   buttonCheckoutWrapper: {
     flex: 1,
     justifyContent: 'flex-end',
   },
   buttonCheckoutStyle: {
-    backgroundColor: Colors.success,
+    backgroundColor: COLORS.success,
     borderRadius: 10,
     height: '100%',
   },

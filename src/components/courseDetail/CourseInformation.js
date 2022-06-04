@@ -3,7 +3,7 @@ import { FlatList, StyleSheet, Text, View } from 'react-native';
 
 import PropTypes from 'prop-types';
 
-import Colors from '~constants/Colors';
+import COLORS from '~constants/colors';
 import responsiveFonts from '~utils/ResponsiveFonts';
 
 import CategoryButton from '../core/CategoryButton';
@@ -19,8 +19,8 @@ function CourseInformation(props) {
         renderItem={({ item }) => (
           <CategoryButton
             text={item.name}
-            backgroundColor={Colors.accentPrimary}
-            textColor={Colors.primary}
+            backgroundColor={COLORS.accentPrimary}
+            textColor={COLORS.primary}
           />
         )}
         keyExtractor={(item) => item.id}
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   title: {
-    color: Colors.lightBaseOne,
+    color: COLORS.lightBaseOne,
     fontSize: responsiveFonts(24),
     fontFamily: 'DMSans_700Bold',
   },

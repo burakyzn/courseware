@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import { Ionicons } from '@expo/vector-icons';
 
-import Colors from '~constants/Colors';
+import COLORS from '~constants/colors';
 
 import InputBox from '../core/InputBox';
 
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     borderRadius: 10,
-    backgroundColor: Colors.lightBaseOne,
+    backgroundColor: COLORS.lightBaseOne,
   },
   iconWrapper: {
     flex: 1,
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   placeholder: {
-    color: Colors.lightBaseThree,
+    color: COLORS.lightBaseThree,
     marginLeft: 15,
   },
 });
