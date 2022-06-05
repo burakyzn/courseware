@@ -8,7 +8,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
 import COLORS from '~constants/colors';
-import { closeTabBar } from '~features/TabBarSlice';
+import { closeTabBar } from '~features/tabBarSlice';
 import PAGES from '~constants/pages';
 
 function NavigatorText(props) {

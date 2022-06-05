@@ -10,7 +10,7 @@ import Searchbox from '~components/explore/SearchBox';
 import NavigatorText from '~components/navigations/NavigatorText';
 import COLORS from '~constants/colors';
 import courseService from '~services/courseService';
-import {categorySelector} from '~features/CategorySlice';
+import {categorySelector} from '~features/categorySlice';
 import { PAGES_STACK, PAGES_TITLE} from '~constants/pages';
 
 function Explore() {

@@ -23,7 +23,7 @@ export const PAGES_TITLE = Object.freeze({
   courseDetail: "Course Detail",
   explore: "Explore",
   home: "Home",
-  myCourses: "My Courses",
+  myCourses: "Courses",
   videoPlayer: "Video Player"
 });
 

@@ -5,7 +5,7 @@ import { Button } from 'react-native-elements';
 import { useDispatch, useSelector } from 'react-redux';
 
 import COLORS from '~constants/colors';
-import { cleanBasket, totalPriceSelector } from '~features/BasketSlice';
+import { cleanBasket, totalPriceSelector } from '~features/basketSlice';
 import responsiveFonts from '~utils/responsiveFonts';
 
 function Payment() {

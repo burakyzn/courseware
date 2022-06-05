@@ -9,7 +9,7 @@ import { useNavigation } from '@react-navigation/native';
 
 import COLORS from '~constants/colors';
 import PAGES from '~constants/pages';
-import { closeTabBar } from '~features/TabBarSlice';
+import { closeTabBar } from '~features/tabBarSlice';
 import responsiveFonts from '~utils/responsiveFonts';
 
 const hp = Dimensions.get('window').height;

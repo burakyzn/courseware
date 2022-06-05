@@ -7,7 +7,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import TabBarIcon from '~components/navigations/TabBarIcon';
 import TabBarLabel from '~components/navigations/TabBarLabel';
-import { selectTabBar } from '~features/TabBarSlice';
+import { selectTabBar } from '~features/tabBarSlice';
 import { PAGES_STACK, PAGES_TITLE } from '~constants/pages';
 
 import AccountStackNavigator from './AccountStackNavigator';

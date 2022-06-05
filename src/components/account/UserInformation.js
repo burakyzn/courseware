@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 import COLORS from '~constants/colors';
 import responsiveFonts from '~utils/responsiveFonts';
-import {userSelector} from '~features/AuthSlice';
+import {userSelector} from '~features/authSlice';
 
 const hp = Dimensions.get('window').height;
 

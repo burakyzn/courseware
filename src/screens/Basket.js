@@ -10,7 +10,7 @@ import CourseCardList from '~components/core/CourseCardList';
 import Divider from '~components/core/Divider';
 import NavigatorText from '~components/navigations/NavigatorText';
 import COLORS from '~constants/colors';
-import { itemsSelector } from '~features/BasketSlice';
+import { itemsSelector } from '~features/basketSlice';
 import {PAGES_TITLE} from '~constants/pages';
 
 function Basket() {

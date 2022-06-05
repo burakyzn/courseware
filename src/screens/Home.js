@@ -7,8 +7,8 @@ import ProfileCard from '~components/core/ProfileCard';
 import CurrentCourse from '~components/home/CurrentCourse';
 import COLORS from '~constants/colors';
 import courseService from '~services/courseService'
-import {lastCourseSelector, fetchUserData, userSelector} from '~features/AuthSlice';
-import {fetchCategoryData} from '~features/CategorySlice';
+import {lastCourseSelector, fetchUserData, userSelector} from '~features/authSlice';
+import {fetchCategoryData} from '~features/categorySlice';
 
 const hp = Dimensions.get('window').height;
 
