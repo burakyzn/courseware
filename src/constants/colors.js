@@ -1,4 +1,4 @@
-const COLORS = {
+const COLORS = Object.freeze({
   lightBaseOne: '#FCFCFF',
   lightBaseTwo: '#F1F1FA',
   lightBaseThree: '#91919F',
@@ -8,6 +8,6 @@ const COLORS = {
   accentPrimary: '#E6E6FF',
   success: '#7DC579',
   warning: '#FFC960',
-};
+});
 
 export default COLORS;

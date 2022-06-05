@@ -8,6 +8,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import TabBarIcon from '~components/navigations/TabBarIcon';
 import TabBarLabel from '~components/navigations/TabBarLabel';
 import { selectTabBar } from '~features/TabBarSlice';
+import { PAGES_STACK, PAGES_TITLE } from '~constants/pages';
 
 import AccountStackNavigator from './AccountStackNavigator';
 import ExploreStackNavigator from './ExploreStackNavigator';
@@ -30,38 +31,38 @@ function TabNavigator() {
       }}
     >
       <Tab.Screen
-        name="HomeStack"
+        name={PAGES_STACK.homeStack}
         component={HomeStackNavigator}
         options={() => ({
           headerShown: false,
-          tabBarLabel: ({ focused }) => renderTabBarLabel(focused, 'Home'),
+          tabBarLabel: ({ focused }) => renderTabBarLabel(focused, PAGES_TITLE.home),
           tabBarIcon: ({ focused }) => renderTabBarIcon(focused, 'home'),
         })}
       />
       <Tab.Screen
-        name="ExploreStack"
+        name={PAGES_STACK.exploreStack}
         component={ExploreStackNavigator}
         options={() => ({
           headerShown: false,
-          tabBarLabel: ({ focused }) => renderTabBarLabel(focused, 'Explore'),
+          tabBarLabel: ({ focused }) => renderTabBarLabel(focused, PAGES_TITLE.explore),
           tabBarIcon: ({ focused }) => renderTabBarIcon(focused, 'search'),
         })}
       />
       <Tab.Screen
-        name="MyCoursesStack"
+        name={PAGES_STACK.myCoursesStack}
         component={MyCoursesStackNavigator}
         options={() => ({
           headerShown: false,
-          tabBarLabel: ({ focused }) => renderTabBarLabel(focused, 'Courses'),
+          tabBarLabel: ({ focused }) => renderTabBarLabel(focused, PAGES_TITLE.myCourses),
           tabBarIcon: ({ focused }) => renderTabBarIcon(focused, 'play-circle'),
         })}
       />
       <Tab.Screen
-        name="AccountStack"
+        name={PAGES_STACK.accountStack}
         component={AccountStackNavigator}
         options={() => ({
           headerShown: false,
-          tabBarLabel: ({ focused }) => renderTabBarLabel(focused, 'Account'),
+          tabBarLabel: ({ focused }) => renderTabBarLabel(focused, PAGES_TITLE.account),
           tabBarIcon: ({ focused }) => renderTabBarIcon(focused, 'person-circle'),
         })}
       />

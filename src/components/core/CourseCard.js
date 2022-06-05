@@ -8,11 +8,11 @@ import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
 import COLORS from '~constants/colors';
+import PAGES from '~constants/pages';
 import { closeTabBar } from '~features/TabBarSlice';
 import responsiveFonts from '~utils/ResponsiveFonts';
 
 const hp = Dimensions.get('window').height;
-
 function CourseCard(props) {
   const { id, title, description, categories, author, authorId, score, level, price } = props;
   const navigation = useNavigation();
@@ -20,7 +20,7 @@ function CourseCard(props) {
 
   const goToCourseDetail = () => {
     dispatch(closeTabBar());
-    navigation.navigate('CourseDetail', {
+    navigation.navigate(PAGES.courseDetail, {
       id,
       title,
       author,

@@ -6,7 +6,7 @@ import CourseCardList from '~components/core/CourseCardList';
 import ProfileCard from '~components/core/ProfileCard';
 import CurrentCourse from '~components/home/CurrentCourse';
 import COLORS from '~constants/colors';
-import courseService from '../services/courseService'
+import courseService from '~services/courseService'
 import {lastCourseSelector, fetchUserData, userSelector} from '~features/AuthSlice';
 import {fetchCategoryData} from '~features/CategorySlice';
 

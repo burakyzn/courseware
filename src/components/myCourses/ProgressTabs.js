@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import COLORS from '~constants/colors';
 import responsiveFonts from '~utils/ResponsiveFonts';
 import {inProgressCourseSelector, doneCourseSelector} from '~features/AuthSlice';
-import courseService from '../../services/courseService'
+import courseService from '~services/courseService'
 
 import CourseCardList from '../core/CourseCardList';
 import TabButton from '../core/TabButton';

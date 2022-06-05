@@ -6,6 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 import ProgressTabs from '~components/myCourses/ProgressTabs';
 import NavigatorText from '~components/navigations/NavigatorText';
 import COLORS from '~constants/colors';
+import {PAGES_STACK ,PAGES_TITLE} from '~constants/pages';
 
 function MyCourses() {
   const navigation = useNavigation();
@@ -17,9 +18,9 @@ function MyCourses() {
           <NavigatorText
             width="100%"
             height={50}
-            text="My Courses"
+            text={PAGES_TITLE.courseDetail}
             onPress={() => {
-              navigation.navigate('HomeStack');
+              navigation.navigate(PAGES_STACK.homeStack);
             }}
             showBasketIcon
           />

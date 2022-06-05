@@ -14,6 +14,7 @@ module.exports = function (api) {
             "~features": "./src/features",
             "~navigations": "./src/navigations",
             "~screens": "./src/screens",
+            "~services": "./src/services",
             "~utils": "./src/utils",
           },
           extensions : [".js", ".jsx", ".json"]

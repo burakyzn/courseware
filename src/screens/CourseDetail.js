@@ -15,7 +15,8 @@ import { addToBasket } from '~features/BasketSlice';
 import { openTabBar } from '~features/TabBarSlice';
 import {categorySelector} from '~features/CategorySlice';
 import responsiveFonts from '~utils/ResponsiveFonts';
-import authorService from '../services/authorService';
+import authorService from '~services/authorService';
+import PAGES, {PAGES_TITLE} from '~constants/pages';
 
 function CourseDetail() {
   const navigation = useNavigation();
@@ -62,7 +63,7 @@ function CourseDetail() {
   };
 
   const handleSeeDetails = () => {
-    navigation.navigate('VideoPlayer');
+    navigation.navigate(PAGES.videoPlayer);
   };
 
   const handleCourseCategories = () => {
@@ -78,7 +79,7 @@ function CourseDetail() {
           <NavigatorText
             width="100%"
             height={50}
-            text="Course Detail"
+            text={PAGES_TITLE.courseDetail}
             onPress={goBack}
             showBasketIcon
           />
@@ -101,7 +102,7 @@ function CourseDetail() {
             courseCount={author.courseCount}
             studentCount={author.studentCount}
             onPress={() => {
-              navigation.navigate('Author', {
+              navigation.navigate(PAGES.author, {
                 authorId: author.id,
                 authorName: author.name,
                 courseCount: author.courseCount,

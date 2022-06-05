@@ -9,7 +9,8 @@ import Divider from '~components/core/Divider';
 import ProfileCard from '~components/core/ProfileCard';
 import NavigatorText from '~components/navigations/NavigatorText';
 import COLORS from '~constants/colors';
-import courseService from '../services/courseService'
+import courseService from '~services/courseService'
+import {PAGES_TITLE} from '~constants/pages';
 
 function Author() {
   const navigation = useNavigation();
@@ -38,7 +39,7 @@ function Author() {
           <NavigatorText
             width="100%"
             height={50}
-            text="Author"
+            text={PAGES_TITLE.author}
             onPress={() => {
               navigation.goBack();
             }}

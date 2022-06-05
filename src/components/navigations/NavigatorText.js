@@ -36,7 +36,7 @@ function NavigatorText(props) {
             color={COLORS.lightBaseOne}
             onPress={() => {
               dispatch(closeTabBar());
-              navigation.navigate('Basket');
+              navigation.navigate(PAGES.basket);
             }}
           />
         </View>

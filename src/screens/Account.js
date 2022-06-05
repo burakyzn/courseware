@@ -7,6 +7,7 @@ import PageList from '~components/account/PageList';
 import UserInformation from '~components/account/UserInformation';
 import NavigatorText from '~components/navigations/NavigatorText';
 import COLORS from '~constants/colors';
+import {PAGES_TITLE} from '~constants/pages';
 
 function Account() {
   const navigation = useNavigation();
@@ -18,7 +19,7 @@ function Account() {
           <NavigatorText
             width="100%"
             height={50}
-            text="Account"
+            text={PAGES_TITLE.account}
             onPress={() => {
               navigation.goBack();
             }}

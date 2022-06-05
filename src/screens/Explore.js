@@ -9,8 +9,9 @@ import CategoryList from '~components/explore/CategoryList';
 import Searchbox from '~components/explore/SearchBox';
 import NavigatorText from '~components/navigations/NavigatorText';
 import COLORS from '~constants/colors';
-import courseService from '../services/courseService';
+import courseService from '~services/courseService';
 import {categorySelector} from '~features/CategorySlice';
+import { PAGES_STACK, PAGES_TITLE} from '~constants/pages';
 
 function Explore() {
   const navigation = useNavigation();
@@ -66,9 +67,9 @@ function Explore() {
           <NavigatorText
             width="100%"
             height={50}
-            text="Explore"
+            text={PAGES_TITLE.explore}
             onPress={() => {
-              navigation.navigate('HomeStack');
+              navigation.navigate(PAGES_STACK.homeStack);
             }}
             showBasketIcon
           />

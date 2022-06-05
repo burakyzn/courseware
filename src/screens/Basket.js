@@ -11,6 +11,7 @@ import Divider from '~components/core/Divider';
 import NavigatorText from '~components/navigations/NavigatorText';
 import COLORS from '~constants/colors';
 import { itemsSelector } from '~features/BasketSlice';
+import {PAGES_TITLE} from '~constants/pages';
 
 function Basket() {
   const navigation = useNavigation();
@@ -28,7 +29,7 @@ function Basket() {
           <NavigatorText
             width="100%"
             height={50}
-            text="Basket"
+            text={PAGES_TITLE.basket}
             onPress={goBack}
             showBasketIcon={false}
           />
