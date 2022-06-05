@@ -50,6 +50,21 @@ function CourseDetail() {
     navigation.goBack();
   };
 
+  useEffect(() => {
+    if(snackbar){
+      var closeSnackbar = setTimeout(
+        () => {
+          setSnackbar(false);
+        }, 
+        1500
+      );
+    }
+
+    return () => {
+      clearTimeout(closeSnackbar);
+    }
+  }, [snackbar])
+  
   const handleAddToBasket = () => {
     dispatch(addToBasket({
       id,
@@ -62,12 +77,8 @@ function CourseDetail() {
       description,
       author : author.name,
     }));
+    
     setSnackbar(true);
-
-    setTimeout(
-      () => setSnackbar(false), 
-      1500
-    );
   };
 
   const handleRemoveFromBasket = () => {

@@ -18,7 +18,7 @@ function MyCourses() {
           <NavigatorText
             width="100%"
             height={50}
-            text={PAGES_TITLE.courseDetail}
+            text={PAGES_TITLE.myCourses}
             onPress={() => {
               navigation.navigate(PAGES_STACK.homeStack);
             }}
