@@ -11,16 +11,19 @@ import AuthorButton from '~components/courseDetail/AuthorButton';
 import CourseInformation from '~components/courseDetail/CourseInformation';
 import NavigatorText from '~components/navigations/NavigatorText';
 import COLORS from '~constants/colors';
-import { addToBasket } from '~features/BasketSlice';
+import { addToBasket, removeFromBasket } from '~features/BasketSlice';
 import { openTabBar } from '~features/TabBarSlice';
 import {categorySelector} from '~features/CategorySlice';
 import responsiveFonts from '~utils/responsiveFonts';
 import authorService from '~services/authorService';
 import PAGES, {PAGES_TITLE} from '~constants/pages';
+import SnackBar from 'react-native-snackbar-component';
 
 function CourseDetail() {
   const navigation = useNavigation();
   const {id, title, authorId, score, level, price, categories, description} = useRoute().params;
+
+  const [snackbar, setSnackbar] = useState(false);
 
   const [author, setAuthor] = useState({
     name: "",
@@ -59,7 +62,17 @@ function CourseDetail() {
       description,
       author : author.name,
     }));
+    setSnackbar(true);
+
+    setTimeout(
+      () => setSnackbar(false), 
+      1500
+    );
   };
+
+  const handleRemoveFromBasket = () => {
+    dispatch(removeFromBasket(id));
+  }
 
   const handleSeeDetails = () => {
     navigation.navigate(PAGES.videoPlayer);
@@ -127,6 +140,7 @@ function CourseDetail() {
           </View>
         </View>
       </View>
+      <SnackBar visible={snackbar} textMessage="The course has been added to basket!" actionHandler={handleRemoveFromBasket} actionText="Undo"/>
     </View>
   );
 }

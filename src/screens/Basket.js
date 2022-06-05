@@ -18,7 +18,7 @@ function Basket() {
 
   const coursesInBasket = useSelector(itemsSelector);
 
-  const goBack = () => {
+  const handleGoBack = () => {
     navigation.goBack();
   };
 
@@ -30,7 +30,7 @@ function Basket() {
             width="100%"
             height={50}
             text={PAGES_TITLE.basket}
-            onPress={goBack}
+            onPress={handleGoBack}
             showBasketIcon={false}
           />
         </View>

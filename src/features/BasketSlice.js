@@ -10,7 +10,7 @@ const BasketSlice = createSlice({
   initialState,
   reducers: {
     addToBasket: (state, action) => {
-      const currentItem = state.items.filter((item) => action.payload.id === item.id)[0];
+      const currentItem = state.items.find((item) => item.id === action.payload.id);
 
       if (!currentItem) {
         state.items = [...state.items, action.payload];
@@ -18,7 +18,7 @@ const BasketSlice = createSlice({
       }
     },
     removeFromBasket: (state, action) => {
-      const currentItem = state.items.filter((item) => action.payload.id === item.id)[0];
+      const currentItem = state.items.find((item) => item.id === action.payload);
 
       if (currentItem) {
         const index = state.items.indexOf(currentItem);
