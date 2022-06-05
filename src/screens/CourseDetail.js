@@ -48,18 +48,17 @@ function CourseDetail() {
   };
 
   const handleAddToBasket = () => {
-    let course = {
+    dispatch(addToBasket({
       id,
       title,
       score,
       level,
       price,
+      authorId,
       categories,
       description,
       author : author.name,
-    }
-
-    dispatch(addToBasket(course));
+    }));
   };
 
   const handleSeeDetails = () => {
