@@ -7,8 +7,8 @@ import responsiveFonts from '~utils/responsiveFonts';
 import {inProgressCourseSelector, doneCourseSelector} from '~features/authSlice';
 import courseService from '~services/courseService'
 
-import CourseCardList from '../core/CourseCardList';
-import TabButton from '../core/TabButton';
+import CourseCardList from '../CourseCardList';
+import TabButton from '../TabButton';
 
 function ProgressTabs() {
   const [courses, setCourses] = useState([]);

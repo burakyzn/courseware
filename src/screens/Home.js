@@ -2,8 +2,8 @@ import React, { useState, useEffect,  } from 'react';
 import { Dimensions, StyleSheet, View } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 
-import CourseCardList from '~components/core/CourseCardList';
-import ProfileCard from '~components/core/ProfileCard';
+import CourseCardList from '~components/CourseCardList';
+import ProfileCard from '~components/ProfileCard';
 import CurrentCourse from '~components/home/CurrentCourse';
 import COLORS from '~constants/colors';
 import courseService from '~services/courseService'

@@ -4,10 +4,10 @@ import { StyleSheet, View } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 
 import AchievementDetail from '~components/author/AchievementDetail';
-import CourseCardList from '~components/core/CourseCardList';
-import Divider from '~components/core/Divider';
-import ProfileCard from '~components/core/ProfileCard';
-import NavigatorText from '~components/navigations/NavigatorText';
+import CourseCardList from '~components/CourseCardList';
+import Divider from '~components/Divider';
+import ProfileCard from '~components/ProfileCard';
+import NavigatorText from '~components/NavigatorText';
 import COLORS from '~constants/colors';
 import courseService from '~services/courseService'
 import {PAGES_TITLE} from '~constants/pages';

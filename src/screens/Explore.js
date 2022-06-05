@@ -4,10 +4,10 @@ import {useSelector} from 'react-redux';
 
 import { useNavigation } from '@react-navigation/native';
 
-import CourseCardList from '~components/core/CourseCardList';
+import CourseCardList from '~components/CourseCardList';
 import CategoryList from '~components/explore/CategoryList';
 import Searchbox from '~components/explore/SearchBox';
-import NavigatorText from '~components/navigations/NavigatorText';
+import NavigatorText from '~components/NavigatorText';
 import COLORS from '~constants/colors';
 import courseService from '~services/courseService';
 import {categorySelector} from '~features/categorySlice';

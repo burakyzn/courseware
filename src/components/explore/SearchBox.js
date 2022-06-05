@@ -7,7 +7,7 @@ import { Ionicons } from '@expo/vector-icons';
 
 import COLORS from '~constants/colors';
 
-import InputBox from '../core/InputBox';
+import InputBox from '../InputBox';
 
 function SearchBox(props) {
   const { width, height, placeholder, onSearchTextChange } = props;

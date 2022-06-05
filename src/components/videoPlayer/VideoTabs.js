@@ -4,7 +4,7 @@ import { StyleSheet, View } from 'react-native';
 import COLORS from '~constants/colors';
 import responsiveFonts from '~utils/responsiveFonts';
 
-import TabButton from '../core/TabButton';
+import TabButton from '../TabButton';
 
 import CourseContext from './CourseContext';
 import Discussion from './Discussion';

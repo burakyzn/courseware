@@ -6,9 +6,9 @@ import { useSelector } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
 
 import Payment from '~components/basket/Payment';
-import CourseCardList from '~components/core/CourseCardList';
-import Divider from '~components/core/Divider';
-import NavigatorText from '~components/navigations/NavigatorText';
+import CourseCardList from '~components/CourseCardList';
+import Divider from '~components/Divider';
+import NavigatorText from '~components/NavigatorText';
 import COLORS from '~constants/colors';
 import { itemsSelector } from '~features/basketSlice';
 import {PAGES_TITLE} from '~constants/pages';

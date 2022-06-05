@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import COLORS from '~constants/colors';
 import responsiveFonts from '~utils/responsiveFonts';
 
-import CategoryButton from '../core/CategoryButton';
+import CategoryButton from '../CategoryButton';
 
 function CourseInformation(props) {
   const { data, title } = props;

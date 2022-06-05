@@ -6,10 +6,10 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { useNavigation, useRoute} from '@react-navigation/native';
 
-import Divider from '~components/core/Divider';
+import Divider from '~components/Divider';
 import AuthorButton from '~components/courseDetail/AuthorButton';
 import CourseInformation from '~components/courseDetail/CourseInformation';
-import NavigatorText from '~components/navigations/NavigatorText';
+import NavigatorText from '~components/NavigatorText';
 import COLORS from '~constants/colors';
 import { addToBasket, removeFromBasket } from '~features/basketSlice';
 import { openTabBar } from '~features/tabBarSlice';

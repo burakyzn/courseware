@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import responsiveFonts from '~utils/responsiveFonts';
 
-import CategoryButton from '../core/CategoryButton';
+import CategoryButton from '../CategoryButton';
 
 function CategoryList(props) {
   const { header, data, style, onCategoryChange } = props;

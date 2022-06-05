@@ -5,7 +5,7 @@ import { Video } from 'expo-av';
 
 import { useNavigation } from '@react-navigation/native';
 
-import NavigatorText from '~components/navigations/NavigatorText';
+import NavigatorText from '~components/NavigatorText';
 import VideoTabs from '~components/videoPlayer/VideoTabs';
 import COLORS from '~constants/colors';
 

@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 
 import PageList from '~components/account/PageList';
 import UserInformation from '~components/account/UserInformation';
-import NavigatorText from '~components/navigations/NavigatorText';
+import NavigatorText from '~components/NavigatorText';
 import COLORS from '~constants/colors';
 import {PAGES_TITLE} from '~constants/pages';
 

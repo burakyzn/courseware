@@ -4,7 +4,7 @@ import { StyleSheet, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import ProgressTabs from '~components/myCourses/ProgressTabs';
-import NavigatorText from '~components/navigations/NavigatorText';
+import NavigatorText from '~components/NavigatorText';
 import COLORS from '~constants/colors';
 import {PAGES_STACK ,PAGES_TITLE} from '~constants/pages';
 
