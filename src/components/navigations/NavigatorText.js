@@ -9,6 +9,7 @@ import { useNavigation } from '@react-navigation/native';
 
 import COLORS from '~constants/colors';
 import { closeTabBar } from '~features/TabBarSlice';
+import PAGES from '~constants/pages';
 
 function NavigatorText(props) {
   const { width, height, text, onPress, showBasketIcon } = props;

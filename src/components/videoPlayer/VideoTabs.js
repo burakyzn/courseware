@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import COLORS from '~constants/colors';
-import responsiveFonts from '~utils/ResponsiveFonts';
+import responsiveFonts from '~utils/responsiveFonts';
 
 import TabButton from '../core/TabButton';
 

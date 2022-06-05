@@ -10,7 +10,7 @@ import { useNavigation } from '@react-navigation/native';
 import COLORS from '~constants/colors';
 import PAGES from '~constants/pages';
 import { closeTabBar } from '~features/TabBarSlice';
-import responsiveFonts from '~utils/ResponsiveFonts';
+import responsiveFonts from '~utils/responsiveFonts';
 
 const hp = Dimensions.get('window').height;
 function CourseCard(props) {

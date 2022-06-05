@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { Input } from 'react-native-elements';
 
 import COLORS from '~constants/colors';
-import responsiveFonts from '~utils/ResponsiveFonts';
+import responsiveFonts from '~utils/responsiveFonts';
 
 function InputBox(props) {
   const { placeholder, rightIcon, onChangeText } = props;

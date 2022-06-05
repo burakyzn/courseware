@@ -4,7 +4,7 @@ import { Dimensions, SectionList, StyleSheet, Text, TouchableOpacity } from 'rea
 import { Ionicons } from '@expo/vector-icons';
 
 import COLORS from '~constants/colors';
-import responsiveFonts from '~utils/ResponsiveFonts';
+import responsiveFonts from '~utils/responsiveFonts';
 
 const hp = Dimensions.get('window').height;
 

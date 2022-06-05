@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import COLORS from '~constants/colors';
 import { cleanBasket, totalPriceSelector } from '~features/BasketSlice';
-import responsiveFonts from '~utils/ResponsiveFonts';
+import responsiveFonts from '~utils/responsiveFonts';
 
 function Payment() {
   const dispatch = useDispatch();

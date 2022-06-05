@@ -4,7 +4,7 @@ import { FlatList, StyleSheet, Text, View } from 'react-native';
 import PropTypes from 'prop-types';
 
 import COLORS from '~constants/colors';
-import responsiveFonts from '~utils/ResponsiveFonts';
+import responsiveFonts from '~utils/responsiveFonts';
 
 import CategoryButton from '../core/CategoryButton';
 

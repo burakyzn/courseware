@@ -4,7 +4,7 @@ import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
 import PropTypes from 'prop-types';
 
 import COLORS from '~constants/colors';
-import responsiveFonts from '~utils/ResponsiveFonts';
+import responsiveFonts from '~utils/responsiveFonts';
 
 const hp = Dimensions.get('window').height;
 

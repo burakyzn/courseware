@@ -14,7 +14,7 @@ import COLORS from '~constants/colors';
 import { addToBasket } from '~features/BasketSlice';
 import { openTabBar } from '~features/TabBarSlice';
 import {categorySelector} from '~features/CategorySlice';
-import responsiveFonts from '~utils/ResponsiveFonts';
+import responsiveFonts from '~utils/responsiveFonts';
 import authorService from '~services/authorService';
 import PAGES, {PAGES_TITLE} from '~constants/pages';
 

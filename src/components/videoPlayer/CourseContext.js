@@ -4,7 +4,7 @@ import { SectionList, StyleSheet, Text, TouchableOpacity, View } from 'react-nat
 import { CheckBox } from 'react-native-elements';
 
 import COLORS from '~constants/colors';
-import responsiveFonts from '~utils/ResponsiveFonts';
+import responsiveFonts from '~utils/responsiveFonts';
 
 function CourseContext() {
   const [isLectureCompleted, setIsLectureCompleted] = useState(false);

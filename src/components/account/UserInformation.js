@@ -3,7 +3,7 @@ import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
 import { useSelector } from 'react-redux';
 
 import COLORS from '~constants/colors';
-import responsiveFonts from '~utils/ResponsiveFonts';
+import responsiveFonts from '~utils/responsiveFonts';
 import {userSelector} from '~features/AuthSlice';
 
 const hp = Dimensions.get('window').height;

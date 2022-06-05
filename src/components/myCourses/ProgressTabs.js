@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import { useSelector } from 'react-redux';
 
 import COLORS from '~constants/colors';
-import responsiveFonts from '~utils/ResponsiveFonts';
+import responsiveFonts from '~utils/responsiveFonts';
 import {inProgressCourseSelector, doneCourseSelector} from '~features/AuthSlice';
 import courseService from '~services/courseService'
 
