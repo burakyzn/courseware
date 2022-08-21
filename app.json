@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "learn-with-courses",
-    "slug": "learn-with-courses",
+    "name": "courseware",
+    "slug": "courseware",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
