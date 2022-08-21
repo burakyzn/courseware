@@ -1,6 +1,6 @@
-# ⚡ Learn With Courses
+# 🚀 Courseware
 
-This application has been developed as an application where users can enroll in courses.
+Courseware has been developed as an application where users can enroll in courses.
 
 <div style="display: flex; justify-content: space-evenly;">
   <img src="https://user-images.githubusercontent.com/44683436/172937098-b45f5cdf-a8fe-4c85-868c-7f91a2f8141a.gif" height="500px;" alt=""/>
@@ -20,7 +20,7 @@ Install required packages.
 ```
 expo install
 ```
-# 🚀 Run
+# 💻 Run
 ```
 expo start
 ```
