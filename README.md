@@ -14,7 +14,7 @@ Courseware has been developed as an application where users can enroll in course
 # ⚙️ Install
 Clone the project.
 ```
-git clone https://github.com/burakyzn/learn-with-courses.git
+git clone https://github.com/burakyzn/courseware.git
 ```
 Install required packages.
 ```
